@@ -1,16 +1,21 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <LandingPage />
+    <NavBar />
+    <Main />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import LandingPage from './components/LandingPage.vue'
+import NavBar from './components/layout/NavBar'
+import Main from './components/Main'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    LandingPage,
+    NavBar,
+    Main
   }
 }
 </script>
@@ -20,6 +25,8 @@ export default {
   margin: 0;
   padding: 0;
   /* font-family: 'Open Sans', sans-serif; */
-  font-family: 'Raleway', sans-serif;
+  /* font-family: 'Raleway', sans-serif; */
+  /* font-family: 'Open Sans', sans-serif;
+  font-family: 'Raleway', sans-serif; */
 }
 </style>
