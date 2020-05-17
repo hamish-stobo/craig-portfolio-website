@@ -4,18 +4,34 @@
         <h1>Welcome</h1>
         <i class="fas fa-chevron-down"></i>
     </div>
-    <ul class="crossfade">
+    <ul v-if="{isDesktop: false}" class="crossfade">
         <li></li>
         <li></li>
         <li></li>
         <li></li>
     </ul>
+    <div v-else class="desktop-bg"></div>
 </div>
 </template>
 
 <script>
 export default {
-    name: 'LandingPage'
+    name: 'LandingPage',
+    data() {
+      return {
+        isDesktop: false
+      }
+    },
+    created() {
+      this.myEventHandler()
+    },
+    methods: {
+      myEventHandler() {
+      // your code for handling resize...
+      const width = window.innerWidth
+      width >= 1200 ? this.isDesktop = true : this.isDesktop = false
+    }
+}
 }
 </script>
 
@@ -24,7 +40,7 @@ export default {
  .landing-wrapper {
      height: 100vh;
      font-family: 'Raleway', sans-serif;
-     background-image: linear-gradient(rgba(255,255,255,0.6), rgba(63,101,198,0.6));
+     /* background-image: linear-gradient(rgba(255,255,255,0.6), rgba(63,101,198,0.6)); */
  }
 
  .landing-wrapper h1 {
@@ -32,6 +48,7 @@ export default {
      line-height: 90vh;
      text-align: center;
      color: white;
+     text-shadow: black;
  }
 
  .fa-chevron-down {
@@ -52,7 +69,7 @@ export default {
     background-repeat: no-repeat;
     opacity: 0;
     z-index: -1;
-    animation: imageAnimation 16s linear infinite;
+    animation: imageAnimation 20s linear infinite;
   }
 
   .crossfade li:nth-child(1) { 
@@ -60,15 +77,15 @@ export default {
   }
   .crossfade li:nth-child(2) { 
     background-image: url('../assets/otago-uni-clocktower.jpg');
-    animation-delay: 4s;
+    animation-delay: 5s;
   }
   .crossfade li:nth-child(3) { 
     background-image: url('../assets/Queenstown.jpg');
-    animation-delay: 8s;
+    animation-delay: 10s;
   }
   .crossfade li:nth-child(4) { 
     background-image: url('../assets/skyline-Auckland.jpg');
-    animation-delay: 12s;
+    animation-delay: 15s;
   }
 
   @keyframes imageAnimation { 
@@ -95,6 +112,20 @@ export default {
   /* Older browser support - .no-cssanimations class added by modernizr */
 .crossfade li {
 	opacity: 1;
+}
+
+/* Desktop styling 1200 and up*/
+.desktop-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('../assets/desktop-bg.png');
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    z-index: -1;
 }
  
 </style>
