@@ -1,6 +1,15 @@
 <template>
     <div id="about">
-        Hello from the about page
+        <sui-card class="card">
+            <sui-card-content class="card-content">
+                <sui-image src="/img/craig-profile-pic.c6f0da8d.png" fluid />
+                <!-- <img src="../../assets/craig-profile-pic.png" /> -->
+                <sui-card-header>Craig Stobo</sui-card-header>
+                <sui-card-description class="profile-desc">
+                    During the course of his career, Craig has been a diplomat, economist, CIO and CEO. Outside of work, after a number of years mountaineering in NZ and overseas, he continues to be a keen cross-country and downhill skier, sailor and ocean swimmer. He also enjoys drama and literature and is a long-time supporter of Otago rugby and the Highlanders. Finally he is Chair of the Waitaki Boys High School Foundation, and is a Taumata of Otago University’s Business School.
+                </sui-card-description>
+            </sui-card-content>
+        </sui-card>
     </div>
 </template>
 
@@ -9,3 +18,32 @@
         name: 'About'
     }
 </script>
+
+<style scoped>
+    #about {
+        background: rgba(63,101,198,0.8);
+        padding: 20px;
+    }
+
+    .card {
+        margin: 0 auto;
+        background: rgba(255,255,255,0.9);
+        width: 90%;
+        max-width: 550px;
+    }
+
+    .card-content {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .card-content > .header {
+        padding-top: 10px;
+    }
+
+    .profile-desc {
+        color: black;   
+    }
+</style>

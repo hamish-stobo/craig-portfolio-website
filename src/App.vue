@@ -24,9 +24,6 @@ export default {
 * {
   margin: 0;
   padding: 0;
-  /* font-family: 'Open Sans', sans-serif; */
-  /* font-family: 'Raleway', sans-serif; */
-  /* font-family: 'Open Sans', sans-serif;
-  font-family: 'Raleway', sans-serif; */
+  font-family: 'Open Sans', sans-serif; 
 }
 </style>

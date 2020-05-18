@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="footer-wrapper">
         Hello from the Footer page
     </div>
 </template>
@@ -9,3 +9,9 @@ export default {
     name: 'Footer'
 }
 </script>
+
+<style scoped>
+    .footer-wrapper {
+        background: salmon;
+    }
+</style>

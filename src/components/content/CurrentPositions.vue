@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="currentpositions">
         Hello from the CurrentPositions page
     </div>
 </template>
@@ -9,3 +9,9 @@
         name: 'CurrentPositions'
     }
 </script>
+
+<style scoped>
+    #currentpositions {
+        background: #CBE6FF;
+    }
+</style>

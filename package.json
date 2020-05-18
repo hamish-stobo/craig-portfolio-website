@@ -10,8 +10,7 @@
   "dependencies": {
     "core-js": "^3.6.4",
     "semantic-ui-vue": "^0.10.1",
-    "vue": "^2.6.11",
-    "vue-resize-directive": "^1.2.0"
+    "vue": "^2.6.11"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.0",

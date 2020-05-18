@@ -1,7 +1,10 @@
 <template>
 <div ref="width">
     <div class="landing-wrapper">
-        <h1>Welcome</h1>
+        <h1>
+          I'm Craig Stobo.
+          <h3>Welcome to my personal website.</h3>
+        </h1>
         <a href="#about">
           <i class="fas fa-chevron-down down-scroll"></i>
         </a>
@@ -47,16 +50,26 @@ export default {
 /* mobile styling */
  .landing-wrapper {
      height: 100vh;
+     padding-top: 40vh;
+     padding-bottom: 4vh;
      font-family: 'Raleway', sans-serif;
      background-image: linear-gradient(rgba(255,255,255,0.3), rgba(63,101,198,0.4));
+     display: flex;
+     flex-flow: column nowrap;
+     justify-content: space-between;
+     align-items: center
  }
 
  .landing-wrapper h1 {
      vertical-align: middle;
-     line-height: 90vh;
      text-align: center;
      color: gold;
      text-shadow: 2px 2px 4px rgba(50, 81, 158, 0.8);
+     font-family: 'Raleway', sans-serif;
+ }
+
+ .landing-wrapper h3 {
+   font-family: 'Raleway', sans-serif;
  }
 
  .down-scroll {
@@ -123,7 +136,7 @@ export default {
       opacity: 1;
       animation-timing-function: ease-out;
     }
-    60% {
+    50% {
       opacity: 0
     }
     100% {
