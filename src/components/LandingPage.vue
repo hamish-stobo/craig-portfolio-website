@@ -24,7 +24,7 @@ export default {
     },
     methods: {
       onResize() {
-          const width = this.$refs.width.clientWidth
+          const width = window.innerWidth
           width >= 1000 ? this.isDesktop = true : this.isDesktop = false
         }
     },
@@ -46,7 +46,7 @@ export default {
  .landing-wrapper {
      height: 100vh;
      font-family: 'Raleway', sans-serif;
-     /* background-image: linear-gradient(rgba(255,255,255,0.6), rgba(63,101,198,0.6)); */
+     background-image: linear-gradient(rgba(255,255,255,0.3), rgba(63,101,198,0.4));
  }
 
  .landing-wrapper h1 {
@@ -54,7 +54,7 @@ export default {
      line-height: 90vh;
      text-align: center;
      color: white;
-     text-shadow: 1px 1px 5px rgba(44, 44, 44, 0.4);
+     text-shadow: 1px 1px 4px rgba(50, 81, 158, 0.5);
  }
 
  .down-scroll {
@@ -62,7 +62,7 @@ export default {
      display: block;
      margin: 0 auto;
      transform: scale(2.5);
-     text-shadow: 1px 1px 5px rgba(44, 44, 44, 0.4);
+     text-shadow: 1px 1px 4px rgba(50, 81, 158, 0.5);
  }
 /* background-animation */
 .crossfade li { 
@@ -121,18 +121,24 @@ export default {
 	opacity: 1;
 }
 
-/* Desktop styling 1200 and up*/
-.desktop-bg {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: url('../assets/desktop-bg.png');
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    z-index: -1;
+/* Desktop styling 1000 and up*/
+@media screen and (min-width: 1000px) {
+  
+  .landing-wrapper {
+    background: none;
+  }
+  .desktop-bg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url('../assets/desktop-bg.png');
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      z-index: -1;
+  }
 }
  
 </style>
