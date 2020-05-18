@@ -2,7 +2,9 @@
 <div ref="width">
     <div class="landing-wrapper">
         <h1>Welcome</h1>
-        <i class="fas fa-chevron-down down-scroll"></i>
+        <a href="#about">
+          <i class="fas fa-chevron-down down-scroll"></i>
+        </a>
     </div>
     <div v-if="isDesktop" class="desktop-bg"></div>
     <ul v-else class="crossfade">
@@ -53,16 +55,30 @@ export default {
      vertical-align: middle;
      line-height: 90vh;
      text-align: center;
-     color: white;
-     text-shadow: 1px 1px 4px rgba(50, 81, 158, 0.5);
+     color: gold;
+     text-shadow: 2px 2px 4px rgba(50, 81, 158, 0.8);
  }
 
  .down-scroll {
-     color: white;
+     color: rgba(63,101,198,0.8);
      display: block;
      margin: 0 auto;
      transform: scale(2.5);
      text-shadow: 1px 1px 4px rgba(50, 81, 158, 0.5);
+     animation: arrowAnimation 2s ease-in-out infinite;
+ }
+
+ @keyframes arrowAnimation {
+   0% {
+     transform: scale(2.5)
+   }
+   50% {
+     transform: scale(3);
+     color: gold
+   }
+   100% {
+     transform: scale(2.5)
+   }
  }
 /* background-animation */
 .crossfade li { 
@@ -107,7 +123,7 @@ export default {
       opacity: 1;
       animation-timing-function: ease-out;
     }
-    30% {
+    60% {
       opacity: 0
     }
     100% {
@@ -120,13 +136,23 @@ export default {
 .crossfade li {
 	opacity: 1;
 }
+/* styling for medium size screens */
+@media screen and (min-width: 750px) { 
+  .landing-wrapper h1 {
+     font-size: 3rem;
+ }
+ .down-scroll {
+     transform: scale(3.5);
+ }
+}
 
 /* Desktop styling 1000 and up*/
 @media screen and (min-width: 1000px) {
-  
+
   .landing-wrapper {
     background: none;
   }
+
   .desktop-bg {
       width: 100%;
       height: 100%;
