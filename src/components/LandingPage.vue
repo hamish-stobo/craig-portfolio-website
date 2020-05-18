@@ -1,16 +1,16 @@
 <template>
-<div>
+<div ref="width">
     <div class="landing-wrapper">
         <h1>Welcome</h1>
-        <i class="fas fa-chevron-down"></i>
+        <i class="fas fa-chevron-down down-scroll"></i>
     </div>
-    <ul v-if="{isDesktop: false}" class="crossfade">
+    <div v-if="isDesktop" class="desktop-bg"></div>
+    <ul v-else class="crossfade">
         <li></li>
         <li></li>
         <li></li>
         <li></li>
     </ul>
-    <div v-else class="desktop-bg"></div>
 </div>
 </template>
 
@@ -22,17 +22,23 @@ export default {
         isDesktop: false
       }
     },
-    created() {
-      this.myEventHandler()
-    },
     methods: {
-      myEventHandler() {
-      // your code for handling resize...
-      const width = window.innerWidth
-      width >= 1200 ? this.isDesktop = true : this.isDesktop = false
+      onResize() {
+          const width = this.$refs.width.clientWidth
+          width >= 1000 ? this.isDesktop = true : this.isDesktop = false
+        }
+    },
+
+    mounted() {
+      // Register an event listener when the Vue component is ready
+      window.addEventListener('resize', this.onResize)
+    },
+
+    beforeDestroy() {
+      // Unregister the event listener before destroying this Vue instance
+      window.removeEventListener('resize', this.onResize)
     }
-}
-}
+    }
 </script>
 
 <style scoped>
@@ -48,14 +54,15 @@ export default {
      line-height: 90vh;
      text-align: center;
      color: white;
-     text-shadow: black;
+     text-shadow: 1px 1px 5px rgba(44, 44, 44, 0.4);
  }
 
- .fa-chevron-down {
+ .down-scroll {
      color: white;
      display: block;
      margin: 0 auto;
      transform: scale(2.5);
+     text-shadow: 1px 1px 5px rgba(44, 44, 44, 0.4);
  }
 /* background-animation */
 .crossfade li { 
