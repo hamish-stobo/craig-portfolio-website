@@ -64,11 +64,14 @@ export default {
         border-radius: 10px;
         padding-right: 15px;
         z-index: 2;
-        float: right;
+        position: absolute;
+        right: 10px;
+        top: 15px;
     }
 
     .bg-on {
         background: rgba(255,255,255,0.8);
+        padding-top: 10px;
     }
 
     .hamburger, .cross {
@@ -103,6 +106,11 @@ export default {
         color: black;
         border-bottom: 1px solid black;
         width: 100%;
+        padding: 5px;
+    }
+
+    ul > a:nth-child(5) {
+        border: none;
     }
 
 @media screen and (min-width: 765px) {
