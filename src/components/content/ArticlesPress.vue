@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="articlespress">
         Hello from the ArticlesPress page
     </div>
 </template>
