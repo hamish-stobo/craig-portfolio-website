@@ -1,5 +1,5 @@
 <template>
-<div>
+<div style="position: sticky; top: 0; z-index: 1;">
     <div v-if="isMobile" class="nav-wrapper" v-bind:class="{'bg-on': isShowing}">
         <button v-if="!isShowing" @click="toggleNav"><i class="fas fa-bars hamburger"></i></button>
         <div class="wrapper-div" v-else-if="isShowing">
@@ -15,8 +15,12 @@
     </div>
     <div v-else-if="!isMobile" class="desktop-nav-wrapper">
         <ul>
-            <li></li>
-        </ul>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#currentpositions">Current Work</a>
+                <a href="#articlespress">Articles & Press</a>
+                <a href="#contact">Contact</a>
+            </ul>
     </div>
 </div>
 </template>
@@ -31,23 +35,36 @@ export default {
         }
     },
     methods: {
+      onResize() {
+          const width = window.innerWidth
+          width >= 765 ? this.isMobile = false : this.isMobile = true
+        },
         toggleNav() {
             this.isShowing = !this.isShowing
             console.log('navbar bool ', this.isShowing)
         }
+    },
+    created() {
+        this.onResize()
+    },
+    mounted() {
+      // Register an event listener when the Vue component is ready
+      window.addEventListener('resize', this.onResize)
+    },
+
+    beforeDestroy() {
+      // Unregister the event listener before destroying this Vue instance
+      window.removeEventListener('resize', this.onResize)
     }
 }
 </script>
 
 <style scoped>
     .nav-wrapper {
-        position: absolute;
-        margin-right: 15px;
-        margin-top: 5px;
-        padding: 10px;
         border-radius: 10px;
-        right: 0;
-        z-index: 1;
+        padding-right: 15px;
+        z-index: 2;
+        float: right;
     }
 
     .bg-on {
@@ -88,5 +105,22 @@ export default {
         width: 100%;
     }
 
+@media screen and (min-width: 765px) {
 
+    ul {
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 10px;
+        background: rgba(39, 82, 148, 0.89);
+    }
+    ul a {
+        display: inline-block;
+        white-space: nowrap;
+        height: 100%;
+        border: none;
+        width: auto;
+        color: gold;
+    }
+}
 </style>

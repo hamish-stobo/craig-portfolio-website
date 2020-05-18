@@ -9,3 +9,9 @@
         name: 'Services'
     }
 </script>
+
+<style scoped>
+    #services {
+        height: 100vh;
+    }
+</style>
