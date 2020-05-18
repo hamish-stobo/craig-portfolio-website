@@ -70,7 +70,7 @@ export default {
     }
 
     .bg-on {
-        background: rgba(255,255,255,0.8);
+        background: rgba(39, 82, 148, 0.89);
         padding-top: 10px;
     }
 
@@ -103,8 +103,8 @@ export default {
 
     a {
         text-decoration: none;
-        color: black;
-        border-bottom: 1px solid black;
+        color: gold;
+        border-bottom: 1px solid rgba(255, 217, 0);
         width: 100%;
         padding: 5px;
     }
