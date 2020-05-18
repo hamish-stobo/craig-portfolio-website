@@ -44,6 +44,8 @@
     }
 
     .profile-desc {
-        color: black;   
+        color: black !important;   
     }
+
+
 </style>
