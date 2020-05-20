@@ -9,3 +9,10 @@
         name: 'ArticlesPress'
     }
 </script>
+
+<style scoped>
+    #articlespress {
+        background: rgba(0,0,0,0.15);
+        height: 100vh;
+    }
+</style>

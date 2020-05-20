@@ -26,4 +26,7 @@ export default {
   padding: 0;
   font-family: 'Open Sans', sans-serif; 
 }
+html {
+  scroll-behavior: smooth;
+}
 </style>

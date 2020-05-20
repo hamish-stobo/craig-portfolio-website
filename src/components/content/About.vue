@@ -1,6 +1,6 @@
 <template>
     <div id="about">
-        <sui-card class="card">
+        <sui-card class="card raised">
             <sui-card-content class="card-content">
                 <sui-image v-bind:src="'./images/craig-profile-photo.png'" fluid />
                 <!-- <img src="../../assets/craig-profile-pic.png" /> -->
@@ -22,7 +22,7 @@
 <style scoped>
     #about {
         background: rgba(63,101,198,0.8);
-        padding: 20px;
+        padding: 20px 10px;
     }
 
     .card {
@@ -44,7 +44,8 @@
     }
 
     .profile-desc {
-        color: black !important;   
+        color: black !important;
+        text-align: justify;
     }
 
     @media screen and (min-width: 500px) {

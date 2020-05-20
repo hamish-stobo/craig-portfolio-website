@@ -4,6 +4,7 @@
         <Services />
         <CurrentPositions />
         <ArticlesPress />
+        <Contact />
         <Footer />
     </div>
 </template>
@@ -14,6 +15,7 @@ import About from './content/About'
 import Services from './content/Services'
 import CurrentPositions from './content/CurrentPositions'
 import ArticlesPress from './content/ArticlesPress'
+import Contact from './content/Contact'
 import Footer from './layout/Footer'
 
 export default {
@@ -23,6 +25,7 @@ export default {
         ArticlesPress, 
         CurrentPositions, 
         Services,
+        Contact,
         Footer
     }
 }

@@ -13,5 +13,6 @@
 <style scoped>
     #currentpositions {
         background: #CBE6FF;
+        height: 100vh;
     }
 </style>
