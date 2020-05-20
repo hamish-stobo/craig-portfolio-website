@@ -65,8 +65,10 @@ export default {
         padding-right: 15px;
         z-index: 2;
         position: absolute;
-        right: 10px;
-        top: 15px;
+        right: 1vw;
+        top: 2vh;
+        width: 200px;
+        transition: all 0.2s ease;
     }
 
     .bg-on {
@@ -75,7 +77,7 @@ export default {
     }
 
     .hamburger, .cross {
-        transform: scale(1.5);
+        transform: scale(2);
         color: gold;
     }
 
@@ -119,7 +121,7 @@ export default {
         flex-flow: row nowrap;
         justify-content: space-evenly;
         align-items: center;
-        padding: 10px;
+        padding: 0;
         background: rgba(39, 82, 148, 0.89);
     }
     ul a {
@@ -129,6 +131,15 @@ export default {
         border: none;
         width: auto;
         color: gold;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    ul a:hover {
+        background: gold;
+        color:rgba(39, 82, 148, 0.89);
+        font-weight: 600;
     }
 }
 </style>

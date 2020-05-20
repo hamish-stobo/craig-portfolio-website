@@ -30,7 +30,7 @@ export default {
     methods: {
       onResize() {
           const width = window.innerWidth
-          width >= 1000 ? this.isDesktop = true : this.isDesktop = false
+          width >= 1200 ? this.isDesktop = true : this.isDesktop = false
         }
     },
 
@@ -160,7 +160,7 @@ export default {
 }
 
 /* Desktop styling 1000 and up*/
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
 
   .landing-wrapper {
     background: none;
