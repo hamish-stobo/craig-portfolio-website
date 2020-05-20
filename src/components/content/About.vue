@@ -2,11 +2,11 @@
     <div id="about">
         <sui-card class="card">
             <sui-card-content class="card-content">
-                <sui-image src="/img/craig-profile-pic.c6f0da8d.png" fluid />
+                <sui-image v-bind:src="'./images/craig-profile-photo.png'" fluid />
                 <!-- <img src="../../assets/craig-profile-pic.png" /> -->
                 <sui-card-header>Craig Stobo</sui-card-header>
                 <sui-card-description class="profile-desc">
-                    During the course of his career, Craig has been a diplomat, economist, CIO and CEO. Outside of work, after a number of years mountaineering in NZ and overseas, he continues to be a keen cross-country and downhill skier, sailor and ocean swimmer. He also enjoys drama and literature and is a long-time supporter of Otago rugby and the Highlanders. Finally he is Chair of the Waitaki Boys High School Foundation, and is a Taumata of Otago University’s Business School.
+                    During the course of his career, Craig has been a diplomat, economist, CIO and CEO. <br />Outside of work, after a number of years mountaineering in NZ and overseas, he continues to be a keen cross-country and downhill skier, sailor and ocean swimmer. <br />He also enjoys drama and literature and is a long-time supporter of Otago rugby and the Highlanders. <br />Finally, he is Chair of the Waitaki Boys High School Foundation, and is a Taumata of Otago University’s Business School.
                 </sui-card-description>
             </sui-card-content>
         </sui-card>
@@ -28,7 +28,7 @@
     .card {
         margin: 0 auto;
         background: rgba(255,255,255,0.9);
-        width: 90%;
+        width: 100%;
         max-width: 550px;
     }
 
