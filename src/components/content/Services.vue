@@ -50,7 +50,7 @@
         width: 100%;
         text-align: justify;
         padding-left: 20%;
-        max-width: 500px;
+        max-width: 550px;
         margin: 10px auto;
         padding: 0;
     }
@@ -64,17 +64,7 @@
     }
     .item-content > svg {
         margin-right: 30px;
+        transform: scale(2) !important;
+        color: cornflowerblue;
     }
-
-/* @media screen and (min-width: 375px) {
-    .item-content {
-        margin-left: 20vw !important;
-    }
-}
-
-@media screen and (min-width: 450px) {
-    .item-content {
-        margin-left: 25vw !important;
-    }
-} */
 </style>
