@@ -1,15 +1,18 @@
 <template>
     <div id="about">
-        <sui-card class="card raised">
-            <sui-card-content class="card-content">
-                <sui-image v-bind:src="'./images/craig-profile-photo.png'" fluid />
-                <!-- <img src="../../assets/craig-profile-pic.png" /> -->
-                <sui-card-header class="about-header">Craig Stobo</sui-card-header>
-                <sui-card-description class="profile-desc">
-                    During the course of his career, Craig has been a diplomat, economist, CIO and CEO. <br />Outside of work, after a number of years mountaineering in NZ and overseas, he continues to be a keen cross-country and downhill skier, sailor and ocean swimmer. <br />He also enjoys drama and literature and is a long-time supporter of Otago rugby and the Highlanders. <br />Finally, he is Chair of the Waitaki Boys High School Foundation, and is a Taumata of Otago University’s Business School.
-                </sui-card-description>
-            </sui-card-content>
-        </sui-card>
+        <sui-card-content class="card-content">
+            <h2>About Me</h2>
+            <sui-image class="avatar-img" v-bind:src="'./images/craig-profile-photo.png'" fluid />
+            <!-- <img src="../../assets/craig-profile-pic.png" /> -->
+            <sui-card-description class="profile-desc">
+                I'm Craig Stobo. During the course of my career, I have been a diplomat, economist, CIO and CEO.
+                Outside of work, after a number of years mountaineering in NZ and overseas, I continue to be a keen 
+                cross-country and downhill skier, sailor and ocean swimmer. I also enjoy drama and literature, 
+                and I am a long-time supporter of Otago rugby and the Highlanders. Finally, I am 
+                Chair of the Waitaki Boys High School Foundation, and I'm a Taumata of Otago University’s 
+                Business School.
+            </sui-card-description>
+        </sui-card-content>
     </div>
 </template>
 
@@ -20,32 +23,28 @@
 </script>
 
 <style scoped>
-    #about {
-        background: rgba(63,101,198,0.8);
-        padding: 20px 10px;
-    }
-
-    .card {
-        margin: 0 auto;
-        background: rgba(255,255,255,0.9);
-        width: 100%;
-        max-width: 550px;
-    }
-
     .card-content {
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 80%;
     }
 
-    .card-content > .header {
+    .card-content > * {
+     color: gold;
+    }
+
+    .card-content > h2 {
         padding-top: 10px;
+        font-weight: 400;
     }
 
     .profile-desc {
-        color: black !important;
-        text-align: justify;
+        text-align: start;
+        width: 80%;
+        padding-top: 20px;
     }
 
     @media screen and (min-width: 500px) {
@@ -57,4 +56,5 @@
             margin: 0 auto;
         }
     }
+
 </style>

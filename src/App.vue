@@ -29,4 +29,16 @@ export default {
 html {
   scroll-behavior: smooth;
 }
+body {
+  background: rgba(63,101,198,0.8);
+}
+
+#services, #articlespress, #footer {
+          background: gold !important;
+        }
+@media screen and (min-width: 765px) {
+        #about, #services, #currentpositions, #articlespress, #contact {
+            padding-top: 70px !important;
+        }
+}
 </style>

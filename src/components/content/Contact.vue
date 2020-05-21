@@ -12,7 +12,6 @@ export default {
 
 <style scoped>
     #contact {
-        background: rgba(0,0,0,0.15);
         height: 100vh;
     }
 </style>

@@ -42,7 +42,6 @@
 
 <style scoped>
     #services {
-        background: rgba(0,0,0,0.15);
         text-align: center;
         padding: 30px 10px;
     }

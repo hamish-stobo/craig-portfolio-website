@@ -1,5 +1,5 @@
 <template>
-    <div class="footer-wrapper">
+    <div id="footer" class="footer-wrapper">
         Hello from the Footer page
     </div>
 </template>

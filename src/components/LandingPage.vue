@@ -35,8 +35,9 @@ export default {
     },
 
     mounted() {
+      this.onResize()
       // Register an event listener when the Vue component is ready
-      window.addEventListener('resize', this.onResize)
+      window.addEventListener('resize', this.onResize) 
     },
 
     beforeDestroy() {
