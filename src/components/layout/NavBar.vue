@@ -76,6 +76,14 @@ export default {
         padding-top: 10px;
     }
 
+    .hamburger {
+        background: rgba(39, 82, 148, 0.89);
+        width: 20px;
+        height: 20px;
+        padding: 2px;
+        border-radius: 5px;
+    }
+
     .hamburger, .cross {
         transform: scale(2);
         color: gold;
@@ -112,6 +120,16 @@ export default {
     }
 
     ul > a:nth-child(5) {
+        border: none;
+    }
+
+    ul > *:active {
+        color:rgba(39, 82, 148, 0.89);
+        background: gold;
+        border-bottom: rgba(39, 82, 148, 0.89);
+    }
+
+    ul > a:nth-child(5):active {
         border: none;
     }
 

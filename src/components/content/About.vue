@@ -28,7 +28,7 @@
         flex-flow: column nowrap;
         align-items: center;
         justify-content: space-between;
-        margin: 0 auto;
+        margin: 20px auto 50px auto;
         width: 80%;
     }
 
@@ -41,9 +41,12 @@
         font-weight: 400;
     }
 
+    .avatar-img {
+        border-radius: 50%;
+    }
+
     .profile-desc {
         text-align: start;
-        width: 80%;
         padding-top: 20px;
     }
 
@@ -54,6 +57,15 @@
         .profile-desc {
             max-width: 410px;
             margin: 0 auto;
+        }
+    }
+
+    @media screen and (min-width: 765px) {
+        .card-content {
+            margin-top: 0;
+        }
+        .card-content h2 {
+            padding-top: 0;
         }
     }
 
