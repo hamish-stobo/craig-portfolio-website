@@ -2,7 +2,7 @@
 <div style="position: sticky; top: 0; z-index: 1;">
     <div v-if="isMobile" class="nav-wrapper" v-bind:class="{'bg-on': isShowing}">
         <button v-if="!isShowing" @click="toggleNav"><i class="fas fa-bars hamburger"></i></button>
-        <div class="wrapper-div" v-else-if="isShowing">
+        <div v-bind:style="{'display: none': !isShowing}" class="wrapper-div" v-else-if="isShowing">
             <button  @click="toggleNav"><i class="fas fa-times cross"></i></button>
             <ul>
                 <a href="#about">About</a>
@@ -68,17 +68,16 @@ export default {
         right: 1vw;
         top: 3vh;
         width: 200px;
-        transition: all 0.2s ease;
+        transition: width 0.2s ease;
     }
 
     .bg-on {
-        background: rgba(39, 82, 148, 0.89);
-        padding-top: 10px;
+        background: rgba(46, 46, 46, 0.8);
         padding-right: 0;
     }
 
     .hamburger {
-        background: rgba(39, 82, 148, 0.89);
+        background: rgba(46, 46, 46, 0.8);
         width: 20px;
         height: 20px;
         padding: 2px;
@@ -90,6 +89,11 @@ export default {
         color: gold;
     }
 
+    .cross {
+        width: 18px;
+        height: 18px;
+    }
+
     button {
         background: none;
         border: none;
@@ -99,7 +103,10 @@ export default {
     }
 
     .wrapper-div > button {
-        display: inline-block;
+        display: block;
+        position: relative;
+        right: 15px;
+        top: 15px;
     }
 
     ul {

@@ -30,11 +30,11 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background: rgba(63,101,198,0.8);
+  background: rgb(46, 46, 46);
 }
 
 #services, #articlespress, #footer {
-          background: gold !important;
+          background: rgba(255,255,255,0.9) !important;
         }
 @media screen and (min-width: 765px) {
         #about, #services, #currentpositions, #articlespress, #contact {

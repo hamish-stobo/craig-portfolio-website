@@ -73,7 +73,7 @@
     }
 
     .services-header {
-      color: rgba(63,101,198,0.8);
+      color: rgb(46, 46, 46);
     }
 
     .list-wrapper {
@@ -91,11 +91,23 @@
       background: rgb(46, 46, 46);
     }
 
+    
+
+    ul > div:nth-child(2n) {
+        background: rgba(255,255,255,0.2);
+    }
+
+    ul > div:nth-child(2n) > span {
+        color: rgb(46, 46, 46);
+        font-weight: bold;
+    }
+
     .service-title {
       width: 50%;
       margin: 0;
       display: block;
       color: gold;
+      font-size: 1rem;
     }
 
     .services-img {
