@@ -65,7 +65,6 @@ export default {
      vertical-align: middle;
      text-align: center;
      color: gold;
-     text-shadow: 2px 2px 4px rgba(50, 81, 158, 0.8);
      font-family: 'Raleway', sans-serif;
  }
 
@@ -74,7 +73,7 @@ export default {
  }
 
  .down-scroll {
-     color: rgba(63,101,198,0.8);
+     color: gold;
      display: block;
      margin: 0 auto;
      transform: scale(2.5);
@@ -88,7 +87,6 @@ export default {
    }
    50% {
      transform: scale(3);
-     color: gold
    }
    100% {
      transform: scale(2.5)

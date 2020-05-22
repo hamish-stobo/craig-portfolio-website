@@ -66,7 +66,7 @@ export default {
         z-index: 2;
         position: absolute;
         right: 1vw;
-        top: 2vh;
+        top: 3vh;
         width: 200px;
         transition: all 0.2s ease;
     }
@@ -74,6 +74,7 @@ export default {
     .bg-on {
         background: rgba(39, 82, 148, 0.89);
         padding-top: 10px;
+        padding-right: 0;
     }
 
     .hamburger {
@@ -103,12 +104,15 @@ export default {
 
     ul {
         list-style-type: none;
-        padding: none;
+        padding: 0 !important;
         display: flex;
         padding-top: 15px;
         flex-flow: column nowrap;
         justify-content: center;
         align-items: flex-end;
+        width: 100%;
+        margin-block-start: 0 !important;
+        margin-block-end: 0 !important;
     }
 
     a {
@@ -116,7 +120,9 @@ export default {
         color: gold;
         border-bottom: 1px solid rgba(255, 217, 0);
         width: 100%;
-        padding: 5px;
+        padding: 5px 5px 5px 15px;
+        height: 40px;
+        line-height: 200%;
     }
 
     ul > a:nth-child(5) {
@@ -131,6 +137,7 @@ export default {
 
     ul > a:nth-child(5):active {
         border: none;
+        border-radius: 0 0 10px 10px;
     }
 
 @media screen and (min-width: 765px) {

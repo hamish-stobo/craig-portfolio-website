@@ -1,7 +1,33 @@
 <template>
 <div id="services">
-    <sui-header>How I can help you:</sui-header>
-    <sui-card class="raised service-list-item">
+    <h2 class="ui header services-header">How I can help you:</h2>
+    <ul class="list-wrapper">
+      <div>
+        <img class="services-img" v-bind:src="'./images/services-photos/photo-1450101499163-c8848c66ca85.jpg'" alt="Man signing paper"/>
+        <span class="service-title">Business advice</span>
+      </div>
+      <div>
+        <span class="service-title">Investment Direction</span>
+        <img class="services-img" v-bind:src="'./images/services-photos/photo-1454165804606-c3d57bc86b40.jpg'" alt="Men discussing sheet of paper"/>
+      </div>
+      <div>
+        <img class="services-img" v-bind:src="'./images/services-photos/photo-1460925895917-afdab827c52f.jpg'" alt="Laptop display graph with figures" />
+        <span class="service-title">Government Relations</span>
+      </div>
+      <div>
+        <span class="service-title">Capital Raising</span>
+        <img class="services-img" v-bind:src="'./images/services-photos/photo-1516321318423-f06f85e504b3.jpg'" alt="People pointing at laptop screen"/>
+      </div>
+      <div>
+        <img class="services-img" v-bind:src="'./images/services-photos/photo-1517048676732-d65bc937f952.jpg'" alt="People sitting around table"/>
+        <span class="service-title">B2B Consulting</span>
+      </div>
+      <div>
+        <span class="service-title">Cash Flow Optimisation</span>
+        <img class="services-img" v-bind:src="'./images/services-photos/photo-1523875194681-bedd468c58bf.jpg'" alt="Chess board"/>
+      </div>
+    </ul>
+    <!-- <sui-card class="raised service-list-item">
       <sui-card-content class="item-content">
         <i class="fas fa-business-time"/>
         Business advice
@@ -30,7 +56,7 @@
         <i class="fas fa-ruler-horizontal" />
         Board minutes
       </sui-card-content>
-    </sui-card>
+    </sui-card> -->
 </div>
 </template>
 
@@ -43,8 +69,47 @@
 <style scoped>
     #services {
         text-align: center;
-        padding: 30px 10px;
+        padding: 30px 0 0 0;
     }
+
+    .services-header {
+      color: rgba(63,101,198,0.8);
+    }
+
+    .list-wrapper {
+      width: 100vw;
+      list-style-type: none;
+      margin-top: 50px;
+    }
+
+    .list-wrapper > div {
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      background: rgb(46, 46, 46);
+    }
+
+    .service-title {
+      width: 50%;
+      margin: 0;
+      display: block;
+      color: gold;
+    }
+
+    .services-img {
+      width: 50%;
+      margin: 0;
+    }
+
+
+
+
+
+
+
+
     .service-list-item {
         width: 100%;
         text-align: justify;
