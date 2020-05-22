@@ -34,7 +34,7 @@ body {
 }
 
 #services, #articlespress, #footer {
-          background: rgba(255,255,255,0.9) !important;
+          background: gold !important;
         }
 @media screen and (min-width: 765px) {
         #about, #services, #currentpositions, #articlespress, #contact {

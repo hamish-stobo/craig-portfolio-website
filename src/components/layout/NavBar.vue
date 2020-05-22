@@ -2,7 +2,7 @@
 <div style="position: sticky; top: 0; z-index: 1;">
     <div v-if="isMobile" class="nav-wrapper" v-bind:class="{'bg-on': isShowing}">
         <button v-if="!isShowing" @click="toggleNav"><i class="fas fa-bars hamburger"></i></button>
-        <div v-bind:style="{'display: none': !isShowing}" class="wrapper-div" v-else-if="isShowing">
+        <div class="wrapper-div" v-else-if="isShowing">
             <button  @click="toggleNav"><i class="fas fa-times cross"></i></button>
             <ul>
                 <a href="#about">About</a>
@@ -63,12 +63,12 @@ export default {
     .nav-wrapper {
         border-radius: 10px;
         padding-right: 15px;
+        padding-top: 15px;
         z-index: 2;
         position: absolute;
         right: 1vw;
         top: 3vh;
         width: 200px;
-        transition: width 0.2s ease;
     }
 
     .bg-on {
@@ -104,9 +104,8 @@ export default {
 
     .wrapper-div > button {
         display: block;
-        position: relative;
+        position: absolute;
         right: 15px;
-        top: 15px;
     }
 
     ul {
@@ -137,9 +136,9 @@ export default {
     }
 
     ul > *:active {
-        color:rgba(39, 82, 148, 0.89);
+        color:rgba(46, 46, 46, 0.8);
         background: gold;
-        border-bottom: rgba(39, 82, 148, 0.89);
+        border-bottom: rgba(46, 46, 46, 0.8);
     }
 
     ul > a:nth-child(5):active {
@@ -154,7 +153,7 @@ export default {
         justify-content: space-evenly;
         align-items: center;
         padding: 0;
-        background: rgba(39, 82, 148, 0.89);
+        background: rgba(46, 46, 46, 0.8);
     }
     ul a {
         display: inline-block;
@@ -170,8 +169,14 @@ export default {
 
     ul a:hover {
         background: gold;
-        color:rgba(39, 82, 148, 0.89);
+        color:rgba(46, 46, 46, 0.8);
         font-weight: 600;
     }
 }
+
+  @media screen and (min-width: 1050px) {
+      ul > a {
+          font-size: 1.2rem;
+      }
+  } 
 </style>

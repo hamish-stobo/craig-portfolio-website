@@ -67,6 +67,14 @@
         .card-content h2 {
             padding-top: 0;
         }
+        .profile-desc {
+            font-size: 1.1rem;
+        }
+    }
+    @media screen and (min-width: 1050px) {
+        .profile-desc {
+            font-size: 1.2rem;
+        }
     }
 
 </style>

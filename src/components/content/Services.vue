@@ -94,7 +94,7 @@
     
 
     ul > div:nth-child(2n) {
-        background: rgba(255,255,255,0.2);
+        background: gold;
     }
 
     ul > div:nth-child(2n) > span {
@@ -115,7 +115,17 @@
       margin: 0;
     }
 
+    @media screen and (min-width: 650px) {
+      .service-title {
+        font-size: 1.2rem;
+      }
+    }
 
+    @media screen and (min-width: 650px) {
+      .service-title {
+        font-size: 1.5rem;
+      }
+    }
 
 
 
