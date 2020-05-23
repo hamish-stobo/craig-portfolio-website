@@ -4,21 +4,21 @@
         <ul class="article-list">
         <a href="https://www.nzherald.co.nz/business/news/article.cfm?c_id=3&objectid=12330405" style="text-decoration: none; color: gold" target="_blank" class="article-list-item">
             <img class="article-img" v-bind:src="'./images/articles -press-images/nz-herald-2020.jpg'" alt="Worker in Hi-Vis and Hardhat">
-            <span class="article-title">Craig Stobo: Shovel-ready, but not work-ready</span>
+            <span class="article-title">Shovel-ready, but not work-ready</span>
             <span class="article-source">NZ Herald</span>
             <span class="article-date">9 May 2020</span>
             <p class="article-desc"></p>
         </a>
         <a href="https://www.youtube.com/watch?v=fDo0HFOe8EU" style="text-decoration: none; color: gold" target="_blank" class="article-list-item">
             <img class="article-img" v-bind:src="'./images/articles -press-images/UoO-2017-business-school-interview.png'" alt="Otago University Business School video thumbnail">
-            <span class="article-title">Q & A with Craig Stobo (Professional Director and Business Owner)</span>
+            <span class="article-title">Q & A with Craig Stobo</span>
             <span class="article-source">University of Otago Business School</span>
             <span class="article-date">20 Oct 2017</span>
             <p class="article-desc"></p>
         </a>
         <a href="https://www.nzherald.co.nz/business/news/article.cfm?c_id=3&objectid=11415720" style="text-decoration: none; color: gold" target="_blank" class="article-list-item">
             <img class="article-img" v-bind:src="'./images/articles -press-images/nz-herald-2015.jpg'" alt="Aircraft Landing">
-            <span class="article-title">Craig Stobo: Government assets sheet needs right balance</span>
+            <span class="article-title">Government assets sheet needs right balance</span>
             <span class="article-source">NZ Herald</span>
             <span class="article-date">12 Mar 2015</span>
             <p class="article-desc"></p>
@@ -60,15 +60,15 @@
     .article-list-item {
         display: grid;
         grid-template-columns: 45% 55%;
-        grid-template-rows: 50% 50%;
+        grid-template-rows: 50% 25% 25%;
         margin: 10px auto;
         background: rgb(46, 46, 46);
         text-align: left;
-        height: 100px;
+        height: 110px;
         padding-bottom: 3px;
         box-shadow: 2px 2px 4px rgba(46, 46, 46, 0.6);
         max-width: 400px;
-        border-radius: 10px;
+        border-radius: 15px;
     }
 
     .article-img {
@@ -78,14 +78,14 @@
         max-height: 100%;
         max-width: 140px;
         display: inline-block;
-        border-radius: 10px 0 0 0;
+        border-radius: 15px 0 0 0;
     }
 
     .article-title {
         font-size: 1rem;
         grid-row: 1 / 2;
         grid-column: 2 / 3;
-        align-self: start;
+        align-self: center;
         margin: 0;
         display: inline-block;
         line-height: 1.2rem;
@@ -102,10 +102,10 @@
     }
 
     .article-date {
-        grid-row: 2 / 3;
+        grid-row: 3 / 4;
         grid-column: 2 / 3;
         font-size: 0.7rem;
-        align-self: end;
+        align-self: start;
         color: white;
     }
 
@@ -119,18 +119,42 @@
         }
     }
 
-     @media screen and (min-width: 850px) {
-         
+    @media screen and (min-width: 700px) {
+        .article-list-item {
+            height: 120px;
+        }
+    }
+
+    @media screen and (min-width: 850px) {
+        
         .article-list {
             display: flex;
             flex-flow: row wrap;
             justify-content: space-evenly;
             align-items: center;
+            max-width: 920px;
         }
 
         .article-list-item {
             margin: 30px 0;
+            width: 400px;
         }
-     }
+    }
+
+    @media screen and (min-width: 920px) { 
+        #articlespress {
+            padding: 40px 4vw 100px;
+        }
+    }
+    @media screen and (min-width: 1050px) { 
+        #articlespress {
+            padding: 40px 8vw 100px;
+        }
+    }
+    @media screen and (min-width: 1200px) { 
+        #articlespress {
+            padding: 40px 12vw 100px;
+        }
+    }
 
 </style>
