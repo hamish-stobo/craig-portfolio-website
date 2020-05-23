@@ -23,7 +23,7 @@
         <span class="service-title">B2B Consulting</span>
       </div>
       <div>
-        <span class="service-title">Cash Flow Optimisation</span>
+        <span class="service-title">Directing Companies</span>
         <img class="services-img" v-bind:src="'./images/services-photos/photo-1523875194681-bedd468c58bf.jpg'" alt="Chess board"/>
       </div>
     </ul>
