@@ -1,6 +1,8 @@
 <template>
     <div id="footer" class="footer-wrapper">
-        Hello from the Footer page
+        <span>© Hamish Stobo2020</span>
+        <i class="fab fa-linkedin"></i>
+        <i class="fab fa-github"></i>
     </div>
 </template>
 
@@ -13,5 +15,13 @@ export default {
 <style scoped>
     .footer-wrapper {
         background: salmon;
+        text-align: center;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
     }
+
+
+
 </style>

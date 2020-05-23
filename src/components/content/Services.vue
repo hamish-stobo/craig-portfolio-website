@@ -4,7 +4,7 @@
     <ul class="list-wrapper">
       <div>
         <img class="services-img" v-bind:src="'./images/services-photos/photo-1450101499163-c8848c66ca85.jpg'" alt="Man signing paper"/>
-        <span class="service-title">Business advice</span>
+        <span class="service-title">Business Advice</span>
       </div>
       <div>
         <span class="service-title">Investment Direction</span>

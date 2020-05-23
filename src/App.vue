@@ -38,7 +38,7 @@ body {
         }
 @media screen and (min-width: 765px) {
         #about, #services, #currentpositions, #articlespress, #contact {
-            padding-top: 60px !important;
+            padding-top: 65px !important;
         }
 }
 </style>
