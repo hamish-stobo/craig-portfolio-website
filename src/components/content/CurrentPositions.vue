@@ -56,6 +56,16 @@ import PreviousWork from './work-sections/PreviousWork'
         width: 100%;
         justify-content: space-around;
         align-items: baseline;
+        margin: 0 auto;
+        max-width: 500px;
+    }
+
+    .positions-toggler h3 {
+        height: 25px !important;
+    }
+
+    .positions-toggler h3:hover {
+        cursor: pointer;
     }
 
     .positions-list {

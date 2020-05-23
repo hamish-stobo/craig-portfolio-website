@@ -12,11 +12,6 @@
                 <span class="job-title">Chairman</span>
             </div>
             <div class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/fliway-group-logo.png'" alt="Fliway Group Logo">
-                <h3 class="company-title">Fliway Group</h3>
-                <span class="job-title">Independent Non-Executive Chairman</span>
-            </div>
-            <div class="positions-list-item">
                 <img class="company-logo" v-bind:src="'./images/company-logos/lgfa.png'" alt="Local Government Funding Agency Logo">
                 <h3 class="company-title">Local Government Funding Agency</h3>
                 <span class="job-title">Chairman</span>
@@ -40,6 +35,16 @@
                 <img class="company-logo" v-bind:src="'./images/company-logos/biomarine-logo.png'" alt="Biomarine Ltd Logo">
                 <h3 class="company-title">Biomarine Ltd</h3>
                 <span class="job-title">Chairman and Shareholder</span>
+            </div>
+            <div class="positions-list-item">
+                <img class="company-logo" v-bind:src="'./images/company-logos/cressida-capital-logo.png'" alt="Cressida Capital Logo">
+                <h3 class="company-title">Cressida Capital</h3>
+                <span class="job-title">Board Advisor</span>
+            </div>
+            <div class="positions-list-item">
+                <img class="company-logo" v-bind:src="'./images/company-logos/urban-partners.png'" alt="Urban Partners NZ Logo">
+                <h3 class="company-title">Urban Partners</h3>
+                <span class="job-title">Board Advisor</span>
             </div>
         </ul>
     </div>
