@@ -77,7 +77,6 @@ export default {
      display: block;
      margin: 0 auto;
      transform: scale(2.5);
-     text-shadow: 1px 1px 4px rgba(50, 81, 158, 0.5);
      animation: arrowAnimation 2s ease-in-out infinite;
  }
 
@@ -108,19 +107,19 @@ export default {
   }
 
   .crossfade li:nth-child(1) { 
-    background-image: url('../assets/waitaki-boys.jpg')
+    background-image: url('../assets/waitaki-boys.jpg');
   }
   .crossfade li:nth-child(2) { 
-    background-image: url('../assets/otago-uni-clocktower.jpg');
     animation-delay: 5s;
+    background-image: url('../assets/otago-uni-clocktower.jpg');
   }
   .crossfade li:nth-child(3) { 
-    background-image: url('../assets/Queenstown.jpg');
     animation-delay: 10s;
+    background-image: url('../assets/skyline-Auckland.jpg');
   }
   .crossfade li:nth-child(4) { 
-    background-image: url('../assets/skyline-Auckland.jpg');
     animation-delay: 15s;
+    background-image: url('../assets/Queenstown.jpg');
   }
 
   @keyframes imageAnimation { 
@@ -149,12 +148,48 @@ export default {
 	opacity: 1;
 }
 /* styling for medium size screens */
+
+@media screen and (min-width: 500px) { 
+  .landing-wrapper h1 {
+     font-size: 2.5rem;
+  }
+
+  .landing-wrapper h3 {
+    font-size: 1.4rem;
+  }
+
+  @keyframes arrowAnimation {
+   0% {
+     transform: scale(3);
+   }
+   50% {
+     transform: scale(3.5);
+   }
+   100% {
+     transform: scale(3);
+   }
+ }
+}
+
 @media screen and (min-width: 750px) { 
   .landing-wrapper h1 {
-     font-size: 3rem;
- }
- .down-scroll {
+     font-size: 3.6rem;
+  }
+
+  .landing-wrapper h3 {
+    font-size: 1.6rem;
+  }
+
+ @keyframes arrowAnimation {
+   0% {
      transform: scale(3.5);
+   }
+   50% {
+     transform: scale(4);
+   }
+   100% {
+     transform: scale(3.5);
+   }
  }
 }
 
@@ -177,6 +212,10 @@ export default {
       background-repeat: no-repeat;
       z-index: -1;
   }
+
+  .landing-wrapper h1 {
+     font-size: 4rem;
+ }
 }
  
 </style>

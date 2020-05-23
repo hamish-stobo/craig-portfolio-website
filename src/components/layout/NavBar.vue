@@ -76,6 +76,7 @@ export default {
         padding-right: 0;
     }
 
+
     .hamburger {
         background: rgba(46, 46, 46, 0.8);
         width: 20px;

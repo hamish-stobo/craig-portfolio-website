@@ -1,7 +1,7 @@
 <template>
     <div id="about">
+        <h2 class="about-section-header">About Me</h2>
         <sui-card-content class="card-content">
-            <h2>About Me</h2>
             <sui-image class="avatar-img" v-bind:src="'./images/craig-profile-photo.png'" fluid />
             <!-- <img src="../../assets/craig-profile-pic.png" /> -->
             <sui-card-description class="profile-desc">
@@ -36,13 +36,17 @@
      color: gold;
     }
 
-    .card-content > h2 {
-        padding-top: 10px;
+    .about-section-header {
+        margin: 30px auto 0 auto;
         font-weight: 400;
+        text-align: center;
+        color: gold;
     }
 
     .avatar-img {
         border-radius: 50%;
+        max-width: 260px;
+        margin-top: 20px;
     }
 
     .profile-desc {
@@ -51,7 +55,11 @@
     }
 
     @media screen and (min-width: 500px) {
-        .about-header {
+        .card-content {
+            margin-bottom: 100px;
+        }
+
+        .about-section-header {
             font-size: 2rem !important;
         }
         .profile-desc {
@@ -62,18 +70,29 @@
 
     @media screen and (min-width: 765px) {
         .card-content {
-            margin-top: 0;
+            margin: 50px auto 200px auto;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 95%;
         }
-        .card-content h2 {
-            padding-top: 0;
+        .about-section-header {
+            margin-top: 0;
         }
         .profile-desc {
             font-size: 1.1rem;
+            margin: 0;
+            padding: 0;
         }
     }
     @media screen and (min-width: 1050px) {
         .profile-desc {
             font-size: 1.2rem;
+        }
+
+        .card-content {
+            justify-content: space-around;
+            max-width: 940px;
         }
     }
 
