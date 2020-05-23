@@ -1,11 +1,11 @@
 <template>
     <div>
         <ul class="positions-list" >
-            <div class="positions-list-item">
+            <a href="https://saturnadvice.co.nz/" target="_blank" style="text-decoration: none; color: inherit" class="positions-list-item">
                 <img class="company-logo" v-bind:src="'./images/company-logos/current/Saturn-Advice-Logo_new 1.png'" alt="Saturn Advice Ltd Logo">
                 <h3 class="company-title">Saturn Advice Ltd</h3>
                 <span class="job-title">Chairman and Shareholder</span>
-            </div>
+            </a>
             <div class="positions-list-item">
                 <img class="company-logo" v-bind:src="'./images/company-logos/current/elevation-capital-logo.png'" alt="Elevation Capital Logo">
                 <h3 class="company-title">Elevation Capital</h3>
