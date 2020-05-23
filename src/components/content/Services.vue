@@ -1,6 +1,6 @@
 <template>
 <div id="services">
-    <h2 class="ui header services-header">How I can help you:</h2>
+    <h2 class="ui header services-header">Key Areas of Expertise:</h2>
     <ul class="list-wrapper">
       <div>
         <img class="services-img" v-bind:src="'./images/services-photos/photo-1450101499163-c8848c66ca85.jpg'" alt="Man signing paper"/>
@@ -12,7 +12,7 @@
       </div>
       <div>
         <img class="services-img" v-bind:src="'./images/services-photos/photo-1460925895917-afdab827c52f.jpg'" alt="Laptop display graph with figures" />
-        <span class="service-title">Government Relations</span>
+        <span class="service-title">Government Advice and Implementation</span>
       </div>
       <div>
         <span class="service-title">Capital Raising</span>

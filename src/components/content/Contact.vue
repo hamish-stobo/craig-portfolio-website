@@ -2,7 +2,7 @@
     <div id="contact">
         <h2 class="contact-section-title">Contact Me</h2>
         <div class="social-icons-wrapper">
-            <a href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://nz.linkedin.com/in/craig-stobo-4b40361a2" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             <a href="mailto:stobo@xtra.co.nz" target="_blank"><i class="far fa-envelope"></i></a>
             <a href="tel:+6421733751" target="_blank"><i class="fas fa-phone"></i></a>
         </div>

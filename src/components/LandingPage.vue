@@ -1,5 +1,5 @@
 <template>
-<div ref="width">
+<div ref="width" style="background: white;">
     <div class="landing-wrapper">
         <h1>
           I'm Craig Stobo.
@@ -9,12 +9,16 @@
           <i class="fas fa-chevron-down down-scroll"></i>
         </a>
     </div>
-    <div v-if="isDesktop" class="desktop-bg"></div>
+    <div v-if="isDesktop" class="desktop-bg" style="background-image: url('./images/landing-page/desktop-bg.png');"></div>
     <ul v-else class="crossfade">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li style="background-image: url('https://inboxdesign.ibcdn.nz/media/2018_02_07_2016_07_27_waitaki-boys-high-school-entrance.jpg');"></li>
+        <li style="background-image: url('https://julietetelandresen.com/wp-content/uploads/2018/01/7027833-queenstown-new-zealand-wakatipu-lake.jpg');"></li>
+        <li style="background-image: url('https://www.timeshighereducation.com/sites/default/files/styles/institution_12col_card/public/institution_images/clocktower_blossom_2.jpg');"></li>
+        <li style="background-image: url('https://cdn.britannica.com/99/61399-050-B867F67F/skyline-Auckland-New-Zealand-Westhaven-Marina.jpg');"></li>
+        <!-- <li style="background-image: url('./images/landing-page/waitaki-boys.jpg');"></li>
+        <li style="background-image: url('./images/landing-page/Queenstown.jpg');"></li>
+        <li style="background-image: url('./images/landing-page/otago-uni-clocktower.jpg');"></li>
+        <li style="background-image: url('./images/landing-page/skyline-Auckland.jpg');"></li> -->
     </ul>
 </div>
 </template>
@@ -33,13 +37,11 @@ export default {
           width >= 1200 ? this.isDesktop = true : this.isDesktop = false
         }
     },
-
     mounted() {
       this.onResize()
       // Register an event listener when the Vue component is ready
       window.addEventListener('resize', this.onResize) 
     },
-
     beforeDestroy() {
       // Unregister the event listener before destroying this Vue instance
       window.removeEventListener('resize', this.onResize)
@@ -58,7 +60,12 @@ export default {
      display: flex;
      flex-flow: column nowrap;
      justify-content: space-between;
-     align-items: center
+     align-items: center;
+     z-index: 2;
+ }
+
+ .landing-wrapper  * {
+   z-index: 3;
  }
 
  .landing-wrapper h1 {
@@ -102,24 +109,18 @@ export default {
     background-position: 50% 50%;
     background-repeat: no-repeat;
     opacity: 0;
-    z-index: -1;
-    animation: imageAnimation 20s linear infinite;
+    z-index: 1;
+    animation: imageAnimation 20s linear infinite 0s;
   }
 
-  .crossfade li:nth-child(1) { 
-    background-image: url('../assets/waitaki-boys.jpg');
-  }
   .crossfade li:nth-child(2) { 
     animation-delay: 5s;
-    background-image: url('../assets/otago-uni-clocktower.jpg');
   }
   .crossfade li:nth-child(3) { 
     animation-delay: 10s;
-    background-image: url('../assets/skyline-Auckland.jpg');
   }
   .crossfade li:nth-child(4) { 
     animation-delay: 15s;
-    background-image: url('../assets/Queenstown.jpg');
   }
 
   @keyframes imageAnimation { 
@@ -135,18 +136,13 @@ export default {
       animation-timing-function: ease-out;
     }
     50% {
-      opacity: 0
+      opacity: 0;
     }
     100% {
-      opacity: 0
+      opacity: 0;
     }
     
   }
-
-  /* Older browser support - .no-cssanimations class added by modernizr */
-.crossfade li {
-	opacity: 1;
-}
 /* styling for medium size screens */
 
 @media screen and (min-width: 500px) { 
@@ -206,11 +202,10 @@ export default {
       position: absolute;
       top: 0;
       left: 0;
-      background-image: url('../assets/desktop-bg.png');
       background-size: cover;
       background-position: 50% 50%;
       background-repeat: no-repeat;
-      z-index: -1;
+      z-index: 1;
   }
 
   .landing-wrapper h1 {
