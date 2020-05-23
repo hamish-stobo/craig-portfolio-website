@@ -1,6 +1,6 @@
 <template>
     <div id="contact">
-
+        Hello From the Contact Page
     </div>
 </template>
 

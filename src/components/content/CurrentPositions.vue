@@ -2,8 +2,8 @@
     <div id="currentpositions">
         <h2 class="current-positions-header">My Work</h2>
         <div class="positions-toggler" >
-            <h3 @click="changeSelected" v-bind:class="{'underline': currentWorkSelected}">Current</h3>
-            <h3 @click="changeSelected" v-bind:class="{'underline': !currentWorkSelected}">Previous</h3>
+            <h3 @click="changeSelected(1)" v-bind:class="{'underline': currentWorkSelected}">Current</h3>
+            <h3 @click="changeSelected(0)" v-bind:class="{'underline': !currentWorkSelected}">Previous</h3>
         </div>
         <CurrentWork v-if="currentWorkSelected" />
         <PreviousWork v-else-if="!currentWorkSelected" />
@@ -25,10 +25,10 @@ import PreviousWork from './work-sections/PreviousWork'
               }
         },
         methods: {
-            changeSelected() {
+            changeSelected(currentSelection) {
                 //if bool is true, return false, else return true.
                 //prevents overly-zealous toggling
-                return this.currentWorkSelected ? this.currentWorkSelected = false : this.currentWorkSelected = true
+                return currentSelection === 1 ? this.currentWorkSelected = true : this.currentWorkSelected = false
             }
         }
     }
@@ -119,16 +119,6 @@ import PreviousWork from './work-sections/PreviousWork'
     }
 
     @media screen and (min-width: 850px) {
-        /* .positions-list {
-            -moz-column-count: 2;
-            -webkit-column-count: 2;
-            column-count: 2;
-        }
-
-        .positions-list-item:nth-child(1) {
-            margin-top: 0;
-        } */
-
         .positions-list {
             display: flex;
             flex-flow: row wrap;

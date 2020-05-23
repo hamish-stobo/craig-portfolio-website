@@ -27,36 +27,6 @@
         <img class="services-img" v-bind:src="'./images/services-photos/photo-1523875194681-bedd468c58bf.jpg'" alt="Chess board"/>
       </div>
     </ul>
-    <!-- <sui-card class="raised service-list-item">
-      <sui-card-content class="item-content">
-        <i class="fas fa-business-time"/>
-        Business advice
-      </sui-card-content>
-    </sui-card>
-    <sui-card class="raised service-list-item">
-      <sui-card-content class="item-content">
-        <i class="fas fa-user-tie" />
-        Investment Direction
-      </sui-card-content>
-    </sui-card>
-    <sui-card class="raised service-list-item">
-      <sui-card-content class="item-content">
-        <i class="fas fa-comments" />
-        Government Relations
-      </sui-card-content>
-    </sui-card>
-    <sui-card class="raised service-list-item">
-      <sui-card-content class="item-content">
-        <i class="fas fa-project-diagram" />
-        Capital Raising
-      </sui-card-content>
-    </sui-card>
-    <sui-card class="raised service-list-item">
-      <sui-card-content class="item-content">
-        <i class="fas fa-ruler-horizontal" />
-        Board minutes
-      </sui-card-content>
-    </sui-card> -->
 </div>
 </template>
 

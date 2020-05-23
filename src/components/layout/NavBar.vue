@@ -159,14 +159,13 @@ export default {
     ul a {
         display: inline-block;
         white-space: nowrap;
-        height: 100%;
         border: none;
         width: auto;
         color: gold;
         width: 100%;
         text-align: center;
         padding: 15px 0;
-        max-height: 60px;
+        height: 60px;
     }
 
     ul a:hover {

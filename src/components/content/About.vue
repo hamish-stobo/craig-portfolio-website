@@ -3,7 +3,6 @@
         <h2 class="about-section-header">About Me</h2>
         <sui-card-content class="card-content">
             <sui-image class="avatar-img" v-bind:src="'./images/craig-profile-photo.png'" fluid />
-            <!-- <img src="../../assets/craig-profile-pic.png" /> -->
             <sui-card-description class="profile-desc">
                 I’m Craig Stobo. I am a professional director and business owner. I have previously worked 
                 as a diplomat, economist, Chief Investment Officer and CEO. Outside of work I have climbed 
