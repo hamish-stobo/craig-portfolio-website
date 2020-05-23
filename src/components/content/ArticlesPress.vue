@@ -54,7 +54,9 @@
 
     .article-list {
         list-style-type: none;
-        margin-top: 50px;
+        margin: 50px auto 0;
+        margin-block-start: 0 !important;
+        margin-block-end: 0 !important;
     }
 
     .article-list-item {
