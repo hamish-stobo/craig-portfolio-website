@@ -3,7 +3,7 @@
     <div class="landing-wrapper">
         <h1>
           I'm Craig Stobo.
-          <h3>Welcome to my personal website.</h3>
+          <h3>Welcome to my website.</h3>
         </h1>
         <a href="#about">
           <i class="fas fa-chevron-down down-scroll"></i>

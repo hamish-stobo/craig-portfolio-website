@@ -166,6 +166,7 @@ export default {
         width: 100%;
         text-align: center;
         padding: 15px 0;
+        max-height: 60px;
     }
 
     ul a:hover {
@@ -173,6 +174,10 @@ export default {
         color:rgba(46, 46, 46, 0.8);
         font-weight: 600;
         font-size: 1.2rem;
+    }
+
+    ul a:nth-child(5):active {
+        border-radius: 0px !important;
     }
 }
 

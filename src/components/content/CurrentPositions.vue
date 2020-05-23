@@ -1,6 +1,6 @@
 <template>
     <div id="currentpositions">
-        <h2 class="current-positions-header">Current Positions</h2>
+        <h2 class="current-positions-header">Current Work</h2>
         <ul class="positions-list">
             <div class="positions-list-item">
                 <img class="company-logo" v-bind:src="'./images/company-logos/Saturn-Advice-Logo_new 1.png'" alt="Saturn Advice Ltd Logo">
