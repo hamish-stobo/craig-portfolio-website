@@ -92,6 +92,7 @@ import PreviousWork from './work-sections/PreviousWork'
         margin: auto;
         padding-left: 4px;
         width: 130px;
+        align-self: center;
     }
 
     .company-title {

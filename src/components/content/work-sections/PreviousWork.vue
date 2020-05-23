@@ -1,45 +1,40 @@
 <template>
     <div>
-        <ul class="positions-list" >
+        <ul class="positions-list">
             <div class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/Saturn-Advice-Logo_new 1.png'" alt="Saturn Advice Ltd Logo">
-                <h3 class="company-title">Saturn Advice Ltd</h3>
-                <span class="job-title">Chairman and Shareholder</span>
-            </div>
-            <div class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/elevation-capital-logo.png'" alt="Elevation Capital Logo">
-                <h3 class="company-title">Elevation Capital</h3>
-                <span class="job-title">Chairman</span>
-            </div>
-            <div class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/fliway-group-logo.png'" alt="Fliway Group Logo">
+                <img class="company-logo" v-bind:src="'./images/company-logos/previous/fliway-group-logo.png'" alt="Fliway Group Logo">
                 <h3 class="company-title">Fliway Group</h3>
-                <span class="job-title">Independent Non-Executive Chairman</span>
-            </div>
-            <div class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/lgfa.png'" alt="Local Government Funding Agency Logo">
-                <h3 class="company-title">Local Government Funding Agency</h3>
                 <span class="job-title">Chairman</span>
             </div>
             <div class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/precinct-properties-logo.png'" alt="Precinct Properties Ltd Logo">
-                <h3 class="company-title">Precinct Properties Ltd</h3>
+                <img class="company-logo" v-bind:src="'./images/company-logos/previous/bureau-logo.png'" alt="Buereau Ltd Logo">
+                <h3 class="company-title">Bureau Ltd</h3> 
                 <span class="job-title">Chairman</span>
             </div>
             <div class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/AIG-logo.png'" alt="AIG Insurance New Zealand Logo">
-                <h3 class="company-title">AIG Insurance New Zealand</h3>
+                <img class="company-logo" v-bind:src="'./images/company-logos/previous/ocg-logo.png'" alt="OCG Consulting Ltd Logo">
+                <h3 class="company-title">OCG Consulting Ltd</h3>
                 <span class="job-title">Chairman</span>
             </div>
             <div class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/apello-services-logo.png'" alt="Apello Services Ltd Logo">
-                <h3 class="company-title">Apello Services Ltd</h3>
+                <img class="company-logo" v-bind:src="'./images/company-logos/previous/callaghan-innovation-logo.png'" alt="Industrial Resarch Ltd Logo">
+                <h3 class="company-title">Industrial Research Ltd</h3>
                 <span class="job-title">Director</span>
             </div>
             <div class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/biomarine-logo.png'" alt="Biomarine Ltd Logo">
-                <h3 class="company-title">Biomarine Ltd</h3>
-                <span class="job-title">Chairman and Shareholder</span>
+                <img style="height: 80px; width: 125px;" class="company-logo" v-bind:src="'./images/company-logos/previous/NZGIF-logo.png'" alt="NZGIF Logo">
+                <h3 class="company-title">New Zealand Green Investment Finance Ltd</h3>
+                <span class="job-title">Advisor</span>
+            </div>
+            <div class="positions-list-item">
+                <img style="height: 90px;" class="company-logo" v-bind:src="'./images/company-logos/previous/treasury-logo.png'" alt="NZ Treasury Logo">
+                <h3 class="company-title">New Zealand Treasury</h3>
+                <span class="job-title">Advisor</span>
+            </div>
+            <div class="positions-list-item">
+                <img class="company-logo" v-bind:src="'./images/company-logos/previous/lgnz-logo.png'" alt="Local Government New Zealand Logo">
+                <h3 class="company-title">Local Government New Zealand</h3>
+                <span class="job-title">Advisor</span>
             </div>
         </ul>
     </div>
