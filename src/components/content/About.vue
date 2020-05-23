@@ -5,12 +5,12 @@
             <sui-image class="avatar-img" v-bind:src="'./images/craig-profile-photo.png'" fluid />
             <!-- <img src="../../assets/craig-profile-pic.png" /> -->
             <sui-card-description class="profile-desc">
-                I'm Craig Stobo. During the course of my career, I have been a diplomat, economist, CIO and CEO.
-                Outside of work, after a number of years mountaineering in NZ and overseas, I continue to be a keen 
-                cross-country and downhill skier, sailor and ocean swimmer. I also enjoy drama and literature, 
-                and I am a long-time supporter of Otago rugby and the Highlanders. Finally, I am 
-                Chair of the Waitaki Boys High School Foundation, and I'm a Taumata of Otago University’s 
-                Business School.
+                I’m Craig Stobo. I am a professional director and business owner. I have previously worked 
+                as a diplomat, economist, Chief Investment Officer and CEO. Outside of work I have climbed 
+                mountains in NZ, Peru, Pakistan, and Nepal. I continue to ski, sail and compete in ocean swims. 
+                I also enjoy drama and literature, and I am a long-time supporter of Otago rugby and the 
+                Highlanders. Finally, I am Chair of the Waitaki Boys High School Foundation, and I'm a 
+                Taumata of Otago University’s Business School.
             </sui-card-description>
         </sui-card-content>
     </div>
@@ -46,7 +46,8 @@
     .avatar-img {
         border-radius: 50%;
         max-width: 260px;
-        margin-top: 20px;
+        height: auto;
+        margin: 20px auto 0 auto;
     }
 
     .profile-desc {
