@@ -5,11 +5,11 @@
         <div class="wrapper-div" v-else-if="isShowing">
             <button  @click="toggleNav"><i class="fas fa-times cross"></i></button>
             <ul>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#currentpositions">Current Work</a>
-                <a href="#articlespress">Articles & Press</a>
-                <a href="#contact">Contact</a>
+                <a @click="toggleNav" href="#about">About</a>
+                <a @click="toggleNav" href="#services">Services</a>
+                <a @click="toggleNav" href="#currentpositions">Current Work</a>
+                <a @click="toggleNav" href="#articlespress">Articles & Press</a>
+                <a @click="toggleNav" href="#contact">Contact</a>
             </ul>
         </div>
     </div>
@@ -172,6 +172,7 @@ export default {
         background: gold;
         color:rgba(46, 46, 46, 0.8);
         font-weight: 600;
+        font-size: 1.2rem;
     }
 }
 
@@ -179,5 +180,8 @@ export default {
       ul > a {
           font-size: 1.2rem;
       }
+      ul a:hover {
+        font-size: 1.3rem;
+    }
   } 
 </style>
