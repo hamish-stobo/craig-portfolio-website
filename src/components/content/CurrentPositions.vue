@@ -1,58 +1,40 @@
 <template>
     <div id="currentpositions">
-        <h2 class="current-positions-header">Current Work</h2>
-        <ul class="positions-list">
-            <div class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/Saturn-Advice-Logo_new 1.png'" alt="Saturn Advice Ltd Logo">
-                <h3 class="company-title">Saturn Advice Ltd</h3>
-                <span class="job-title">Chairman and Non-Executive Director</span>
-            </div>
-            <div class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/elevation-capital-logo.png'" alt="Elevation Capital Logo">
-                <h3 class="company-title">Elevation Capital</h3>
-                <span class="job-title">Chairman</span>
-            </div>
-            <div class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/fliway-group-logo.png'" alt="Fliway Group Logo">
-                <h3 class="company-title">Fliway Group</h3>
-                <span class="job-title">Independent Non-Executive Chairman</span>
-            </div>
-            <div class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/lgfa.png'" alt="Local Government Funding Agency Logo">
-                <h3 class="company-title">Local Government Funding Agency</h3>
-                <span class="job-title">Chairman</span>
-            </div>
-            <div class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/precinct-properties-logo.png'" alt="Precinct Properties Ltd Logo">
-                <h3 class="company-title">Precinct Properties Ltd</h3>
-                <span class="job-title">Chairman</span>
-            </div>
-            <div class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/AIG-logo.png'" alt="AIG Insurance New Zealand Logo">
-                <h3 class="company-title">AIG Insurance New Zealand</h3>
-                <span class="job-title">Chairman</span>
-            </div>
-            <div class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/apello-services-logo.png'" alt="Apello Services Ltd Logo">
-                <h3 class="company-title">Apello Services Ltd</h3>
-                <span class="job-title">Managing Director</span>
-            </div>
-            <div class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/biomarine-logo.png'" alt="Biomarine Ltd Logo">
-                <h3 class="company-title">Biomarine Ltd</h3>
-                <span class="job-title">Director</span>
-            </div>
-        </ul>
+        <h2 class="current-positions-header">My Work</h2>
+        <div class="positions-toggler" >
+            <h3 @click="changeSelected" v-bind:class="{'underline': currentWorkSelected}">Current</h3>
+            <h3 @click="changeSelected" v-bind:class="{'underline': !currentWorkSelected}">Previous</h3>
+        </div>
+        <CurrentWork v-if="currentWorkSelected" />
+        <PreviousWork v-else-if="!currentWorkSelected" />
     </div>
 </template>
 
 <script>
+import CurrentWork from './work-sections/CurrentWork'
+import PreviousWork from './work-sections/PreviousWork'
     export default {
-        name: 'CurrentPositions'
+        name: 'CurrentPositions',
+        components: {
+            CurrentWork,
+            PreviousWork
+        },
+        data() {
+          return {
+                currentWorkSelected: true
+              }
+        },
+        methods: {
+            changeSelected() {
+                //if bool is true, return false, else return true.
+                //prevents overly-zealous toggling
+                return this.currentWorkSelected ? this.currentWorkSelected = false : this.currentWorkSelected = true
+            }
+        }
     }
 </script>
 
-<style scoped>
+<style>
     #currentpositions {
         text-align: center;
     }
@@ -61,6 +43,19 @@
         padding-top: 20px;
         font-weight: 400;
         color: gold;
+    }
+
+    .underline {
+        border-bottom: 2px solid gold;
+    }
+
+    .positions-toggler {
+        color: gold;
+        display: flex;
+        flex-flow: row nowrap;
+        width: 100%;
+        justify-content: space-around;
+        align-items: baseline;
     }
 
     .positions-list {

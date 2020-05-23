@@ -7,7 +7,7 @@
             <ul>
                 <a @click="toggleNav" href="#about">About</a>
                 <a @click="toggleNav" href="#services">Services</a>
-                <a @click="toggleNav" href="#currentpositions">Current Work</a>
+                <a @click="toggleNav" href="#currentpositions">My Work</a>
                 <a @click="toggleNav" href="#articlespress">Articles & Press</a>
                 <a @click="toggleNav" href="#contact">Contact</a>
             </ul>
@@ -17,7 +17,7 @@
         <ul>
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
-                <a href="#currentpositions">Current Work</a>
+                <a href="#currentpositions">My Work</a>
                 <a href="#articlespress">Articles & Press</a>
                 <a href="#contact">Contact</a>
             </ul>
