@@ -66,6 +66,9 @@
         text-align: left;
         height: 100px;
         padding-bottom: 3px;
+        box-shadow: 2px 2px 4px rgba(46, 46, 46, 0.6);
+        max-width: 400px;
+        border-radius: 10px;
     }
 
     .article-img {
@@ -74,6 +77,7 @@
         margin: 0;
         width: 130px;
         display: inline-block;
+        border-radius: 10px 0 0 0;
     }
 
     .article-title {
