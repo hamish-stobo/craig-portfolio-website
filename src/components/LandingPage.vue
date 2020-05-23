@@ -11,10 +11,10 @@
     </div>
     <div v-if="isDesktop" class="desktop-bg" style="background-image: url('./images/landing-page/desktop-bg.png');"></div>
     <ul v-else class="crossfade">
-        <li style="background-image: url('https://inboxdesign.ibcdn.nz/media/2018_02_07_2016_07_27_waitaki-boys-high-school-entrance.jpg');"></li>
-        <li style="background-image: url('https://julietetelandresen.com/wp-content/uploads/2018/01/7027833-queenstown-new-zealand-wakatipu-lake.jpg');"></li>
-        <li style="background-image: url('https://www.timeshighereducation.com/sites/default/files/styles/institution_12col_card/public/institution_images/clocktower_blossom_2.jpg');"></li>
-        <li style="background-image: url('https://cdn.britannica.com/99/61399-050-B867F67F/skyline-Auckland-New-Zealand-Westhaven-Marina.jpg');"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
         <!-- <li style="background-image: url('./images/landing-page/waitaki-boys.jpg');"></li>
         <li style="background-image: url('./images/landing-page/Queenstown.jpg');"></li>
         <li style="background-image: url('./images/landing-page/otago-uni-clocktower.jpg');"></li>
@@ -79,6 +79,10 @@ export default {
    font-family: 'Raleway', sans-serif;
  }
 
+ .landing-wrapper > h1, .landing-wrapper > h3 {
+   text-shadow: 3px 3px 8px rgba(46, 46, 46);
+ }
+
  .down-scroll {
      color: gold;
      display: block;
@@ -113,13 +117,21 @@ export default {
     animation: imageAnimation 20s linear infinite 0s;
   }
 
+  .crossfade li:nth-child(1) { 
+    background-image: url('https://inboxdesign.ibcdn.nz/media/2018_02_07_2016_07_27_waitaki-boys-high-school-entrance.jpg');
+    background-position: 30% 50%;
+  }
+
   .crossfade li:nth-child(2) { 
+    background-image: url('https://julietetelandresen.com/wp-content/uploads/2018/01/7027833-queenstown-new-zealand-wakatipu-lake.jpg');
     animation-delay: 5s;
   }
   .crossfade li:nth-child(3) { 
+    background-image: url('https://www.timeshighereducation.com/sites/default/files/styles/institution_12col_card/public/institution_images/clocktower_blossom_2.jpg');
     animation-delay: 10s;
   }
   .crossfade li:nth-child(4) { 
+    background-image: url('https://cdn.britannica.com/99/61399-050-B867F67F/skyline-Auckland-New-Zealand-Westhaven-Marina.jpg');
     animation-delay: 15s;
   }
 
