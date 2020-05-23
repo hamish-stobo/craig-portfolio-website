@@ -75,7 +75,8 @@
         grid-column: 1 / 2;
         grid-row: 1 / 4;
         margin: 0;
-        width: 130px;
+        max-height: 100%;
+        max-width: 140px;
         display: inline-block;
         border-radius: 10px 0 0 0;
     }
@@ -88,6 +89,7 @@
         margin: 0;
         display: inline-block;
         line-height: 1.2rem;
+        margin: 2px 2px 0 0;
     }
 
     .article-source {
@@ -96,6 +98,7 @@
         font-size: 0.8rem;
         line-height: 1rem;
         color: white;
+        align-self: center;
     }
 
     .article-date {
@@ -109,4 +112,25 @@
     .article-desc {
         display: none;
     }
+
+    @media screen and (min-width: 400px) {
+        .article-list-item {
+            grid-template-columns: 150px auto;
+        }
+    }
+
+     @media screen and (min-width: 850px) {
+         
+        .article-list {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .article-list-item {
+            margin: 30px 0;
+        }
+     }
+
 </style>
