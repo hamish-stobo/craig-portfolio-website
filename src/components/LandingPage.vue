@@ -208,10 +208,6 @@ export default {
     background: none;
   }
 
-  .landing-wrapper > h1, .landing-wrapper > h3 {
-   text-shadow: none;
- }
-
   .desktop-bg {
       width: 100%;
       height: 100%;
