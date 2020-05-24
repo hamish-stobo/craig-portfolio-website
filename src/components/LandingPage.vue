@@ -15,10 +15,6 @@
         <li></li>
         <li></li>
         <li></li>
-        <!-- <li style="background-image: url('./images/landing-page/waitaki-boys.jpg');"></li>
-        <li style="background-image: url('./images/landing-page/Queenstown.jpg');"></li>
-        <li style="background-image: url('./images/landing-page/otago-uni-clocktower.jpg');"></li>
-        <li style="background-image: url('./images/landing-page/skyline-Auckland.jpg');"></li> -->
     </ul>
 </div>
 </template>
