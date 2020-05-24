@@ -131,7 +131,7 @@ export default {
     animation-delay: 10s;
   }
   .crossfade li:nth-child(4) { 
-    background-image: url('https://cdn.britannica.com/99/61399-050-B867F67F/skyline-Auckland-New-Zealand-Westhaven-Marina.jpg');
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/60/Bayswater_Marina_Auckland_New_Zealand.jpg');
     animation-delay: 15s;
   }
 
@@ -207,6 +207,10 @@ export default {
   .landing-wrapper {
     background: none;
   }
+
+  .landing-wrapper > h1, .landing-wrapper > h3 {
+   text-shadow: none;
+ }
 
   .desktop-bg {
       width: 100%;
