@@ -1,6 +1,6 @@
 <template>
 <div style="position: sticky; top: 0; z-index: 1;">
-    <div v-if="isMobile" class="nav-wrapper">
+    <div v-if="isMobile" class="nav-wrapper" v-bind:style="navBackgroundStyle">
         <button @click="toggleNav" v-bind:class="['nav-icon-position', !isShowing ? 'show' : 'hide-icon']" class="nav-icon"><i v-bind:class="['hamburger', !isShowing ? 'show' : 'hide-icon']" class="fas fa-bars"></i></button>
         <div v-bind:class="['nav-list-transition', isShowing ? 'show-list' : 'hide-list']">
             <button @click="toggleNav" v-bind:class="['cross-icon-position', isShowing ? 'show' : 'hide-icon']" class="nav-icon"><i v-bind:class="['cross', isShowing ? 'hide-icon' : 'show']" class="fas fa-times"></i></button>
@@ -31,7 +31,8 @@ export default {
     data() {
         return {
             isMobile: true,
-            isShowing: false
+            isShowing: false,
+            navBackgroundStyle: !this.isShowing ? 'background: rgba(46, 46, 46, 0.8);' : 'background: none;'
         }
     },
     methods: {
@@ -67,7 +68,6 @@ export default {
         right: 1vw;
         top: 3vh;
         width: 200px;
-        background: rgba(46, 46, 46, 0.8);
         opacity: 1;
         transition: opacity 0.7s ease-in;
     }
@@ -87,7 +87,7 @@ export default {
     .show {
         opacity: 1;
         visibility: visible;
-        transition: opacity 0.5s ease-in;
+        transition: all 0.5s ease-in;
     }
 
     .hide-icon {
@@ -97,8 +97,9 @@ export default {
         visibility: hidden !important;
         margin: 0 !important;
         padding: 0 !important;
-        height: 0px;
-        transition: opacity 0.5s ease-in;
+        height: 0px !important;
+        transition: all 0.5s ease-in;
+        background: none;
     }
 
     .nav-list-transition {
