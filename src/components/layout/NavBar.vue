@@ -173,6 +173,7 @@ export default {
         color:rgba(46, 46, 46, 0.8);
         font-weight: 600;
         font-size: 1.2rem;
+        transition: background 0.4s ease-in;
     }
 
     ul a:nth-child(5):active {

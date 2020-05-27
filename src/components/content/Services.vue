@@ -39,7 +39,7 @@
 <style scoped>
     #services {
         text-align: center;
-        padding: 30px 0 0 0;
+      padding: 90px 0 0 0 !important;
     }
 
     .services-header {
@@ -47,7 +47,7 @@
     }
 
     .list-wrapper {
-      width: 100vw;
+      width: 100%;
       list-style-type: none;
       margin-top: 50px;
     }
@@ -73,8 +73,8 @@
     }
 
     .service-title {
-      width: 50%;
-      margin: 0;
+      width: 45%;
+      margin: 0 auto;
       display: block;
       color: gold;
       font-size: 1rem;
@@ -85,9 +85,10 @@
       margin: 0;
     }
 
-    @media screen and (min-width: 650px) {
+    @media screen and (min-width: 450px) {
       .service-title {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+        line-height: 1.8rem;
       }
     }
 
