@@ -97,11 +97,6 @@
       }
     }
 
-
-
-
-
-
     .service-list-item {
         width: 100%;
         text-align: justify;
