@@ -1,10 +1,10 @@
 <template>
 <div style="position: sticky; top: 0; z-index: 1;">
-    <div v-if="isMobile" class="nav-wrapper" v-bind:class="{'bg-on': isShowing}">
-        <button v-if="!isShowing" @click="toggleNav"><i class="fas fa-bars hamburger"></i></button>
-        <div class="wrapper-div" v-else-if="isShowing">
-            <button  @click="toggleNav"><i class="fas fa-times cross"></i></button>
-            <ul>
+    <div v-if="isMobile" class="nav-wrapper">
+        <button @click="toggleNav" v-bind:class="['nav-icon-position', !isShowing ? 'show' : 'hide-icon']" class="nav-icon"><i v-bind:class="['hamburger', !isShowing ? 'show' : 'hide-icon']" class="fas fa-bars"></i></button>
+        <div v-bind:class="['nav-list-transition', isShowing ? 'show-list' : 'hide-list']">
+            <button @click="toggleNav" v-bind:class="['cross-icon-position', isShowing ? 'show' : 'hide-icon']" class="nav-icon"><i v-bind:class="['cross', isShowing ? 'hide-icon' : 'show']" class="fas fa-times"></i></button>
+            <ul v-bind:class="['', isShowing ? 'show' : 'hide-icon']">
                 <a @click="toggleNav" href="#about">About</a>
                 <a @click="toggleNav" href="#services">Services</a>
                 <a @click="toggleNav" href="#currentpositions">My Work</a>
@@ -41,7 +41,6 @@ export default {
         },
         toggleNav() {
             this.isShowing = !this.isShowing
-            console.log('navbar bool ', this.isShowing)
         }
     },
     created() {
@@ -62,20 +61,65 @@ export default {
 <style scoped>
     .nav-wrapper {
         border-radius: 10px;
-        padding-right: 15px;
-        padding-top: 15px;
+        padding-right: 5px;
         z-index: 2;
         position: absolute;
         right: 1vw;
         top: 3vh;
         width: 200px;
-    }
-
-    .bg-on {
         background: rgba(46, 46, 46, 0.8);
-        padding-right: 0;
+        opacity: 1;
+        transition: opacity 0.7s ease-in;
     }
 
+    .nav-icon-position {
+        position: absolute;
+        top: 20px !important;
+        right: 10px !important;
+    }
+
+    .cross-icon-position {
+        position: absolute;
+        top: 20px !important;
+        right: 10px !important;
+    }
+
+    .show {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.5s ease-in;
+    }
+
+    .hide-icon {
+        position: absolute;
+        right: 10px;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 0px;
+        transition: opacity 0.5s ease-in;
+    }
+
+    .nav-list-transition {
+        transition: all 0.7s ease-in;
+    }
+
+    .show-list {
+        visibility: visible;
+        height: auto;
+        opacity: 1;
+        border-radius: 10px;
+        padding-top: 20px;
+        padding-right: 20px;
+    }
+
+    .hide-list {
+        opacity: 0 !important;
+        background: none !important;
+        visibility: none;
+        border-radius: 10px;
+    }
 
     .hamburger {
         background: rgba(46, 46, 46, 0.8);
@@ -98,15 +142,8 @@ export default {
     button {
         background: none;
         border: none;
-        float: right;
         outline: none;
         cursor: pointer;
-    }
-
-    .wrapper-div > button {
-        display: block;
-        position: absolute;
-        right: 15px;
     }
 
     ul {
