@@ -9,7 +9,8 @@
           <i class="fas fa-chevron-down down-scroll"></i>
         </a>
     </div>
-    <div v-if="isDesktop" class="desktop-bg" style="background-image: url('./images/landing-page/desktop-bg.png');"></div>
+    <div v-if="isDesktop" class="desktop-bg"></div>
+    <!-- style="background-image: url('./images/landing-page/desktop-bg.png');" -->
     <ul v-else class="crossfade">
         <li></li>
         <li></li>
@@ -30,7 +31,7 @@ export default {
     methods: {
       onResize() {
           const width = window.innerWidth
-          width >= 1200 ? this.isDesktop = true : this.isDesktop = false
+          width >= 1200 ? this.isDesktop = true : this.isDesktop = false  
         }
     },
     mounted() {
@@ -52,7 +53,6 @@ export default {
      padding-top: 40vh;
      padding-bottom: 4vh;
      font-family: 'Raleway', sans-serif;
-     background-image: linear-gradient(rgba(255,255,255,0.3), rgba(63,101,198,0.4));
      display: flex;
      flex-flow: column nowrap;
      justify-content: space-between;
@@ -105,12 +105,13 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
+    background: 
+        50% 50% / cover
+        no-repeat;
     opacity: 0;
     z-index: 1;
     animation: imageAnimation 20s linear infinite 0s;
+    box-shadow: inset 0 0 0 1000px rgba(46, 46, 46, 0.2);
   }
 
   .crossfade li:nth-child(1) { 
@@ -151,6 +152,8 @@ export default {
     }
     
   }
+
+  
 /* styling for medium size screens */
 
 @media screen and (min-width: 500px) { 
@@ -210,10 +213,12 @@ export default {
       position: absolute;
       top: 0;
       left: 0;
-      background-size: cover;
-      background-position: 50% 50%;
-      background-repeat: no-repeat;
       z-index: 1;
+      background: 
+        url('/images/landing-page/desktop-bg.png')
+        50% 50% / cover
+        no-repeat;
+      box-shadow: inset 0 0 0 1000px rgba(46, 46, 46, 0.3);
   }
 
   .landing-wrapper h1 {
