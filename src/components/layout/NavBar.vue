@@ -61,7 +61,7 @@ export default {
 
 <style scoped>
     .nav-wrapper {
-        border-radius: 10px;
+        border-radius: 15px;
         padding-right: 5px;
         z-index: 2;
         position: absolute;
@@ -69,7 +69,10 @@ export default {
         top: 3vh;
         width: 200px;
         opacity: 1;
-        transition: opacity 0.7s ease-in;
+    }
+
+    .nav-wrapper, .nav-wrapper * {
+        transition: opacity 0.2s ease-in;
     }
 
     .nav-icon-position {
@@ -80,14 +83,14 @@ export default {
 
     .cross-icon-position {
         position: absolute;
-        top: 20px !important;
-        right: 10px !important;
+        top: 22px !important;
+        right: 11px !important;
     }
 
     .show {
         opacity: 1;
         visibility: visible;
-        transition: all 0.5s ease-in;
+        transition: none;
     }
 
     .hide-icon {
@@ -98,21 +101,21 @@ export default {
         margin: 0 !important;
         padding: 0 !important;
         height: 0px !important;
-        transition: all 0.5s ease-in;
+        transition: opacity 0.2s ease-in;
         background: none;
     }
 
     .nav-list-transition {
-        transition: all 0.7s ease-in;
+        transition: opacity 0.3s ease-in;
     }
 
     .show-list {
         visibility: visible;
         height: auto;
         opacity: 1;
-        border-radius: 10px;
+        border-radius: 25px;
         padding-top: 20px;
-        padding-right: 20px;
+        padding-right: 35px;
     }
 
     .hide-list {
@@ -174,7 +177,15 @@ export default {
         border: none;
     }
 
-    ul > *:active {
+    ul a:hover {
+         background: gold;
+         color:rgba(46, 46, 46, 0.8);
+         border-bottom: 1px solid rgba(46, 46, 46, 0.8);
+         font-weight: 600;
+         transition: background 0.4s ease-in;
+    }
+
+    ul a:active {
         color:rgba(46, 46, 46, 0.8);
         background: gold;
         border-bottom: rgba(46, 46, 46, 0.8);
@@ -209,9 +220,8 @@ export default {
     ul a:hover {
         background: gold;
         color:rgba(46, 46, 46, 0.8);
-        font-weight: 600;
-        font-size: 1.2rem;
         transition: background 0.4s ease-in;
+        font-weight: 600;
     }
 
     ul a:nth-child(5):active {
