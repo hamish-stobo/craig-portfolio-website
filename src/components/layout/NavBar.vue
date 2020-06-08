@@ -40,8 +40,12 @@ export default {
           const width = window.innerWidth
           width >= 765 ? this.isMobile = false : this.isMobile = true
         },
-        toggleNav() {
-            this.isShowing ? this.isShowing = false : this.isShowing = true
+        toggleNav(num) {
+            if(num == 1) {
+                this.isShowing = false;
+            } else {
+                this.isShowing ? this.isShowing = false : this.isShowing = true
+            }
         }
     },
     created() {

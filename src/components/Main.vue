@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div @click="hideNavbar">
         <About />
         <Services />
         <CurrentPositions />
@@ -27,6 +27,11 @@ export default {
         Services,
         Contact,
         Footer
+    },
+    methods: {
+        hideNavbar() {
+            this.$emit('hidenavbar')
+        }
     }
 }
 </script>

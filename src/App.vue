@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <LandingPage />
-    <NavBar />
-    <Main />
+    <NavBar ref="navbarComponent" />
+    <Main v-on:hidenavbar="hideNav" />
   </div>
 </template>
 
@@ -16,6 +16,12 @@ export default {
     LandingPage,
     NavBar,
     Main
+  },
+  methods: {
+    hideNav() {
+      // console.log(this.$refs)
+      this.$refs.navbarComponent.toggleNav(1)
+    }
   }
 }
 </script>
