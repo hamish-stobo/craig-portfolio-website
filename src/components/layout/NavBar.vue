@@ -183,12 +183,16 @@ export default {
         height: 41px;
     }
 
+    ul > a:nth-child(5):hover {
+        border-bottom: 1px solid gold;
+    }
+
     ul a:hover {
          background: gold;
          color:rgba(46, 46, 46, 0.8);
          border-bottom: 1px solid rgba(46, 46, 46, 0.8);
          font-weight: 600;
-         transition: background 0.4s ease-in;
+         transition: background 0.4s ease-in, border 0.4s ease-in;
     }
 
     ul a:active {
@@ -221,6 +225,12 @@ export default {
         text-align: center;
         padding: 15px 0;
         height: 60px;
+        border-radius: 0 !important;
+    }
+
+    ul a:nth-child(5) {
+        height: 60px;
+        border: none;
     }
 
     ul a:hover {
@@ -228,6 +238,8 @@ export default {
         color:rgba(46, 46, 46, 0.8);
         transition: background 0.4s ease-in;
         font-weight: 600;
+        border-radius: 0 !important;
+        border: none !important;
     }
 
     ul a:nth-child(5):active {
