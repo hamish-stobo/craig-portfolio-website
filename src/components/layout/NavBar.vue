@@ -41,7 +41,7 @@ export default {
           width >= 765 ? this.isMobile = false : this.isMobile = true
         },
         toggleNav() {
-            this.isShowing = !this.isShowing
+            this.isShowing ? this.isShowing = false : this.isShowing = true
         }
     },
     created() {
@@ -175,6 +175,8 @@ export default {
 
     ul > a:nth-child(5) {
         border: none;
+        border-radius: 0 0 0 15px;
+        height: 41px;
     }
 
     ul a:hover {
