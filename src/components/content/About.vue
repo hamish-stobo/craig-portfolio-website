@@ -170,7 +170,7 @@
             margin: 50px auto 200px auto;
             flex-flow: row nowrap;
             justify-content: space-evenly;
-            align-items: center;
+            align-items: flex-start;
             width: 95%;
         }
         .about-section-header {
@@ -179,6 +179,9 @@
         .dynamic-content-wrapper {
             width: 410px;
             height: 190px;
+        }
+        .avatar-img {
+            margin-top: 0;
         }
 
         .profile-desc, .qualifications-wrapper li {
