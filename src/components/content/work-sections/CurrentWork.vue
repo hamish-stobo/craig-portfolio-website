@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ul class="positions-list" >
+        <ul class="positions-list currWork" v-bind:class="{'isOn': isOn}">
             <a href="https://saturnadvice.co.nz/" target="_blank" style="text-decoration: none; color: inherit" class="positions-list-item">
                 <img class="company-logo" v-bind:src="'./images/company-logos/current/Saturn-Advice-Logo_new 1.png'" alt="Saturn Advice Ltd Logo">
                 <h3 class="company-title">Saturn Advice Ltd</h3>
@@ -62,6 +62,6 @@
 
 <script>
 export default {
-    name: "CurrentWork"
+    name: "CurrentWork",
 }
 </script>

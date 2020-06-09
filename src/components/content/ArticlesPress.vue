@@ -1,54 +1,56 @@
 <template>
     <div id="articlespress">
         <h2 class="articles-section-title">Articles, Press & Poetry</h2>
-        <ul class="article-list">
-        <a href="https://www.nzherald.co.nz/business/news/article.cfm?c_id=3&objectid=12330405" style="text-decoration: none; color: gold" target="_blank" class="article-list-item">
-            <img class="article-img" v-bind:src="'./images/articles -press-images/nz-herald-2020.jpg'" alt="Worker in Hi-Vis and Hardhat">
-            <span class="article-title">Shovel-ready, but not work-ready</span>
-            <span class="article-source">NZ Herald</span>
-            <span class="article-date">9 May 2020</span>
-        </a>
-        <a href="https://www.youtube.com/watch?v=fDo0HFOe8EU" style="text-decoration: none; color: gold" target="_blank" class="article-list-item">
-            <img class="article-img" v-bind:src="'./images/articles -press-images/UoO-2017-business-school-interview.png'" alt="Otago University Business School video thumbnail">
-            <span class="article-title">Q & A with Craig Stobo</span>
-            <span class="article-source">University of Otago Business School</span>
-            <span class="article-date">20 Oct 2017</span>
-        </a>
-        <a href="https://www.nzherald.co.nz/business/news/article.cfm?c_id=3&objectid=11415720" style="text-decoration: none; color: gold" target="_blank" class="article-list-item">
-            <img class="article-img" v-bind:src="'./images/articles -press-images/nz-herald-2015.jpg'" alt="Aircraft Landing">
-            <span class="article-title">Government assets sheet needs right balance</span>
-            <span class="article-source">NZ Herald</span>
-            <span class="article-date">12 Mar 2015</span>
-        </a>
-        <a href="./images/docs/LGNZ140101 Insurance Review Publication FA-4.pdf" style="text-decoration: none; color: gold" target="_blank" class="article-list-item">
-            <img class="article-img" v-bind:src="'./images/articles -press-images/NZ-Local-Govt-Insurance-Market-Review-Thumnail.png'" alt="Thumbnail of Document">
-            <span class="article-title">NZ Local Government Insurance Review</span>
-            <span class="article-source">Local Government New Zealand</span>
-            <span class="article-date space-me">Dec 2013</span>
-        </a>
-        <a href="./images/docs/IFSD Group Presentation_July2011.pdf" style="text-decoration: none; color: gold" target="_blank" class="article-list-item">
-            <img class="article-img" v-bind:src="'./images/articles -press-images/exporting-financial-services-thumbnail.png'" alt="Thumbnail of Document">
-            <span class="article-title">Exporting Financial Services</span>
-            <span class="article-source">International Financial Services Development Group</span>
-            <span class="article-date space-me">July 2011</span>
-        </a>
-        <a href="./images/docs/2004-other-report-stobo-taxation-investment-income.pdf" style="text-decoration: none; color: gold" target="_blank" class="article-list-item">
-            <img class="article-img" v-bind:src="'./images/articles -press-images/report-to-minister-of-finance.png'" alt="Thumbnail of Document">
-            <span class="article-title">Towards Consensus on the Taxation of Investment Income</span>
-            <span class="article-source">Inland Revenue Department</span>
-            <span class="article-date">October 2004</span>
-        </a>
-        </ul>
+        <div class="button-div">
+            <h3 v-bind:class="{'underline': showingArticles}" @click="toggler(0)">Articles</h3>
+            <h3 v-bind:class="{'underline': showingPress}" @click="toggler(1)">Press</h3>
+            <h3 v-bind:class="{'underline': showingPoetry}" @click="toggler(2)">Poetry</h3>
+        </div>
+        <Articles v-if="showingArticles" />
+        <Press v-else-if="showingPress" />
+        <Poetry v-else-if="showingPoetry" />
     </div>
 </template>
 
 <script>
+import Articles from './subcomponents/Articles'
+import Press from './subcomponents/Press'
+import Poetry from './subcomponents/Poetry'
     export default {
-        name: 'ArticlesPress'
+        name: 'ArticlesPress',
+        components: {
+            Articles,
+            Press,
+            Poetry
+        },
+        data() {
+            return {
+                showingArticles: true,
+                showingPress: false,
+                showingPoetry: false
+            }
+        },
+        methods: {
+            toggler(num) {
+                if(num === 0) {
+                    this.showingArticles = true
+                    this.showingPress = false
+                    this.showingPoetry = false
+                } else if(num === 1) {
+                    this.showingArticles = false
+                    this.showingPress = true
+                    this.showingPoetry = false
+                } else if(num === 2) {
+                    this.showingArticles = false
+                    this.showingPress = false
+                    this.showingPoetry = true
+                }
+            }
+        }
     }
 </script>
 
-<style scoped>
+<style>
     #articlespress {
         text-align: center;
         padding: 40px 0 100px 0;
@@ -58,6 +60,29 @@
         padding-top: 20px;
         font-weight: 700;
         color: rgb(46, 46, 46);
+    }
+
+    .button-div {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        cursor: pointer;
+        min-width: 320px;
+    }
+
+     .button-div h3 {
+        padding: 5px;
+        margin: 0 5px 5px 5px;
+        border: 1px solid rgb(46, 46, 46);
+        border-radius: 5px;
+    }
+
+    .underline {
+        background: rgb(46, 46, 46);
+        color: gold;
+        transition: background 0.7s ease-in;
     }
 
     .article-list {

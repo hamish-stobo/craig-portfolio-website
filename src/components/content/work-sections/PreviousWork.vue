@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ul class="positions-list">
+        <ul class="positions-list prevWork" >
             <a href="https://www.fliway.com/" target="_blank" style="text-decoration: none; color: inherit" class="positions-list-item">
                 <img class="company-logo" v-bind:src="'./images/company-logos/previous/fliway-group-logo.png'" alt="Fliway Group Logo">
                 <h3 class="company-title">Fliway Group</h3>
@@ -42,6 +42,6 @@
 
 <script>
 export default {
-    name: "PreviousWork"
+    name: "PreviousWork",
 }
 </script>

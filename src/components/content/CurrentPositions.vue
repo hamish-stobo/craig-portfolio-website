@@ -5,8 +5,8 @@
             <h3 @click="changeSelected(1)" v-bind:class="{'underline': currentWorkSelected}">Current</h3>
             <h3 @click="changeSelected(0)" v-bind:class="{'underline': !currentWorkSelected}">Previous</h3>
         </div>
-        <CurrentWork v-if="currentWorkSelected" v-bind:class="{'hide-current-work': showingQualifications}" />
-        <PreviousWork v-else-if="!currentWorkSelected" v-bind:class="{'hide-past-work': showingQualifications}"/>
+        <CurrentWork v-if="currentWorkSelected" />
+        <PreviousWork v-else-if="!currentWorkSelected" />
     </div>
 </template>
 
@@ -28,7 +28,7 @@ import PreviousWork from './work-sections/PreviousWork'
             changeSelected(currentSelection) {
                 //if bool is true, return false, else return true.
                 //prevents overly-zealous toggling
-                return currentSelection === 1 ? this.currentWorkSelected = true : this.currentWorkSelected = false
+                currentSelection === 1 ? this.currentWorkSelected = true : this.currentWorkSelected = false
             }
         }
     }
@@ -76,6 +76,7 @@ import PreviousWork from './work-sections/PreviousWork'
     .positions-list {
         list-style-type: none;
         margin: 50px 10px 50px 10px;
+        transition: opacity 0.4s ease-in;
     }
 
     .positions-list-item {
@@ -88,6 +89,7 @@ import PreviousWork from './work-sections/PreviousWork'
         grid-template-rows: 1fr 1fr;
         height: 110px;
         max-width: 400px;
+        transition: opacity 0.5s ease-in;
     }
 
     .company-logo {
@@ -99,16 +101,19 @@ import PreviousWork from './work-sections/PreviousWork'
         max-width: 130px;
         align-self: center;
         max-height: 100%;
+        transition: opacity 0.6s ease-in;
     }
 
     .company-title {
         grid-row: 1 / 2;
         grid-column: 2 / 3;
+        transition: opacity 0.7s ease-in;
     }
 
     .job-title {
         grid-row: 2 / 3;
         grid-column: 2 / 3;
+        transition: opacity 0.7s ease-in;
     }
 
     @media screen and (min-width: 700px) {
