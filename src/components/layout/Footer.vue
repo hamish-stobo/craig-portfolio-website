@@ -15,6 +15,9 @@ export default {
 <style scoped>
     #footer {
         height: 35px;
+        width: 100vw;
+        bottom: 0;
+        position: fixed;
     }
 
     .footer-wrapper {

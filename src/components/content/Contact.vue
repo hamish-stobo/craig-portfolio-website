@@ -18,7 +18,7 @@ export default {
 <style scoped>
     #contact {
         text-align: center;
-        height: 40vh;
+        padding: 20px 0 110px 0;
     }
 
     .contact-section-title {
