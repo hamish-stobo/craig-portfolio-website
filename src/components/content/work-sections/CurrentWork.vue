@@ -14,7 +14,7 @@
             <a href="https://www.elevationcapital.co.nz/" target="_blank" style="text-decoration: none; color: inherit" class="positions-list-item">
                 <img class="company-logo" v-bind:src="'./images/company-logos/current/elevation-capital-logo.png'" alt="Elevation Capital Logo">
                 <h3 class="company-title">Elevation Capital</h3>
-                <span class="job-title">Chairman</span>
+                <span class="job-title">Chairman and Shareholder</span>
             </a>
             <a href="https://www.lgfa.co.nz/" target="_blank" style="text-decoration: none; color: inherit" class="positions-list-item">
                 <img class="company-logo" v-bind:src="'./images/company-logos/current/lgfa.png'" alt="Local Government Funding Agency Logo">
@@ -51,6 +51,11 @@
                 <h3 class="company-title">Urban Partners</h3>
                 <span class="job-title">Board Advisor</span>
             </a>
+            <span style="text-decoration: none; color: inherit" class="positions-list-item">
+                <img class="company-logo legend-terrace-logo" v-bind:src="'./images/company-logos/current/legend-terrace-logo.png'" alt="Legend Terrace NZ Logo">
+                <h3 class="company-title">Legend Terrace</h3>
+                <span class="job-title">Chairman and Shareholder</span>
+            </span>
         </ul>
     </div>
 </template>

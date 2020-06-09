@@ -5,8 +5,8 @@
             <h3 @click="changeSelected(1)" v-bind:class="{'underline': currentWorkSelected}">Current</h3>
             <h3 @click="changeSelected(0)" v-bind:class="{'underline': !currentWorkSelected}">Previous</h3>
         </div>
-        <CurrentWork v-if="currentWorkSelected" />
-        <PreviousWork v-else-if="!currentWorkSelected" />
+        <CurrentWork v-if="currentWorkSelected" v-bind:class="{'hide-current-work': showingQualifications}" />
+        <PreviousWork v-else-if="!currentWorkSelected" v-bind:class="{'hide-past-work': showingQualifications}"/>
     </div>
 </template>
 
@@ -45,23 +45,28 @@ import PreviousWork from './work-sections/PreviousWork'
         color: gold;
     }
 
-    .underline {
-        border-bottom: 2px solid gold;
-    }
-
     .positions-toggler {
         color: gold;
         display: flex;
         flex-flow: row nowrap;
         width: 100%;
         justify-content: space-around;
-        align-items: baseline;
-        margin: 0 auto;
-        max-width: 500px;
+        align-items: center;
+        margin: 10px auto;
+        max-width: 400px;
     }
 
     .positions-toggler h3 {
-        height: 25px !important;
+        border: 1px solid gold;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin: 5px;
+    }
+
+    .underline {
+        background: gold;
+        color: rgb(46, 46, 46);
+        transition: background 0.4s ease-in;
     }
 
     .positions-toggler h3:hover {
@@ -91,8 +96,9 @@ import PreviousWork from './work-sections/PreviousWork'
         display: block;
         margin: auto;
         padding-left: 4px;
-        width: 130px;
+        max-width: 130px;
         align-self: center;
+        max-height: 100%;
     }
 
     .company-title {
@@ -103,10 +109,6 @@ import PreviousWork from './work-sections/PreviousWork'
     .job-title {
         grid-row: 2 / 3;
         grid-column: 2 / 3;
-    }
-
-    .company-logo:nth-child(1) {
-        max-width: 130px;
     }
 
     @media screen and (min-width: 700px) {

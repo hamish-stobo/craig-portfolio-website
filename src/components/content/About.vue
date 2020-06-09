@@ -95,22 +95,6 @@
         transition: background 0.7s ease-in;
     }
 
-    .selectorArrow {
-        animation: selectorArrowAnimation 2s ease-in-out infinite;
-    }
-
-    @keyframes selectorArrowAnimation {
-        0% {
-            transform: scale(1.3)
-        }
-        50% {
-            transform: scale(1.5);
-        }
-        100% {
-            transform: scale(1.3)
-        }
-    }
-
     .profile-desc, .qualifications-wrapper {
         text-align: start;
         padding: 25px;

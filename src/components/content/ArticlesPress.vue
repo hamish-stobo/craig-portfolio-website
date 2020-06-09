@@ -1,34 +1,42 @@
 <template>
     <div id="articlespress">
-        <h2 class="articles-section-title">Articles & Press</h2>
+        <h2 class="articles-section-title">Articles, Press & Poetry</h2>
         <ul class="article-list">
         <a href="https://www.nzherald.co.nz/business/news/article.cfm?c_id=3&objectid=12330405" style="text-decoration: none; color: gold" target="_blank" class="article-list-item">
             <img class="article-img" v-bind:src="'./images/articles -press-images/nz-herald-2020.jpg'" alt="Worker in Hi-Vis and Hardhat">
             <span class="article-title">Shovel-ready, but not work-ready</span>
             <span class="article-source">NZ Herald</span>
             <span class="article-date">9 May 2020</span>
-            <p class="article-desc"></p>
         </a>
         <a href="https://www.youtube.com/watch?v=fDo0HFOe8EU" style="text-decoration: none; color: gold" target="_blank" class="article-list-item">
             <img class="article-img" v-bind:src="'./images/articles -press-images/UoO-2017-business-school-interview.png'" alt="Otago University Business School video thumbnail">
             <span class="article-title">Q & A with Craig Stobo</span>
             <span class="article-source">University of Otago Business School</span>
             <span class="article-date">20 Oct 2017</span>
-            <p class="article-desc"></p>
         </a>
         <a href="https://www.nzherald.co.nz/business/news/article.cfm?c_id=3&objectid=11415720" style="text-decoration: none; color: gold" target="_blank" class="article-list-item">
             <img class="article-img" v-bind:src="'./images/articles -press-images/nz-herald-2015.jpg'" alt="Aircraft Landing">
             <span class="article-title">Government assets sheet needs right balance</span>
             <span class="article-source">NZ Herald</span>
             <span class="article-date">12 Mar 2015</span>
-            <p class="article-desc"></p>
         </a>
-        <a href="https://taxpolicy.ird.govt.nz/sites/default/files/2004-other-report-stobo-taxation-investment-income.pdf" style="text-decoration: none; color: gold" target="_blank" class="article-list-item">
-            <img class="article-img" v-bind:src="'./images/articles -press-images/report-to-minister-of-finance.png'" alt="">
+        <a href="./images/docs/LGNZ140101 Insurance Review Publication FA-4.pdf" style="text-decoration: none; color: gold" target="_blank" class="article-list-item">
+            <img class="article-img" v-bind:src="'./images/articles -press-images/NZ-Local-Govt-Insurance-Market-Review-Thumnail.png'" alt="Thumbnail of Document">
+            <span class="article-title">NZ Local Government Insurance Review</span>
+            <span class="article-source">Local Government New Zealand</span>
+            <span class="article-date space-me">Dec 2013</span>
+        </a>
+        <a href="./images/docs/IFSD Group Presentation_July2011.pdf" style="text-decoration: none; color: gold" target="_blank" class="article-list-item">
+            <img class="article-img" v-bind:src="'./images/articles -press-images/exporting-financial-services-thumbnail.png'" alt="Thumbnail of Document">
+            <span class="article-title">Exporting Financial Services</span>
+            <span class="article-source">International Financial Services Development Group</span>
+            <span class="article-date space-me">July 2011</span>
+        </a>
+        <a href="./images/docs/2004-other-report-stobo-taxation-investment-income.pdf" style="text-decoration: none; color: gold" target="_blank" class="article-list-item">
+            <img class="article-img" v-bind:src="'./images/articles -press-images/report-to-minister-of-finance.png'" alt="Thumbnail of Document">
             <span class="article-title">Towards Consensus on the Taxation of Investment Income</span>
             <span class="article-source">Inland Revenue Department</span>
             <span class="article-date">October 2004</span>
-            <p class="article-desc"></p>
         </a>
         </ul>
     </div>
@@ -70,7 +78,7 @@
         padding-bottom: 3px;
         box-shadow: 2px 2px 4px rgba(46, 46, 46, 0.6);
         max-width: 400px;
-        border-radius: 15px;
+        border-radius: 10px;
     }
 
     .article-img {
@@ -80,7 +88,7 @@
         max-height: 100%;
         max-width: 140px;
         display: inline-block;
-        border-radius: 15px 0 0 0;
+        border-radius: 10px 0 0 0;
     }
 
     .article-title {
@@ -118,6 +126,9 @@
     @media screen and (min-width: 400px) {
         .article-list-item {
             grid-template-columns: 150px auto;
+        }
+        .space-me {
+            margin-top: 5px;
         }
     }
 

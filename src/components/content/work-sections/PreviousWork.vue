@@ -23,7 +23,7 @@
             </a>
             <a href="https://nzgif.co.nz/" target="_blank" style="text-decoration: none; color: inherit" class="positions-list-item">
                 <img style="height: 80px; width: 125px;" class="company-logo" v-bind:src="'./images/company-logos/previous/NZGIF-logo.png'" alt="NZGIF Logo">
-                <h3 class="company-title">New Zealand Green Investment Finance Ltd</h3>
+                <h3 class="company-title">New Zealand Green Investment Finance</h3>
                 <span class="job-title">Advisor</span>
             </a>
             <a href="https://treasury.govt.nz/" target="_blank" style="text-decoration: none; color: inherit" class="positions-list-item">
