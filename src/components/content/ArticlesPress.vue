@@ -74,7 +74,7 @@ import Poetry from './subcomponents/Poetry'
 
      .button-div h3 {
         padding: 5px;
-        margin: 0 5px 5px 5px;
+        margin: 0 15px 5px 15px;
         border: 1px solid rgb(46, 46, 46);
         border-radius: 5px;
     }
