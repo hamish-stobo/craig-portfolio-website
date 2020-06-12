@@ -41,7 +41,19 @@ body {
 
 #services, #articlespress, #footer {
           background: gold !important;
-        }
+}
+
+@media screen and (max-width: 765px) {
+  #about, #services, #currentpositions, #articlespress, #contact {
+    padding-top: 30px !important;
+  }
+  .about-section-header, .services-header, .current-positions-header, .articles-section-title, .contact-section-title {
+    padding-top: 20px !important;
+    margin-top: 0 !important;
+  }
+}
+
+
 @media screen and (min-width: 765px) {
         #about, #services, #currentpositions, #articlespress, #contact {
             padding-top: 65px !important;

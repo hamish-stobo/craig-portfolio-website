@@ -16,8 +16,7 @@ export default {
     #footer {
         height: 35px;
         width: 100vw;
-        bottom: 0;
-        position: fixed;
+        position: static;
     }
 
     .footer-wrapper {

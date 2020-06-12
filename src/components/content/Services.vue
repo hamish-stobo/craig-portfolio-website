@@ -39,7 +39,7 @@
 <style scoped>
     #services {
         text-align: center;
-      padding: 90px 0 0 0 !important;
+        padding: 90px 0 0 0;
     }
 
     .services-header {
