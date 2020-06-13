@@ -42,6 +42,6 @@
 
 <script>
 export default {
-    name: "PreviousWork",
+    name: "PreviousWork"
 }
 </script>
