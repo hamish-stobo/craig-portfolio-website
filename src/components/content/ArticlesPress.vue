@@ -90,6 +90,16 @@ import Poetry from './subcomponents/Poetry'
         margin: 50px auto 0;
         margin-block-start: 0 !important;
         margin-block-end: 0 !important;
+        animation: liAnimation 0.7s ease-in;
+    }
+
+    @keyframes liAnimation { 
+        0% {
+            opacity: 0.5
+        }
+        100% {
+            opacity: 1
+        }
     }
 
     .article-list-item {

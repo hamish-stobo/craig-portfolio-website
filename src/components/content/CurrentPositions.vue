@@ -88,7 +88,7 @@ import PreviousWork from './work-sections/PreviousWork'
         grid-template-rows: 1fr 1fr;
         height: 110px;
         max-width: 400px;
-        animation: liAnimation 1s linear;
+        animation: liAnimation 0.7s ease-in;
         color:rgb(46, 46, 46) !important;
         text-decoration: none !important;
     }
