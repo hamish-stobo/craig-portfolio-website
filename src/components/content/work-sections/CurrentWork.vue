@@ -1,34 +1,19 @@
 <template>
     <div>
         <ul class="positions-list currWork">
-            <a href="https://saturnadvice.co.nz/" target="_blank" class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/current/Saturn-Advice-Logo_new 1.png'" alt="Saturn Advice Ltd Logo">
-                <h3 class="company-title">Saturn Advice Ltd</h3>
-                <span class="job-title">Chairman and Shareholder</span>
+            <a href="https://www.nzwindfarms.co.nz/" target="_blank" class="positions-list-item">
+                <img class="company-logo" v-bind:src="'./images/company-logos/current/fma_logo.png'" alt="Local Government Funding Agency Logo">
+                <h3 class="company-title">https://www.nzwindfarms.co.nz/</h3>
+                <span class="job-title">Chairman</span>
             </a>
-            <a href="https://www.pssnz.co.nz/" target="_blank" class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/current/saturn-invest-logo.png'" alt="Saturn Invest Ltd Logo">
-                <h3 class="company-title">Saturn Invest Ltd</h3>
-                <span class="job-title">Chairman and Shareholder</span>
-            </a>
-            <a href="https://www.elevationcapital.co.nz/" target="_blank" class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/current/elevation-capital-logo.png'" alt="Elevation Capital Logo">
-                <h3 class="company-title">Elevation Capital</h3>
-                <span class="job-title">Chairman and Shareholder</span>
+            <a href="https://www.fma.govt.nz/" target="_blank" class="positions-list-item">
+                <img class="company-logo" v-bind:src="'./images/company-logos/current/fma_logo.png'" alt="Local Government Funding Agency Logo">
+                <h3 class="company-title">Financial Markets Authority</h3>
+                <span class="job-title">Chairman</span>
             </a>
             <a href="https://www.lgfa.co.nz/" target="_blank" class="positions-list-item">
                 <img class="company-logo" v-bind:src="'./images/company-logos/current/lgfa.png'" alt="Local Government Funding Agency Logo">
                 <h3 class="company-title">Local Government Funding Agency</h3>
-                <span class="job-title">Chairman</span>
-            </a>
-            <a href="https://www.precinct.co.nz/" target="_blank" class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/current/precinct-properties-logo.png'" alt="Precinct Properties Ltd Logo">
-                <h3 class="company-title">Precinct Properties Ltd</h3>
-                <span class="job-title">Chairman</span>
-            </a>
-            <a href="https://www.aig.co.nz/" target="_blank" class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/current/AIG-logo.png'" alt="AIG Insurance New Zealand Logo">
-                <h3 class="company-title">AIG Insurance New Zealand</h3>
                 <span class="job-title">Chairman</span>
             </a>
             <a href="https://appelloservices.co.nz/" target="_blank" class="positions-list-item">
