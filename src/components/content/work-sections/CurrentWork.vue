@@ -2,7 +2,7 @@
     <div>
         <ul class="positions-list currWork">
             <a href="https://www.nzwindfarms.co.nz/" target="_blank" class="positions-list-item">
-                <img class="company-logo" v-bind:src="'./images/company-logos/current/fma_logo.png'" alt="Local Government Funding Agency Logo">
+                <img class="company-logo" v-bind:src="'./images/company-logos/current/nz_wind_farms.png'" alt="Local Government Funding Agency Logo">
                 <h3 class="company-title">NZ Windfarms Ltd</h3>
                 <span class="job-title">Chairman</span>
             </a>
