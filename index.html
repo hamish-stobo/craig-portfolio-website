@@ -7,31 +7,39 @@
     <meta name="author" content="Your Name">
     <title>Craig Stobo</title>
     <!-- Link to CSS file -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/tw-styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <!-- Link to favicon -->
     <link rel="icon" href="/public/craig-profile-photo.png" type="image/x-icon">
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-base">
+    <div class="mx-auto">
     <!-- https://excalidraw.com/#json=625kTfdSVLHj9CJpXvXU6,tzK-Sjn3o9Ep4wvfmMAcpg -->
     <!-- Header section -->
-    <header>
-        <div class="flex flex-col justify-center items-center mt-10">
-            <div>
-                <img class="w-60 h-60" src="/public/craig-profile-photo.png" alt="Profile picture"></img>
+    <header class="h-screen min-h-full flex flex-col justify-between">
+            <div class="flex flex-col justify-center items-center mt-10 gap-4">
+                    <img class="w-60 h-60" src="/public/craig-profile-photo.png" alt="Profile picture"></img>
+                    <div class="flex flex-col items-center justify-start gap-2">
+                        <p class="text-center">Hi, I'm</p>
+                        <p class="text-center text-3xl">Craig Stobo</p>
+                    </div>
+                    <div class="flex flex-col items-center justify-center gap-2 mt-4">
+                        <p class="text-center">I am a</p>
+                        <p class="text-center text-3xl">Professional Director</p>
+                        <p class="text-center text-3xl">Founder</p>
+                        <p class="text-center text-3xl">Entrepeneur</p>
+                    </div>
             </div>
-            <div>
-                <p class="text-left text-sm">Hi, I'm</p>
-                <p class="text-left text-2xl">Craig Stobo</p>
-            </div>
-        </div>
+        <div class="mx-auto mb-2 mt-4"><a id="about-link" href="#about" class="border-0 hover:border-b-2 border-gray-900">Read More</a></div>
     </header>
 
     <!-- Main content section -->
     <main>
-        <section id="home">
-            <h2>Home</h2>
-            <p>This is the home section of your website.</p>
+        <section id="about" class="h-screen">
+            <p class="text-sm">I'm a professional director and business owner with a background as a diplomat, economist, Chief Investment Officer, and CEO.</p>
+            <p class="text-sm">I enjoy climbing mountains, skiing, sailing, and ocean swims.</p>
+            <p class="text-sm">I'm passionate about drama, literature, and supporting Otago rugby and the Highlanders.</p>
+            <p class="text-sm">I also serve as Chair of the Waitaki Boys High School Foundation and am a Taumata of Otago University’s Business School.</p>
         </section>
 
         <section id="about">
@@ -51,11 +59,12 @@
     </main>
 
     <!-- Footer section -->
-    <footer>
+     <!-- <footer>
         <p>&copy; 2024 Your Name. All rights reserved.</p>
-    </footer>
+    </footer> -->
 
     <!-- Link to JavaScript file -->
+</div>
     <script src="scripts.js"></script>
 </body>
 </html>
