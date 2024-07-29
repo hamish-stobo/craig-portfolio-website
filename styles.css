@@ -3,9 +3,65 @@
 @tailwind utilities;
 
 * {
-    font-family: monospace
+    font-family: Open Sans
 }
 
 html {
     scroll-behavior: smooth;
-  }
+}
+
+.carousel-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+/* .accordion-title {
+    color: #7A7572;
+} */
+
+.accordion-title::after,
+.accordion-title::before {
+    content: '';
+    position: absolute;
+    right: 1.25em;
+    top: 1.25em;
+    width: 2px;
+    height: 0.75em;
+    background-color: #000000;
+    transition: all 0.2s;
+}
+
+.accordion-title::after {
+    transform: rotate(90deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    transition: max-height .20s;
+}
+
+.toggle:checked {
+
+    &+.accordion-title,
+    &+.accordion-title+.accordion-content {
+        box-shadow: 3px 3px 6px #ddd, -3px 3px 6px #ddd;
+    }
+
+    &+.accordion-title+.accordion-content {
+        max-height: 500px;
+    }
+
+    &+.accordion-title::before {
+        transform: rotate(90deg) !important;
+    }
+}

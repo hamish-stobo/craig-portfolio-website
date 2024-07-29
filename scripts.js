@@ -18,3 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+
+  const intervalTime = 2000;
+  const wrapper = document.querySelector('.carousel-wrapper');
+  const items = document.querySelectorAll('.carousel-item');
+  const itemCount = items.length;
+  let index = 0;
+
+  function moveToNextSlide() {
+      index = (index + 1) % itemCount;
+      const offset = -index * 100;
+      wrapper.style.transform = `translateX(${offset}%)`;
+  }
+
+    setInterval(moveToNextSlide, intervalTime);

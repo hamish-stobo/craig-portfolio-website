@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,61 +11,218 @@
     <link rel="stylesheet" href="/tw-styles.css">
     <link rel="stylesheet" href="/styles.css">
     <!-- Link to favicon -->
-    <link rel="icon" href="/public/craig-profile-photo.png" type="image/x-icon">
+    <link rel="icon" href="/public/craig-portfolio-photo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
 </head>
-<body class="bg-gray-100 text-base">
-    <div class="mx-auto">
-    <!-- https://excalidraw.com/#json=625kTfdSVLHj9CJpXvXU6,tzK-Sjn3o9Ep4wvfmMAcpg -->
-    <!-- Header section -->
-    <header class="h-screen min-h-full flex flex-col justify-between">
-            <div class="flex flex-col justify-center items-center mt-10 gap-4">
-                    <img class="w-60 h-60" src="/public/craig-profile-photo.png" alt="Profile picture"></img>
-                    <div class="flex flex-col items-center justify-start gap-2">
-                        <p class="text-center">Hi, I'm</p>
-                        <p class="text-center text-3xl">Craig Stobo</p>
-                    </div>
-                    <div class="flex flex-col items-center justify-center gap-2 mt-4">
-                        <p class="text-center">I am a</p>
-                        <p class="text-center text-3xl">Professional Director</p>
-                        <p class="text-center text-3xl">Founder</p>
-                        <p class="text-center text-3xl">Entrepeneur</p>
-                    </div>
+
+<body class="bg-gray-100 text-base p-8">
+    <div class="flex flex-col gap-12">
+        <!-- https://excalidraw.com/#json=625kTfdSVLHj9CJpXvXU6,tzK-Sjn3o9Ep4wvfmMAcpg -->
+        <!-- Header section -->
+        <div class="flex flex-col justify-between gap-8">
+            <div class="flex flex-col gap-4">
+                <img src="/public/craig-portfolio-photo.png" alt="Profile picture" class="shadow-lg rounded"
+                    style="max-width: 400px"></img>
+                <span class="text-center">Hi, I'm</span>
+                <span class="text-center text-3xl">Craig Stobo</span>
             </div>
-        <div class="mx-auto mb-2 mt-4"><a id="about-link" href="#about" class="border-0 hover:border-b-2 border-gray-900">Read More</a></div>
-    </header>
+            <div class="flex flex-col gap-4">
+                <span class="text-left text-xl">Professional Director</span>
+                <span class="text-left text-xl">Entrepeneur</span>
+                <span class="text-left text-xl">Business Owner</span>
+                <span class="text-left text-xl">Ocean Swimmer</span>
+                <span class="text-left text-xl">Mountaineer</span>
+                <span class="text-left text-xl">Playwrite</span>
+            </div>
+            <!-- <div class="mb-6 w-full flex flex-row justify-center">
+            <a id="about-link" href="#about" class="border-0 hover:border-b-2 border-gray-900">Read More</a>
+        </div> -->
+        </div>
 
-    <!-- Main content section -->
-    <main>
-        <section id="about" class="h-screen">
-            <p class="text-sm">I'm a professional director and business owner with a background as a diplomat, economist, Chief Investment Officer, and CEO.</p>
-            <p class="text-sm">I enjoy climbing mountains, skiing, sailing, and ocean swims.</p>
-            <p class="text-sm">I'm passionate about drama, literature, and supporting Otago rugby and the Highlanders.</p>
-            <p class="text-sm">I also serve as Chair of the Waitaki Boys High School Foundation and am a Taumata of Otago University’s Business School.</p>
+        <!-- Main content section -->
+        <section id="about" class="flex flex-col gap-4">
+            <div class="carousel-container relative w-full mb-8" style="max-width: 400px">
+                <div class="carousel-wrapper flex">
+                    <div class="carousel-item h-64 flex items-center justify-center text-white text-2xl"><img
+                            src="/public/mtn-climbing.jpg" alt="Mountain climbing photo" class="shadow rounded"></div>
+                    <div class="carousel-item h-64 flex items-center justify-center text-white text-2xl"><img
+                            src="/public/swim-photo.jpg" alt="People in wetsuits on the beach" class="shadow rounded">
+                    </div>
+                    <div class="carousel-item h-64 flex items-center justify-center text-white text-2xl"><img
+                            src="/public/sailing.jpg" alt="People in wetsuits on the beach" class="shadow rounded">
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col gap-4">
+                <p class="text-left">I'm a professional director and business owner with a background as a diplomat,
+                    economist, Chief Investment Officer, and CEO.</p>
+                <p class="text-left">I enjoy climbing mountains, skiing, sailing, and ocean swims.</p>
+                <p class="text-left">I'm passionate about drama, literature, and supporting Otago rugby and the
+                    Highlanders.</p>
+                <p class="text-left">I also serve as Chair of the Waitaki Boys High School Foundation and am a Taumata
+                    of Otago University’s Business School.</p>
+            </div>
+
+            <div class="mt-4 ml-0 mr-auto">
+                <a href="/public/blank_resume_template.pdf" target="_blank"
+                    class="bg-white p-4 rounded hover:bg-gray-200">Curriculum Vitae</a>
+            </div>
         </section>
 
-        <section id="about">
-            <h2>About</h2>
-            <p>Information about you or your website.</p>
-        </section>
-
-        <section id="services">
-            <h2>Services</h2>
-            <p>Description of services you offer.</p>
+        <section id="media" class="flex flex-col gap-4">
+            <div>
+                <div class="mx-auto">
+                    <div class="relative mb-1">
+                        <input type="checkbox" id="toggle1" class="toggle hidden" />
+                        <label class="accordion-title block font-bold bg-white p-4 cursor-pointer" for="toggle1">
+                            Articles (5)
+                        </label>
+                        <div class="accordion-content bg-white overflow-hidden">
+                            <div class="p-4">
+                                <div class="flex flex-col gap-4">
+                                    <div class="flex flex-col justify-start items-start gap-2">
+                                        <a href="" target="_blank" class="text-blue-600 hover:underline text-lg">NZ
+                                            Local Government Insurance Review</a>
+                                        <div class="flex flex-row flex-wrap gap-2 justify-start items-center">
+                                            <span class="text-sm">Local Government New Zealand</span>
+                                            <span
+                                                class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 whitespace-nowrap max-w-min">December
+                                                2013</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col justify-start items-start gap-2">
+                                        <a href="" target="_blank"
+                                            class="text-blue-600 hover:underline text-lg">Exporting Financial
+                                            Services</a>
+                                        <div class="flex flex-row flex-wrap gap-2 justify-start items-center">
+                                            <span class="text-sm">International Financial Services Development
+                                                Group</span>
+                                            <span
+                                                class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 whitespace-nowrap max-w-min">July
+                                                2011</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col justify-start items-start gap-2">
+                                        <a href="" target="_blank" class="text-blue-600 hover:underline text-lg">Towards
+                                            Consensus on the Taxation of Investment Income</a>
+                                        <div class="flex flex-row flex-wrap gap-2 justify-start items-center">
+                                            <span class="text-sm">Inland Revenue Department</span>
+                                            <span
+                                                class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 whitespace-nowrap max-w-min">October
+                                                2004</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative mb-1">
+                        <input type="checkbox" id="toggle2" class="toggle hidden" />
+                        <label class="accordion-title block font-bold bg-white p-4 cursor-pointer" for="toggle2">
+                            Poetry (3)
+                        </label>
+                        <div class="accordion-content bg-white overflow-hidden">
+                            <div class="p-4">
+                                <div class="flex flex-col justify-start items-start gap-2">
+                                    <a href="" target="_blank" class="text-blue-600 hover:underline text-lg">NZ
+                                        Local Government Insurance Review</a>
+                                    <div class="flex flex-row flex-wrap gap-2 justify-start items-center">
+                                        <span class="text-sm">Local Government New Zealand</span>
+                                        <span
+                                            class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 whitespace-nowrap max-w-min">December
+                                            2013</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col justify-start items-start gap-2">
+                                    <a href="" target="_blank" class="text-blue-600 hover:underline text-lg">Exporting
+                                        Financial
+                                        Services</a>
+                                    <div class="flex flex-row flex-wrap gap-2 justify-start items-center">
+                                        <span class="text-sm">International Financial Services Development
+                                            Group</span>
+                                        <span
+                                            class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 whitespace-nowrap max-w-min">July
+                                            2011</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col justify-start items-start gap-2">
+                                    <a href="" target="_blank" class="text-blue-600 hover:underline text-lg">Towards
+                                        Consensus on the Taxation of Investment Income</a>
+                                    <div class="flex flex-row flex-wrap gap-2 justify-start items-center">
+                                        <span class="text-sm">Inland Revenue Department</span>
+                                        <span
+                                            class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 whitespace-nowrap max-w-min">October
+                                            2004</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative mb-1">
+                        <input type="checkbox" id="toggle3" class="toggle hidden" />
+                        <label class="accordion-title block font-bold bg-white p-4 cursor-pointer" for="toggle3">
+                            Press (4)
+                        </label>
+                        <div class="accordion-content bg-white overflow-hidden ">
+                            <div class="p-4">
+                                <div class="flex flex-col justify-start items-start gap-2">
+                                    <a href="" target="_blank" class="text-blue-600 hover:underline text-lg">NZ
+                                        Local Government Insurance Review</a>
+                                    <div class="flex flex-row flex-wrap gap-2 justify-start items-center">
+                                        <span class="text-sm">Local Government New Zealand</span>
+                                        <span
+                                            class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 whitespace-nowrap max-w-min">December
+                                            2013</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col justify-start items-start gap-2">
+                                    <a href="" target="_blank" class="text-blue-600 hover:underline text-lg">Exporting
+                                        Financial
+                                        Services</a>
+                                    <div class="flex flex-row flex-wrap gap-2 justify-start items-center">
+                                        <span class="text-sm">International Financial Services Development
+                                            Group</span>
+                                        <span
+                                            class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 whitespace-nowrap max-w-min">July
+                                            2011</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col justify-start items-start gap-2">
+                                    <a href="" target="_blank" class="text-blue-600 hover:underline text-lg">Towards
+                                        Consensus on the Taxation of Investment Income</a>
+                                    <div class="flex flex-row flex-wrap gap-2 justify-start items-center">
+                                        <span class="text-sm">Inland Revenue Department</span>
+                                        <span
+                                            class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 whitespace-nowrap max-w-min">October
+                                            2004</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="contact">
-            <h2>Contact</h2>
-            <p>Contact information or a contact form.</p>
+            <form class="flex flex-col gap-2 justify-start items-start">
+                <label for="email" class="block leading-6 text-gray-900">Your email</label>
+                <input type="email" name="email" id="email" class="block flex-1 border-0 py-1.5 pl-1 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="jaydoe@email.com">
+                <label for="message" class="block leading-6 text-gray-900">Your Message</label>
+                <textarea id="message" name="message" rows="3" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"></textarea>
+            </form>
         </section>
-    </main>
 
-    <!-- Footer section -->
-     <!-- <footer>
+        <!-- Footer section -->
+        <!-- <footer>
         <p>&copy; 2024 Your Name. All rights reserved.</p>
     </footer> -->
-
-    <!-- Link to JavaScript file -->
-</div>
+        <!-- Link to JavaScript file -->
+    </div>
     <script src="scripts.js"></script>
 </body>
+
 </html>
