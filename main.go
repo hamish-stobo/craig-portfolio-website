@@ -89,14 +89,21 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	})
 
 	var err error
-	tmpl, err = tmpl.ParseFiles("templates/index.html")
+	tmpl, err = tmpl.ParseGlob("templates/*.html")
 	if err != nil {
-		log.Printf("Error parsing template: %v", err)
+		log.Printf("Error parsing templates: %v", err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
 		return
 	}
 
-	err = tmpl.Execute(w, data)
+	tmpl, err = tmpl.ParseGlob("templates/partials/*.html")
+	if err != nil {
+		log.Printf("Error parsing partial templates: %v", err)
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
+	}
+
+	err = tmpl.ExecuteTemplate(w, "index.html", data)
 	if err != nil {
 		log.Printf("Error executing template: %v", err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
@@ -217,9 +224,16 @@ func buildStaticSite(w http.ResponseWriter, r *http.Request) {
 		},
 	})
 
-	tmpl, err = tmpl.ParseFiles("templates/index.html")
+	tmpl, err = tmpl.ParseGlob("templates/*.html")
 	if err != nil {
-		log.Printf("Error parsing template: %v", err)
+		log.Printf("Error parsing templates: %v", err)
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
+	}
+
+	tmpl, err = tmpl.ParseGlob("templates/partials/*.html")
+	if err != nil {
+		log.Printf("Error parsing partial templates: %v", err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
 		return
 	}
@@ -233,7 +247,7 @@ func buildStaticSite(w http.ResponseWriter, r *http.Request) {
 	}
 	defer file.Close()
 
-	err = tmpl.Execute(file, data)
+	err = tmpl.ExecuteTemplate(file, "index.html", data)
 	if err != nil {
 		log.Printf("Error executing template: %v", err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)

@@ -1,0 +1,57 @@
+<!-- About Section -->
+<section id="about" class="py-16 md:py-24 bg-gray-800">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-gold-rush text-center mb-12">About Me</h2>
+        
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+            <!-- Profile Image -->
+            <div class="flex-shrink-0">
+                <img src="/static/images/craig-profile-photo.png" 
+                     alt="Craig Stobo" 
+                     class="w-64 h-64 rounded-full mx-auto">
+            </div>
+            
+            <!-- Content -->
+            <div class="flex-1 text-center md:text-left" 
+                 x-data="{ activeTab: 'summary' }">
+                <!-- Tab Buttons -->
+                <div class="flex justify-center md:justify-start gap-4 mb-8">
+                    <button @click="activeTab = 'summary'" 
+                            :class="activeTab === 'summary' ? 'bg-gold-rush text-gray-800' : 'border-gold-rush text-gold-rush'"
+                            class="px-4 py-2 border-2 rounded-lg transition-all duration-300 font-semibold">
+                        Personal Summary
+                    </button>
+                    <button @click="activeTab = 'qualifications'" 
+                            :class="activeTab === 'qualifications' ? 'bg-gold-rush text-gray-800' : 'border-gold-rush text-gold-rush'"
+                            class="px-4 py-2 border-2 rounded-lg transition-all duration-300 font-semibold">
+                        Qualifications
+                    </button>
+                </div>
+                
+                <!-- Tab Content -->
+                <div x-show="activeTab === 'summary'" 
+                     x-transition:enter="transition ease-out duration-300"
+                     x-transition:enter-start="opacity-0 transform translate-y-4"
+                     x-transition:enter-end="opacity-1 transform translate-y-0"
+                     class="text-gold-rush text-lg leading-relaxed">
+                    {{.PersonalSummary}}
+                </div>
+                
+                <div x-show="activeTab === 'qualifications'" 
+                     x-transition:enter="transition ease-out duration-300"
+                     x-transition:enter-start="opacity-0 transform translate-y-4"
+                     x-transition:enter-end="opacity-1 transform translate-y-0"
+                     class="text-gold-rush">
+                    <ul class="space-y-3 text-lg">
+                        {{range .Qualifications}}
+                        <li class="flex items-start">
+                            <i class="fas fa-graduation-cap text-gold-rush mr-3 mt-1"></i>
+                            {{.}}
+                        </li>
+                        {{end}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,73 @@
+<!-- Articles & Press Section -->
+<section id="articles" class="py-16 md:py-24 bg-gold-rush">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-800 text-center mb-12">Articles, Press & Poetry</h2>
+        
+        <div class="max-w-6xl mx-auto" x-data="{ activeTab: 'articles' }">
+            <!-- Tab Buttons -->
+            <div class="flex justify-center gap-4 mb-12">
+                <button @click="activeTab = 'articles'" 
+                        :class="activeTab === 'articles' ? 'bg-gray-800 text-gold-rush' : 'border-gray-800 text-gray-800'"
+                        class="px-6 py-3 border-2 rounded-lg transition-all duration-300 font-semibold">
+                    Articles
+                </button>
+                <button @click="activeTab = 'press'" 
+                        :class="activeTab === 'press' ? 'bg-gray-800 text-gold-rush' : 'border-gray-800 text-gray-800'"
+                        class="px-6 py-3 border-2 rounded-lg transition-all duration-300 font-semibold">
+                    Press
+                </button>
+                <button @click="activeTab = 'poetry'" 
+                        :class="activeTab === 'poetry' ? 'bg-gray-800 text-gold-rush' : 'border-gray-800 text-gray-800'"
+                        class="px-6 py-3 border-2 rounded-lg transition-all duration-300 font-semibold">
+                    Poetry
+                </button>
+            </div>
+            
+            <!-- Articles -->
+            <div x-show="activeTab === 'articles'" 
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0"
+                 x-transition:enter-end="opacity-1"
+                 class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {{range .Articles}}
+                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <a href="{{.URL}}" target="_blank" class="block">
+                        <div class="grid grid-cols-2 h-32">
+                            <div class="p-4">
+                                <img src="{{.Image}}" 
+                                     alt="{{.Alt}}" 
+                                     class="w-full h-full object-cover rounded">
+                            </div>
+                            <div class="p-4 flex flex-col justify-between">
+                                <h3 class="font-bold text-gold-rush text-sm mb-2 leading-tight">{{.Title}}</h3>
+                                <div>
+                                    <p class="text-white text-xs mb-1">{{.Source}}</p>
+                                    <p class="text-white text-xs">{{.Date}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {{end}}
+            </div>
+            
+            <!-- Press -->
+            <div x-show="activeTab === 'press'" 
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0"
+                 x-transition:enter-end="opacity-1"
+                 class="text-center text-gray-800">
+                <p class="text-lg">Press content coming soon...</p>
+            </div>
+            
+            <!-- Poetry -->
+            <div x-show="activeTab === 'poetry'" 
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0"
+                 x-transition:enter-end="opacity-1"
+                 class="text-center text-gray-800">
+                <p class="text-lg">Poetry content coming soon...</p>
+            </div>
+        </div>
+    </div>
+</section>

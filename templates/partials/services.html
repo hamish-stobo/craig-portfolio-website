@@ -1,0 +1,23 @@
+<!-- Services Section -->
+<section id="services" class="py-16 md:py-24 bg-gold-rush">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-800 text-center mb-12">Key Areas of Expertise</h2>
+        
+        <div class="max-w-6xl mx-auto">
+            {{range $index, $service := .Services}}
+            <div class="flex flex-col {{if isEven $index}}md:flex-row{{else}}md:flex-row-reverse{{end}} mb-0 {{if isEven $index}}bg-gray-800{{else}}bg-gold-rush{{end}}">
+                <div class="md:w-1/2">
+                    <img src="{{$service.Image}}" 
+                         alt="{{$service.Alt}}" 
+                         class="w-full h-64 md:h-80 object-cover">
+                </div>
+                <div class="md:w-1/2 flex items-center justify-center p-8">
+                    <h3 class="text-xl md:text-2xl font-heading font-bold {{if isEven $index}}text-gold-rush{{else}}text-gray-800{{end}} text-center">
+                        {{$service.Title}}
+                    </h3>
+                </div>
+            </div>
+            {{end}}
+        </div>
+    </div>
+</section>

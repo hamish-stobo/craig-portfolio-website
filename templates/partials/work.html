@@ -1,0 +1,80 @@
+<!-- Work Section -->
+<section id="work" class="py-16 md:py-24 bg-gray-800">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-gold-rush text-center mb-12">My Work</h2>
+        
+        <div class="max-w-6xl mx-auto" x-data="{ activeTab: 'current' }">
+            <!-- Tab Buttons -->
+            <div class="flex justify-center gap-4 mb-12">
+                <button @click="activeTab = 'current'" 
+                        :class="activeTab === 'current' ? 'bg-gold-rush text-gray-800' : 'border-gold-rush text-gold-rush'"
+                        class="px-6 py-3 border-2 rounded-lg transition-all duration-300 font-semibold text-lg">
+                    Current
+                </button>
+                <button @click="activeTab = 'previous'" 
+                        :class="activeTab === 'previous' ? 'bg-gold-rush text-gray-800' : 'border-gold-rush text-gold-rush'"
+                        class="px-6 py-3 border-2 rounded-lg transition-all duration-300 font-semibold text-lg">
+                    Previous
+                </button>
+            </div>
+            
+            <!-- Current Work -->
+            <div x-show="activeTab === 'current'" 
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0"
+                 x-transition:enter-end="opacity-1"
+                 class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                {{range .CurrentWork}}
+                <div class="bg-gold-rush rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    {{if .URL}}
+                    <a href="{{.URL}}" target="_blank" class="block">
+                    {{end}}
+                        <div class="p-6 grid grid-cols-2 gap-4 h-32">
+                            <div class="flex items-center justify-center">
+                                <img src="{{.Logo}}" 
+                                     alt="{{.Alt}}" 
+                                     class="max-w-full max-h-full object-contain">
+                            </div>
+                            <div class="flex flex-col justify-center">
+                                <h3 class="font-bold text-gray-800 text-lg mb-2">{{.Company}}</h3>
+                                <p class="text-gray-700">{{.Title}}</p>
+                            </div>
+                        </div>
+                    {{if .URL}}
+                    </a>
+                    {{end}}
+                </div>
+                {{end}}
+            </div>
+            
+            <!-- Previous Work -->
+            <div x-show="activeTab === 'previous'" 
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0"
+                 x-transition:enter-end="opacity-1"
+                 class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                {{range .PreviousWork}}
+                <div class="bg-gold-rush rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    {{if .URL}}
+                    <a href="{{.URL}}" target="_blank" class="block">
+                    {{end}}
+                        <div class="p-6 grid grid-cols-2 gap-4 h-32">
+                            <div class="flex items-center justify-center">
+                                <img src="{{.Logo}}" 
+                                     alt="{{.Alt}}" 
+                                     class="max-w-full max-h-full object-contain">
+                            </div>
+                            <div class="flex flex-col justify-center">
+                                <h3 class="font-bold text-gray-800 text-lg mb-2">{{.Company}}</h3>
+                                <p class="text-gray-700">{{.Title}}</p>
+                            </div>
+                        </div>
+                    {{if .URL}}
+                    </a>
+                    {{end}}
+                </div>
+                {{end}}
+            </div>
+        </div>
+    </div>
+</section>

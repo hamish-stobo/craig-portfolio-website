@@ -1,0 +1,33 @@
+<!-- Landing Section -->
+<section class="relative h-screen flex flex-col justify-between items-center text-center overflow-hidden">
+    <!-- Background Images for Mobile -->
+    <div class="absolute inset-0 md:hidden">
+        <div class="absolute inset-0 bg-slide bg-slide-1 opacity-0" style="background-image: url('https://inboxdesign.ibcdn.nz/media/2018_02_07_2016_07_27_waitaki-boys-high-school-entrance.jpg'); background-position: 30% 50%;"></div>
+        <div class="absolute inset-0 bg-slide bg-slide-2 opacity-0" style="background-image: url('https://julietetelandresen.com/wp-content/uploads/2018/01/7027833-queenstown-new-zealand-wakatipu-lake.jpg');"></div>
+        <div class="absolute inset-0 bg-slide bg-slide-3 opacity-0" style="background-image: url('https://www.timeshighereducation.com/sites/default/files/styles/institution_12col_card/public/institution_images/clocktower_blossom_2.jpg');"></div>
+        <div class="absolute inset-0 bg-slide bg-slide-4 opacity-0" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/60/Bayswater_Marina_Auckland_New_Zealand.jpg');"></div>
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+    </div>
+    
+    <!-- Desktop Background -->
+    <div class="hidden md:block absolute inset-0 bg-slide" style="background-image: url('/static/images/landing-page/desktop-bg.png');">
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+    </div>
+    
+    <!-- Content -->
+    <div class="relative z-10 flex-1 flex flex-col justify-center items-center px-4">
+        <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gold-rush text-shadow mb-4">
+            I'm {{.Name}}.
+        </h1>
+        <h2 class="font-heading text-xl sm:text-2xl md:text-3xl text-gold-rush text-shadow">
+            Welcome to my website.
+        </h2>
+    </div>
+    
+    <!-- Scroll Arrow -->
+    <div class="relative z-10 mb-8">
+        <a href="#about" class="inline-block text-gold-rush bounce-arrow">
+            <i class="fas fa-chevron-down text-3xl sm:text-4xl"></i>
+        </a>
+    </div>
+</section>
