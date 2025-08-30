@@ -1,6 +1,6 @@
 <!-- Articles & Publications Section -->
 <section id="articles" class="py-20 bg-st-andrews-blue">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-4" x-data="{ activeTab: 'articles' }">
         <!-- Section Header -->
         <div class="text-center mb-16">
             <h2 class="text-4xl md:text-5xl font-heading font-bold text-white mb-4">Publications & Media</h2>
@@ -11,7 +11,7 @@
         </div>
         
         <!-- Content Toggle -->
-        <div class="flex justify-center mb-12" x-data="{ activeTab: 'articles' }">
+        <div class="flex justify-center mb-12">
             <div class="tabs tabs-boxed bg-white/10 backdrop-blur-md border border-white/20">
                 <button @click="activeTab = 'articles'" 
                         :class="activeTab === 'articles' ? 'tab-active' : ''"
@@ -34,7 +34,7 @@
             </div>
         </div>
         
-        <div class="max-w-7xl mx-auto" x-data="{ activeTab: 'articles' }">
+        <div class="max-w-7xl mx-auto">
             
             <!-- Research Papers/Articles -->
             <div x-show="activeTab === 'articles'" 
@@ -118,22 +118,86 @@
                  x-transition:enter="transition ease-out duration-500"
                  x-transition:enter-start="opacity-0 transform translate-y-8"
                  x-transition:enter-end="opacity-1 transform translate-y-0"
-                 class="text-center">
-                <div class="card bg-white/10 backdrop-blur-md border border-white/20 max-w-2xl mx-auto">
-                    <div class="card-body p-12">
-                        <div class="text-6xl mb-6">
-                            <i class="fas fa-newspaper text-gold-rush"></i>
+                 class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+                {{range $index, $press := .PressItems}}
+                <article class="card bg-white shadow-2xl border border-white/50 hover:shadow-3xl hover:scale-105 transition-all duration-500 group overflow-hidden">
+                    <a href="{{.URL}}" target="_blank" class="block">
+                        <!-- Press Item Thumbnail -->
+                        <figure class="relative h-48 overflow-hidden">
+                            <img src="{{.Image}}" 
+                                 alt="{{.Alt}}" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-st-andrews-blue/80 via-transparent to-transparent"></div>
+                            
+                            <!-- Media Type Badge -->
+                            <div class="absolute top-4 left-4">
+                                {{if contains .URL "youtube"}}
+                                <div class="badge bg-red-600 text-white border-none font-semibold">
+                                    <i class="fab fa-youtube mr-1"></i>
+                                    Video
+                                </div>
+                                {{else}}
+                                <div class="badge bg-blue-600 text-white border-none font-semibold">
+                                    <i class="fas fa-newspaper mr-1"></i>
+                                    Article
+                                </div>
+                                {{end}}
+                            </div>
+                            
+                            <!-- External Link Icon -->
+                            <div class="absolute bottom-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center group-hover:bg-gold-rush group-hover:scale-110 transition-all duration-300">
+                                <i class="fas fa-external-link-alt text-st-andrews-blue"></i>
+                            </div>
+                        </figure>
+                        
+                        <!-- Press Item Content -->
+                        <div class="card-body p-6">
+                            <!-- Publication Info -->
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="badge badge-outline text-st-andrews-blue border-st-andrews-blue/30 text-xs">
+                                    {{.Source}}
+                                </div>
+                                <div class="badge badge-ghost text-st-andrews-blue/60 text-xs">
+                                    {{.Date}}
+                                </div>
+                            </div>
+                            
+                            <!-- Press Item Title -->
+                            <h3 class="card-title text-lg font-heading font-semibold text-st-andrews-blue group-hover:text-deep-blue transition-colors duration-300 leading-tight mb-3">
+                                {{.Title}}
+                            </h3>
+                            
+                            <!-- Press Item Preview -->
+                            <p class="text-sm text-st-andrews-blue/70 leading-relaxed font-body mb-4">
+                                {{if eq .Source "NZ Herald"}}
+                                    Expert commentary and analysis on key economic and financial sector developments in New Zealand.
+                                {{else if eq .Source "University of Otago Business School"}}
+                                    Insights from a distinguished alumnus and business leader on industry trends and professional development.
+                                {{else}}
+                                    Professional commentary and expert analysis from a leading voice in New Zealand's financial sector.
+                                {{end}}
+                            </p>
+                            
+                            <!-- Read More -->
+                            <div class="card-actions justify-between items-center mt-4">
+                                <div class="flex items-center gap-2 text-st-andrews-blue/60 text-sm">
+                                    {{if contains .URL "youtube"}}
+                                    <i class="fas fa-play"></i>
+                                    <span>Watch Interview</span>
+                                    {{else}}
+                                    <i class="fas fa-eye"></i>
+                                    <span>Read Article</span>
+                                    {{end}}
+                                </div>
+                                <div class="badge badge-outline text-st-andrews-blue border-st-andrews-blue/30 group-hover:bg-st-andrews-blue group-hover:text-white transition-all duration-300">
+                                    <i class="fas fa-arrow-right mr-1"></i>
+                                    {{if contains .URL "youtube"}}Watch{{else}}Read{{end}}
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="text-2xl font-heading font-semibold text-white mb-4">Press Coverage</h3>
-                        <p class="text-sky/80 mb-6 font-body">
-                            Media coverage and expert commentary will be featured here as it becomes available.
-                        </p>
-                        <a href="#contact" class="btn bg-gold-rush text-st-andrews-blue border-none hover:bg-deep-gold transition-all duration-300">
-                            <i class="fas fa-envelope mr-2"></i>
-                            Media Inquiries
-                        </a>
-                    </div>
-                </div>
+                    </a>
+                </article>
+                {{end}}
             </div>
             
             <!-- Creative Writing/Poetry -->

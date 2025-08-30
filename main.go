@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"github.com/gorilla/mux"
 )
@@ -20,6 +21,7 @@ type PageData struct {
 	CurrentWork     []Position
 	PreviousWork    []Position
 	Articles        []Article
+	PressItems      []PressItem
 	Contact         Contact
 }
 
@@ -38,6 +40,15 @@ type Position struct {
 }
 
 type Article struct {
+	Title  string
+	Source string
+	Date   string
+	Image  string
+	URL    string
+	Alt    string
+}
+
+type PressItem struct {
 	Title  string
 	Source string
 	Date   string
@@ -85,6 +96,9 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.New("index.html").Funcs(template.FuncMap{
 		"isEven": func(i int) bool {
 			return i%2 == 0
+		},
+		"contains": func(s, substr string) bool {
+			return strings.Contains(s, substr)
 		},
 	})
 
@@ -222,6 +236,9 @@ func buildStaticSite(w http.ResponseWriter, r *http.Request) {
 		"isEven": func(i int) bool {
 			return i%2 == 0
 		},
+		"contains": func(s, substr string) bool {
+			return strings.Contains(s, substr)
+		},
 	})
 
 	tmpl, err = tmpl.ParseGlob("templates/*.html")
@@ -357,9 +374,14 @@ func getPageData() PageData {
 			{Company: "Local Government New Zealand", Title: "Advisor", Logo: "/static/images/company-logos/previous/lgnz-logo.png", URL: "https://www.lgnz.co.nz/", Alt: "Local Government New Zealand Logo"},
 		},
 		Articles: []Article{
-			{Title: "NZ Local Government Insurance Review", Source: "Local Government New Zealand", Date: "Dec 2013", Image: "/static/images/articles-press-images/NZ-Local-Govt-Insurance-Market-Review-Thumnail.png", URL: "/static/docs/LGNZ140101 Insurance Review Publication FA-4.pdf", Alt: "Thumbnail of Document"},
-			{Title: "Exporting Financial Services", Source: "International Financial Services Development Group", Date: "July 2011", Image: "/static/images/articles-press-images/exporting-financial-services-thumbnail.png", URL: "/static/docs/IFSD Group Presentation_July2011.pdf", Alt: "Thumbnail of Document"},
-			{Title: "Towards Consensus on the Taxation of Investment Income", Source: "Inland Revenue Department", Date: "October 2004", Image: "/static/images/articles-press-images/report-to-minister-of-finance.png", URL: "/static/docs/2004-other-report-stobo-taxation-investment-income.pdf", Alt: "Thumbnail of Document"},
+			{Title: "NZ Local Government Insurance Review", Source: "Local Government New Zealand", Date: "Dec 2013", Image: "/static/images/publications-media/articles/thumbnail_local_government_insurance_market_review.png", URL: "/static/docs/articles/LGNZ140101 Insurance Review Publication FA-4.pdf", Alt: "Thumbnail of Document"},
+			{Title: "Exporting Financial Services", Source: "International Financial Services Development Group", Date: "July 2011", Image: "/static/images/publications-media/articles/thumbnail_exporting_financial_services.png", URL: "/static/docs/articles/IFSD Group Presentation_July2011.pdf", Alt: "Thumbnail of Document"},
+			{Title: "Towards Consensus on the Taxation of Investment Income", Source: "Inland Revenue Department", Date: "October 2004", Image: "/static/images/publications-media/articles/thumbnail_consensus_taxation_investment_income.png", URL: "/static/docs/articles/2004-other-report-stobo-taxation-investment-income.pdf", Alt: "Thumbnail of Document"},
+		},
+		PressItems: []PressItem{
+			{Title: "Shovel-ready, but not work-ready", Source: "NZ Herald", Date: "9 May 2020", Image: "/static/images/publications-media/media/nz-herald-2020.jpg", URL: "https://www.nzherald.co.nz/business/news/article.cfm?c_id=3&objectid=12330405", Alt: "NZ Herald article thumbnail"},
+			{Title: "Q & A with Craig Stobo", Source: "University of Otago Business School", Date: "20 Oct 2017", Image: "/static/images/publications-media/media/UoO-2017-business-school-interview.png", URL: "https://www.youtube.com/watch?v=fDo0HFOe8EU", Alt: "University of Otago interview thumbnail"},
+			{Title: "Government assets sheet needs right balance", Source: "NZ Herald", Date: "12 Mar 2015", Image: "/static/images/publications-media/media/nz-herald-2015.jpg", URL: "https://www.nzherald.co.nz/business/news/article.cfm?c_id=3&objectid=11415720", Alt: "NZ Herald article thumbnail"},
 		},
 		Contact: Contact{
 			LinkedIn: "https://nz.linkedin.com/in/craig-stobo-4b40361a2",
