@@ -18,14 +18,12 @@
                         class="tab tab-lg font-semibold text-st-andrews-blue transition-all duration-300">
                     <i class="fas fa-briefcase mr-2"></i>
                     Current Positions
-                    <div class="badge badge-sm bg-gold-rush text-st-andrews-blue border-none ml-2">{{len .CurrentWork}}</div>
                 </button>
                 <button @click="activeTab = 'previous'" 
                         :class="activeTab === 'previous' ? 'tab-active' : ''"
                         class="tab tab-lg font-semibold text-st-andrews-blue transition-all duration-300">
                     <i class="fas fa-history mr-2"></i>
                     Previous Roles
-                    <div class="badge badge-sm bg-gold-rush text-st-andrews-blue border-none ml-2">{{len .PreviousWork}}</div>
                 </button>
             </div>
         </div>
