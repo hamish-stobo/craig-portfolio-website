@@ -1,6 +1,6 @@
 <!-- Work Experience Section -->
 <section id="work" class="py-20 bg-gradient-to-br from-ivory to-sky/20">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-4" x-data="{ activeWorkTab: 'current' }">
         <!-- Section Header -->
         <div class="text-center mb-16">
             <h2 class="text-4xl md:text-5xl font-heading font-bold text-st-andrews-blue mb-4">Professional Experience</h2>
@@ -11,16 +11,16 @@
         </div>
         
         <!-- Experience Toggle -->
-        <div class="flex justify-center mb-12" x-data="{ activeTab: 'current' }">
+        <div class="flex justify-center mb-12">
             <div class="tabs tabs-boxed bg-white shadow-lg border border-st-andrews-blue/10">
-                <button @click="activeTab = 'current'" 
-                        :class="activeTab === 'current' ? 'tab-active' : ''"
+                <button @click="activeWorkTab = 'current'" 
+                        :class="activeWorkTab === 'current' ? 'tab-active' : ''"
                         class="tab tab-lg font-semibold text-st-andrews-blue transition-all duration-300">
                     <i class="fas fa-briefcase mr-2"></i>
                     Current Positions
                 </button>
-                <button @click="activeTab = 'previous'" 
-                        :class="activeTab === 'previous' ? 'tab-active' : ''"
+                <button @click="activeWorkTab = 'previous'" 
+                        :class="activeWorkTab === 'previous' ? 'tab-active' : ''"
                         class="tab tab-lg font-semibold text-st-andrews-blue transition-all duration-300">
                     <i class="fas fa-history mr-2"></i>
                     Previous Roles
@@ -28,10 +28,10 @@
             </div>
         </div>
         
-        <div class="max-w-7xl mx-auto" x-data="{ activeTab: 'current' }">
+        <div class="max-w-7xl mx-auto">
             
             <!-- Current Work -->
-            <div x-show="activeTab === 'current'" 
+            <div x-show="activeWorkTab === 'current'" 
                  x-transition:enter="transition ease-out duration-500"
                  x-transition:enter-start="opacity-0 transform translate-y-8"
                  x-transition:enter-end="opacity-1 transform translate-y-0"
@@ -86,7 +86,7 @@
             </div>
             
             <!-- Previous Work -->
-            <div x-show="activeTab === 'previous'" 
+            <div x-show="activeWorkTab === 'previous'" 
                  x-transition:enter="transition ease-out duration-500"
                  x-transition:enter-start="opacity-0 transform translate-y-8"
                  x-transition:enter-end="opacity-1 transform translate-y-0"

@@ -386,7 +386,7 @@ func getPageData() PageData {
 		Contact: Contact{
 			LinkedIn: "https://nz.linkedin.com/in/craig-stobo-4b40361a2",
 			Email:    "mailto:stobo@xtra.co.nz",
-			Phone:    "tel:+6421733751",
+			Phone:    "", // html/template doesn't want to parse this and render it - it gets transformed to random string. Had to hardcode it in the html.
 		},
 	}
 }
