@@ -1,44 +1,84 @@
-<!-- Work Section -->
-<section id="work" class="py-16 md:py-24 bg-gray-800">
+<!-- Work Experience Section -->
+<section id="work" class="py-20 bg-gradient-to-br from-ivory to-sky/20">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-heading font-bold text-gold-rush text-center mb-12">My Work</h2>
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-heading font-bold text-st-andrews-blue mb-4">Professional Experience</h2>
+            <p class="text-xl text-st-andrews-blue/70 max-w-2xl mx-auto font-body">
+                A distinguished career spanning leadership roles across finance, government, and corporate sectors
+            </p>
+            <div class="w-24 h-1 bg-gold-rush mx-auto rounded-full mt-6"></div>
+        </div>
         
-        <div class="max-w-6xl mx-auto" x-data="{ activeTab: 'current' }">
-            <!-- Tab Buttons -->
-            <div class="flex justify-center gap-4 mb-12">
+        <!-- Experience Toggle -->
+        <div class="flex justify-center mb-12" x-data="{ activeTab: 'current' }">
+            <div class="tabs tabs-boxed bg-white shadow-lg border border-st-andrews-blue/10">
                 <button @click="activeTab = 'current'" 
-                        :class="activeTab === 'current' ? 'bg-gold-rush text-gray-800' : 'border-gold-rush text-gold-rush'"
-                        class="px-6 py-3 border-2 rounded-lg transition-all duration-300 font-semibold text-lg">
-                    Current
+                        :class="activeTab === 'current' ? 'tab-active' : ''"
+                        class="tab tab-lg font-semibold text-st-andrews-blue transition-all duration-300">
+                    <i class="fas fa-briefcase mr-2"></i>
+                    Current Positions
+                    <div class="badge badge-sm bg-gold-rush text-st-andrews-blue border-none ml-2">{{len .CurrentWork}}</div>
                 </button>
                 <button @click="activeTab = 'previous'" 
-                        :class="activeTab === 'previous' ? 'bg-gold-rush text-gray-800' : 'border-gold-rush text-gold-rush'"
-                        class="px-6 py-3 border-2 rounded-lg transition-all duration-300 font-semibold text-lg">
-                    Previous
+                        :class="activeTab === 'previous' ? 'tab-active' : ''"
+                        class="tab tab-lg font-semibold text-st-andrews-blue transition-all duration-300">
+                    <i class="fas fa-history mr-2"></i>
+                    Previous Roles
+                    <div class="badge badge-sm bg-gold-rush text-st-andrews-blue border-none ml-2">{{len .PreviousWork}}</div>
                 </button>
             </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto" x-data="{ activeTab: 'current' }">
             
             <!-- Current Work -->
             <div x-show="activeTab === 'current'" 
-                 x-transition:enter="transition ease-out duration-300"
-                 x-transition:enter-start="opacity-0"
-                 x-transition:enter-end="opacity-1"
-                 class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                {{range .CurrentWork}}
-                <div class="bg-gold-rush rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                 x-transition:enter="transition ease-out duration-500"
+                 x-transition:enter-start="opacity-0 transform translate-y-8"
+                 x-transition:enter-end="opacity-1 transform translate-y-0"
+                 class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                {{range $index, $position := .CurrentWork}}
+                <div class="card bg-white shadow-xl border border-white/50 hover:shadow-2xl hover:scale-105 transition-all duration-500 group">
                     {{if .URL}}
                     <a href="{{.URL}}" target="_blank" class="block">
                     {{end}}
-                        <div class="p-6 grid grid-cols-2 gap-4 h-32">
-                            <div class="flex items-center justify-center">
+                        <!-- Company Logo Section -->
+                        <figure class="px-6 pt-6">
+                            <div class="w-full h-24 flex items-center justify-center bg-gradient-to-br from-st-andrews-blue/5 to-gold-rush/5 rounded-xl border border-st-andrews-blue/10">
                                 <img src="{{.Logo}}" 
                                      alt="{{.Alt}}" 
-                                     class="max-w-full max-h-full object-contain">
+                                     class="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"/>
                             </div>
-                            <div class="flex flex-col justify-center">
-                                <h3 class="font-bold text-gray-800 text-lg mb-2">{{.Company}}</h3>
-                                <p class="text-gray-700">{{.Title}}</p>
+                        </figure>
+                        
+                        <!-- Card Content -->
+                        <div class="card-body px-6 pb-6">
+                            <!-- Position Title -->
+                            <div class="badge badge-lg bg-gold-rush text-st-andrews-blue border-none mb-3 font-semibold">
+                                {{.Title}}
                             </div>
+                            
+                            <!-- Company Name -->
+                            <h3 class="card-title text-lg font-heading font-semibold text-st-andrews-blue group-hover:text-deep-blue transition-colors duration-300">
+                                {{.Company}}
+                            </h3>
+                            
+                            <!-- Status Indicator -->
+                            <div class="flex items-center gap-2 mt-2">
+                                <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                                <span class="text-sm text-st-andrews-blue/70 font-medium">Active Role</span>
+                            </div>
+                            
+                            {{if .URL}}
+                            <!-- External Link Indicator -->
+                            <div class="card-actions justify-end mt-4">
+                                <div class="badge badge-outline text-st-andrews-blue border-st-andrews-blue/30 group-hover:bg-st-andrews-blue group-hover:text-white transition-all duration-300">
+                                    <i class="fas fa-external-link-alt mr-1"></i>
+                                    Visit Website
+                                </div>
+                            </div>
+                            {{end}}
                         </div>
                     {{if .URL}}
                     </a>
@@ -49,31 +89,94 @@
             
             <!-- Previous Work -->
             <div x-show="activeTab === 'previous'" 
-                 x-transition:enter="transition ease-out duration-300"
-                 x-transition:enter-start="opacity-0"
-                 x-transition:enter-end="opacity-1"
-                 class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                {{range .PreviousWork}}
-                <div class="bg-gold-rush rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                 x-transition:enter="transition ease-out duration-500"
+                 x-transition:enter-start="opacity-0 transform translate-y-8"
+                 x-transition:enter-end="opacity-1 transform translate-y-0"
+                 class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                {{range $index, $position := .PreviousWork}}
+                <div class="card bg-white/80 shadow-lg border border-white/50 hover:shadow-xl hover:scale-105 transition-all duration-500 group">
                     {{if .URL}}
                     <a href="{{.URL}}" target="_blank" class="block">
                     {{end}}
-                        <div class="p-6 grid grid-cols-2 gap-4 h-32">
-                            <div class="flex items-center justify-center">
+                        <!-- Company Logo Section -->
+                        <figure class="px-6 pt-6">
+                            <div class="w-full h-24 flex items-center justify-center bg-gradient-to-br from-st-andrews-blue/5 to-gold-rush/5 rounded-xl border border-st-andrews-blue/10">
                                 <img src="{{.Logo}}" 
                                      alt="{{.Alt}}" 
-                                     class="max-w-full max-h-full object-contain">
+                                     class="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"/>
                             </div>
-                            <div class="flex flex-col justify-center">
-                                <h3 class="font-bold text-gray-800 text-lg mb-2">{{.Company}}</h3>
-                                <p class="text-gray-700">{{.Title}}</p>
+                        </figure>
+                        
+                        <!-- Card Content -->
+                        <div class="card-body px-6 pb-6">
+                            <!-- Position Title -->
+                            <div class="badge badge-lg bg-st-andrews-blue/10 text-st-andrews-blue border border-st-andrews-blue/20 mb-3 font-semibold">
+                                {{.Title}}
                             </div>
+                            
+                            <!-- Company Name -->
+                            <h3 class="card-title text-lg font-heading font-semibold text-st-andrews-blue/80 group-hover:text-st-andrews-blue transition-colors duration-300">
+                                {{.Company}}
+                            </h3>
+                            
+                            <!-- Status Indicator -->
+                            <div class="flex items-center gap-2 mt-2">
+                                <div class="w-3 h-3 bg-st-andrews-blue/50 rounded-full"></div>
+                                <span class="text-sm text-st-andrews-blue/60 font-medium">Previous Role</span>
+                            </div>
+                            
+                            {{if .URL}}
+                            <!-- External Link Indicator -->
+                            <div class="card-actions justify-end mt-4">
+                                <div class="badge badge-outline text-st-andrews-blue/70 border-st-andrews-blue/30 group-hover:bg-st-andrews-blue/80 group-hover:text-white transition-all duration-300">
+                                    <i class="fas fa-external-link-alt mr-1"></i>
+                                    Learn More
+                                </div>
+                            </div>
+                            {{end}}
                         </div>
                     {{if .URL}}
                     </a>
                     {{end}}
                 </div>
                 {{end}}
+            </div>
+        </div>
+        
+        <!-- Career Timeline Summary -->
+        <div class="mt-20">
+            <div class="card bg-gradient-to-r from-st-andrews-blue to-deep-blue text-white max-w-4xl mx-auto">
+                <div class="card-body p-8 text-center">
+                    <h3 class="text-2xl font-heading font-semibold mb-4">Career Highlights</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                        <div class="stat">
+                            <div class="stat-figure text-gold-rush">
+                                <i class="fas fa-crown text-2xl"></i>
+                            </div>
+                            <div class="stat-title text-sky/80">Leadership Roles</div>
+                            <div class="stat-value text-white">Chairman</div>
+                            <div class="stat-desc text-sky/70">Multiple Organizations</div>
+                        </div>
+                        
+                        <div class="stat">
+                            <div class="stat-figure text-gold-rush">
+                                <i class="fas fa-chart-line text-2xl"></i>
+                            </div>
+                            <div class="stat-title text-sky/80">Industry Focus</div>
+                            <div class="stat-value text-white">Finance</div>
+                            <div class="stat-desc text-sky/70">& Government Advisory</div>
+                        </div>
+                        
+                        <div class="stat">
+                            <div class="stat-figure text-gold-rush">
+                                <i class="fas fa-globe text-2xl"></i>
+                            </div>
+                            <div class="stat-title text-sky/80">Geographic Scope</div>
+                            <div class="stat-value text-white">National</div>
+                            <div class="stat-desc text-sky/70">New Zealand Focus</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -1,23 +1,98 @@
 <!-- Services Section -->
-<section id="services" class="py-16 md:py-24 bg-gold-rush">
+<section id="services" class="py-20 bg-st-andrews-blue">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-800 text-center mb-12">Key Areas of Expertise</h2>
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-heading font-bold text-white mb-4">Key Areas of Expertise</h2>
+            <p class="text-xl text-sky/90 max-w-2xl mx-auto font-body">
+                Professional services backed by decades of experience in finance, governance, and strategic leadership
+            </p>
+            <div class="w-24 h-1 bg-gold-rush mx-auto rounded-full mt-6"></div>
+        </div>
         
-        <div class="max-w-6xl mx-auto">
+        <!-- Services Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {{range $index, $service := .Services}}
-            <div class="flex flex-col {{if isEven $index}}md:flex-row{{else}}md:flex-row-reverse{{end}} mb-0 {{if isEven $index}}bg-gray-800{{else}}bg-gold-rush{{end}}">
-                <div class="md:w-1/2">
+            <div class="card bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-500 group">
+                <figure class="relative overflow-hidden">
                     <img src="{{$service.Image}}" 
                          alt="{{$service.Alt}}" 
-                         class="w-full h-64 md:h-80 object-cover">
-                </div>
-                <div class="md:w-1/2 flex items-center justify-center p-8">
-                    <h3 class="text-xl md:text-2xl font-heading font-bold {{if isEven $index}}text-gold-rush{{else}}text-gray-800{{end}} text-center">
+                         class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-st-andrews-blue/80 to-transparent"></div>
+                    
+                    <!-- Service Icon -->
+                    <div class="absolute top-4 right-4 w-12 h-12 bg-gold-rush rounded-full flex items-center justify-center shadow-lg">
+                        {{if eq $service.Title "Business Advice"}}
+                            <i class="fas fa-chart-line text-st-andrews-blue text-xl"></i>
+                        {{else if eq $service.Title "Investment Direction"}}
+                            <i class="fas fa-coins text-st-andrews-blue text-xl"></i>
+                        {{else if eq $service.Title "Government Advice and Implementation"}}
+                            <i class="fas fa-landmark text-st-andrews-blue text-xl"></i>
+                        {{else if eq $service.Title "Capital Raising"}}
+                            <i class="fas fa-hand-holding-usd text-st-andrews-blue text-xl"></i>
+                        {{else if eq $service.Title "B2B Consulting"}}
+                            <i class="fas fa-handshake text-st-andrews-blue text-xl"></i>
+                        {{else if eq $service.Title "Directing Companies"}}
+                            <i class="fas fa-chess-king text-st-andrews-blue text-xl"></i>
+                        {{else}}
+                            <i class="fas fa-cog text-st-andrews-blue text-xl"></i>
+                        {{end}}
+                    </div>
+                </figure>
+                
+                <div class="card-body p-6">
+                    <h3 class="card-title text-xl font-heading font-semibold text-white mb-3 group-hover:text-gold-rush transition-colors duration-300">
                         {{$service.Title}}
                     </h3>
+                    
+                    <!-- Service Description (you can add these to your data structure) -->
+                    <p class="text-sky/80 text-sm leading-relaxed font-body">
+                        {{if eq $service.Title "Business Advice"}}
+                            Strategic guidance for business growth, operational efficiency, and market positioning.
+                        {{else if eq $service.Title "Investment Direction"}}
+                            Expert oversight of investment strategies and portfolio management decisions.
+                        {{else if eq $service.Title "Government Advice and Implementation"}}
+                            Policy development and implementation expertise for government initiatives.
+                        {{else if eq $service.Title "Capital Raising"}}
+                            Facilitating funding solutions and capital acquisition for business expansion.
+                        {{else if eq $service.Title "B2B Consulting"}}
+                            Business-to-business consulting for operational and strategic improvements.
+                        {{else if eq $service.Title "Directing Companies"}}
+                            Board leadership and corporate governance for organizational excellence.
+                        {{else}}
+                            Professional expertise in this specialized area of business operations.
+                        {{end}}
+                    </p>
+                    
+                    <!-- Expertise Level -->
+                    <div class="mt-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-medium text-sky/70">Expertise Level</span>
+                            <span class="text-xs font-bold text-gold-rush">Expert</span>
+                        </div>
+                        <div class="w-full bg-white/20 rounded-full h-2">
+                            <div class="bg-gradient-to-r from-gold-rush to-deep-gold h-2 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             {{end}}
+        </div>
+        
+        <!-- Call to Action -->
+        <div class="text-center mt-16">
+            <div class="card bg-white/10 backdrop-blur-md border border-white/20 max-w-2xl mx-auto">
+                <div class="card-body p-8">
+                    <h3 class="text-2xl font-heading font-semibold text-white mb-4">Ready to Work Together?</h3>
+                    <p class="text-sky/90 mb-6 font-body">
+                        Let's discuss how my expertise can help drive your organization's success.
+                    </p>
+                    <a href="#contact" class="btn bg-gold-rush text-st-andrews-blue border-none hover:bg-deep-gold hover:scale-105 transition-all duration-300 font-semibold px-8">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        Schedule a Consultation
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </section>

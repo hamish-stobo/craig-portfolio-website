@@ -1,41 +1,71 @@
 <!-- Navigation -->
-<nav class="sticky top-0 z-50 bg-gray-800 bg-opacity-90 backdrop-blur-sm" 
+<nav class="navbar fixed top-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/20" 
      x-data="{ isOpen: false }">
-    <!-- Mobile Menu Button -->
-    <div class="md:hidden flex justify-end p-4">
-        <button @click="isOpen = !isOpen" 
-                class="text-gold-rush bg-gray-800 bg-opacity-80 p-2 rounded-lg border border-gold-rush">
-            <i class="fas fa-bars text-xl" x-show="!isOpen"></i>
-            <i class="fas fa-times text-xl" x-show="isOpen"></i>
-        </button>
-    </div>
     
     <!-- Mobile Menu -->
-    <div x-show="isOpen" 
-         x-transition:enter="transition ease-out duration-200"
-         x-transition:enter-start="opacity-0 transform -translate-y-2"
-         x-transition:enter-end="opacity-1 transform translate-y-0"
-         x-transition:leave="transition ease-in duration-150"
-         x-transition:leave-start="opacity-1 transform translate-y-0"
-         x-transition:leave-end="opacity-0 transform -translate-y-2"
-         class="md:hidden bg-gray-800 border-t border-gold-rush">
-        <div class="flex flex-col">
-            <a href="#about" @click="isOpen = false" class="px-6 py-4 text-gold-rush hover:bg-gold-rush hover:text-gray-800 transition-all duration-300 border-b border-gold-rush border-opacity-30">About</a>
-            <a href="#services" @click="isOpen = false" class="px-6 py-4 text-gold-rush hover:bg-gold-rush hover:text-gray-800 transition-all duration-300 border-b border-gold-rush border-opacity-30">Services</a>
-            <a href="#work" @click="isOpen = false" class="px-6 py-4 text-gold-rush hover:bg-gold-rush hover:text-gray-800 transition-all duration-300 border-b border-gold-rush border-opacity-30">My Work</a>
-            <a href="#articles" @click="isOpen = false" class="px-6 py-4 text-gold-rush hover:bg-gold-rush hover:text-gray-800 transition-all duration-300 border-b border-gold-rush border-opacity-30">Articles & Press</a>
-            <a href="#contact" @click="isOpen = false" class="px-6 py-4 text-gold-rush hover:bg-gold-rush hover:text-gray-800 transition-all duration-300">Contact</a>
+    <div class="navbar-start lg:hidden">
+        <div class="dropdown">
+            <div tabindex="0" role="button" 
+                 @click="isOpen = !isOpen"
+                 class="btn btn-ghost btn-circle text-white hover:bg-white/20 transition-all duration-300">
+                <svg class="w-6 h-6" :class="isOpen ? 'hidden' : 'block'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                <svg class="w-6 h-6" :class="isOpen ? 'block' : 'hidden'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </div>
+            <ul x-show="isOpen" 
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 scale-95"
+                x-transition:enter-end="opacity-1 scale-100"
+                x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-1 scale-100"
+                x-transition:leave-end="opacity-0 scale-95"
+                tabindex="0" 
+                class="menu menu-sm dropdown-content mt-3 p-4 shadow-2xl bg-white/95 backdrop-blur-md rounded-box w-64 border border-white/30">
+                <li><a href="#about" @click="isOpen = false" class="text-st-andrews-blue hover:text-gold-rush font-medium transition-colors duration-300">
+                    <i class="fas fa-user w-4"></i>About Me</a></li>
+                <li><a href="#services" @click="isOpen = false" class="text-st-andrews-blue hover:text-gold-rush font-medium transition-colors duration-300">
+                    <i class="fas fa-cogs w-4"></i>Services</a></li>
+                <li><a href="#work" @click="isOpen = false" class="text-st-andrews-blue hover:text-gold-rush font-medium transition-colors duration-300">
+                    <i class="fas fa-briefcase w-4"></i>My Work</a></li>
+                <li><a href="#articles" @click="isOpen = false" class="text-st-andrews-blue hover:text-gold-rush font-medium transition-colors duration-300">
+                    <i class="fas fa-newspaper w-4"></i>Articles & Press</a></li>
+                <li><a href="#contact" @click="isOpen = false" class="text-st-andrews-blue hover:text-gold-rush font-medium transition-colors duration-300">
+                    <i class="fas fa-envelope w-4"></i>Contact</a></li>
+            </ul>
         </div>
+    </div>
+    
+    <!-- Logo/Brand -->
+    <div class="navbar-center lg:navbar-start">
+        <a href="#" class="btn btn-ghost text-xl text-white font-heading font-semibold hover:bg-white/20 transition-all duration-300">
+            {{.Name}}
+        </a>
     </div>
     
     <!-- Desktop Menu -->
-    <div class="hidden md:flex">
-        <div class="flex w-full">
-            <a href="#about" class="flex-1 px-6 py-4 text-gold-rush text-center hover:bg-gold-rush hover:text-gray-800 transition-all duration-300 text-lg font-semibold">About</a>
-            <a href="#services" class="flex-1 px-6 py-4 text-gold-rush text-center hover:bg-gold-rush hover:text-gray-800 transition-all duration-300 text-lg font-semibold">Services</a>
-            <a href="#work" class="flex-1 px-6 py-4 text-gold-rush text-center hover:bg-gold-rush hover:text-gray-800 transition-all duration-300 text-lg font-semibold">My Work</a>
-            <a href="#articles" class="flex-1 px-6 py-4 text-gold-rush text-center hover:bg-gold-rush hover:text-gray-800 transition-all duration-300 text-lg font-semibold">Articles & Press</a>
-            <a href="#contact" class="flex-1 px-6 py-4 text-gold-rush text-center hover:bg-gold-rush hover:text-gray-800 transition-all duration-300 text-lg font-semibold">Contact</a>
-        </div>
+    <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1 gap-2">
+            <li><a href="#about" class="text-white hover:text-gold-rush font-medium transition-all duration-300 hover:bg-white/20 rounded-lg">
+                About</a></li>
+            <li><a href="#services" class="text-white hover:text-gold-rush font-medium transition-all duration-300 hover:bg-white/20 rounded-lg">
+                Services</a></li>
+            <li><a href="#work" class="text-white hover:text-gold-rush font-medium transition-all duration-300 hover:bg-white/20 rounded-lg">
+                My Work</a></li>
+            <li><a href="#articles" class="text-white hover:text-gold-rush font-medium transition-all duration-300 hover:bg-white/20 rounded-lg">
+                Articles & Press</a></li>
+            <li><a href="#contact" class="text-white hover:text-gold-rush font-medium transition-all duration-300 hover:bg-white/20 rounded-lg">
+                Contact</a></li>
+        </ul>
+    </div>
+    
+    <!-- Contact Button (Desktop) -->
+    <div class="navbar-end hidden lg:flex">
+        <a href="#contact" class="btn bg-gold-rush text-st-andrews-blue border-none hover:bg-deep-gold hover:scale-105 transition-all duration-300 font-semibold">
+            <i class="fas fa-paper-plane mr-2"></i>
+            Get in Touch
+        </a>
     </div>
 </nav>

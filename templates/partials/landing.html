@@ -1,33 +1,61 @@
-<!-- Landing Section -->
-<section class="relative h-screen flex flex-col justify-between items-center text-center overflow-hidden">
+<!-- Hero Section -->
+<section class="hero min-h-screen relative overflow-hidden">
     <!-- Background Images for Mobile -->
     <div class="absolute inset-0 md:hidden">
         <div class="absolute inset-0 bg-slide bg-slide-1 opacity-0" style="background-image: url('https://inboxdesign.ibcdn.nz/media/2018_02_07_2016_07_27_waitaki-boys-high-school-entrance.jpg'); background-position: 30% 50%;"></div>
         <div class="absolute inset-0 bg-slide bg-slide-2 opacity-0" style="background-image: url('https://julietetelandresen.com/wp-content/uploads/2018/01/7027833-queenstown-new-zealand-wakatipu-lake.jpg');"></div>
         <div class="absolute inset-0 bg-slide bg-slide-3 opacity-0" style="background-image: url('https://www.timeshighereducation.com/sites/default/files/styles/institution_12col_card/public/institution_images/clocktower_blossom_2.jpg');"></div>
         <div class="absolute inset-0 bg-slide bg-slide-4 opacity-0" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/60/Bayswater_Marina_Auckland_New_Zealand.jpg');"></div>
-        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-st-andrews-blue/40 via-deep-blue/60 to-st-andrews-blue/80"></div>
     </div>
     
     <!-- Desktop Background -->
     <div class="hidden md:block absolute inset-0 bg-slide" style="background-image: url('/static/images/landing-page/desktop-bg.png');">
-        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-st-andrews-blue/50 via-deep-blue/70 to-st-andrews-blue/90"></div>
     </div>
     
-    <!-- Content -->
-    <div class="relative z-10 flex-1 flex flex-col justify-center items-center px-4">
-        <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gold-rush text-shadow mb-4">
-            I'm {{.Name}}.
-        </h1>
-        <h2 class="font-heading text-xl sm:text-2xl md:text-3xl text-gold-rush text-shadow">
-            Welcome to my website.
-        </h2>
+    <!-- Hero Content -->
+    <div class="hero-content text-center relative z-10 max-w-4xl mx-auto px-4">
+        <div class="max-w-2xl">
+            <!-- Main Title -->
+            <h1 class="text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight">
+                I'm <span class="text-gold-rush">{{.Name}}</span>
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="text-xl md:text-2xl text-sky font-light mb-8 font-body">
+                Professional Director & Business Owner
+            </p>
+            
+            <!-- Description -->
+            <p class="text-lg text-ivory/90 mb-12 max-w-xl mx-auto leading-relaxed font-body">
+                Experienced diplomat, economist, and CEO with expertise in investment direction, 
+                government advisory, and corporate leadership across New Zealand's financial sector.
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#about" class="btn btn-lg bg-gold-rush text-st-andrews-blue border-none hover:bg-deep-gold hover:scale-105 transition-all duration-300 font-semibold px-8">
+                    <i class="fas fa-user mr-2"></i>
+                    Learn About Me
+                </a>
+                <a href="#work" class="btn btn-lg btn-outline text-white border-white hover:bg-white hover:text-st-andrews-blue transition-all duration-300 font-semibold px-8">
+                    <i class="fas fa-briefcase mr-2"></i>
+                    View My Work
+                </a>
+            </div>
+        </div>
     </div>
     
-    <!-- Scroll Arrow -->
-    <div class="relative z-10 mb-8">
-        <a href="#about" class="inline-block text-gold-rush bounce-arrow">
-            <i class="fas fa-chevron-down text-3xl sm:text-4xl"></i>
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <a href="#about" class="text-white/70 hover:text-gold-rush transition-colors duration-300">
+            <div class="flex flex-col items-center">
+                <span class="text-sm font-body mb-2">Scroll to explore</span>
+                <div class="w-6 h-10 border-2 border-current rounded-full flex justify-center">
+                    <div class="w-1 h-3 bg-current rounded-full mt-2 animate-bounce"></div>
+                </div>
+            </div>
         </a>
     </div>
 </section>

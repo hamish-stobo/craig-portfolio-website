@@ -1,22 +1,125 @@
 <!-- Contact Section -->
-<section id="contact" class="py-16 md:py-24 bg-gray-800">
+<section id="contact" class="py-20 bg-gradient-to-br from-ivory to-sky/30">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-heading font-bold text-gold-rush text-center mb-12">Contact Me</h2>
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-heading font-bold text-st-andrews-blue mb-4">Get in Touch</h2>
+            <p class="text-xl text-st-andrews-blue/70 max-w-2xl mx-auto font-body">
+                Ready to discuss strategic opportunities, board positions, or consulting engagements? Let's connect.
+            </p>
+            <div class="w-24 h-1 bg-gold-rush mx-auto rounded-full mt-6"></div>
+        </div>
         
-        <div class="flex justify-center gap-8">
-            <a href="{{.Contact.LinkedIn}}" 
-               target="_blank" 
-               class="w-16 h-16 bg-gold-rush rounded-full flex items-center justify-center text-gray-800 hover:bg-deep-gold transition-colors duration-300">
-                <i class="fab fa-linkedin-in text-2xl"></i>
-            </a>
-            <a href="{{.Contact.Email}}" 
-               class="w-16 h-16 bg-gold-rush rounded-full flex items-center justify-center text-gray-800 hover:bg-deep-gold transition-colors duration-300">
-                <i class="far fa-envelope text-2xl"></i>
-            </a>
-            <a href="{{.Contact.Phone}}" 
-               class="w-16 h-16 bg-gold-rush rounded-full flex items-center justify-center text-gray-800 hover:bg-deep-gold transition-colors duration-300">
-                <i class="fas fa-phone text-2xl"></i>
-            </a>
+        <div class="max-w-4xl mx-auto">
+            <!-- Contact Card -->
+            <div class="card bg-white shadow-2xl border border-white/50">
+                <div class="card-body p-8 md:p-12">
+                    
+                    <!-- Professional Intro -->
+                    <div class="text-center mb-12">
+                        <div class="avatar mb-6">
+                            <div class="w-24 h-24 rounded-full ring ring-gold-rush ring-offset-4">
+                                <img src="/static/images/craig-profile-photo.png" alt="Craig Stobo"/>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-heading font-semibold text-st-andrews-blue mb-2">{{.Name}}</h3>
+                        <p class="text-st-andrews-blue/70 font-body">Professional Director & Business Owner</p>
+                    </div>
+                    
+                    <!-- Contact Methods -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                        
+                        <!-- LinkedIn -->
+                        <a href="{{.Contact.LinkedIn}}" target="_blank" 
+                           class="card bg-gradient-to-br from-st-andrews-blue/5 to-gold-rush/5 border border-st-andrews-blue/10 hover:shadow-lg hover:scale-105 transition-all duration-300 group">
+                            <div class="card-body items-center text-center p-6">
+                                <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fab fa-linkedin-in text-white text-xl"></i>
+                                </div>
+                                <h4 class="font-semibold text-st-andrews-blue mb-2">LinkedIn</h4>
+                                <p class="text-sm text-st-andrews-blue/70 font-body">Professional Network</p>
+                                <div class="badge badge-outline text-st-andrews-blue border-st-andrews-blue/30 mt-3 group-hover:bg-st-andrews-blue group-hover:text-white transition-all duration-300">
+                                    Connect
+                                </div>
+                            </div>
+                        </a>
+                        
+                        <!-- Email -->
+                        <a href="{{.Contact.Email}}" 
+                           class="card bg-gradient-to-br from-st-andrews-blue/5 to-gold-rush/5 border border-st-andrews-blue/10 hover:shadow-lg hover:scale-105 transition-all duration-300 group">
+                            <div class="card-body items-center text-center p-6">
+                                <div class="w-12 h-12 bg-gold-rush rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-envelope text-st-andrews-blue text-xl"></i>
+                                </div>
+                                <h4 class="font-semibold text-st-andrews-blue mb-2">Email</h4>
+                                <p class="text-sm text-st-andrews-blue/70 font-body">Direct Communication</p>
+                                <div class="badge badge-outline text-st-andrews-blue border-st-andrews-blue/30 mt-3 group-hover:bg-st-andrews-blue group-hover:text-white transition-all duration-300">
+                                    Send Message
+                                </div>
+                            </div>
+                        </a>
+                        
+                        <!-- Phone -->
+                        <a href="{{.Contact.Phone}}" 
+                           class="card bg-gradient-to-br from-st-andrews-blue/5 to-gold-rush/5 border border-st-andrews-blue/10 hover:shadow-lg hover:scale-105 transition-all duration-300 group">
+                            <div class="card-body items-center text-center p-6">
+                                <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-phone text-white text-xl"></i>
+                                </div>
+                                <h4 class="font-semibold text-st-andrews-blue mb-2">Phone</h4>
+                                <p class="text-sm text-st-andrews-blue/70 font-body">Direct Line</p>
+                                <div class="badge badge-outline text-st-andrews-blue border-st-andrews-blue/30 mt-3 group-hover:bg-st-andrews-blue group-hover:text-white transition-all duration-300">
+                                    Call Now
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Professional Notice -->
+                    <div class="alert bg-st-andrews-blue/5 border border-st-andrews-blue/20">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-info-circle text-st-andrews-blue text-xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-st-andrews-blue mb-2">Professional Inquiries</h4>
+                                <p class="text-st-andrews-blue/80 font-body leading-relaxed">
+                                    For board positions, strategic consulting, investment advisory, or government relations matters, 
+                                    please reach out via LinkedIn or email with details of your opportunity or requirements.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Expertise Areas Quick Reference -->
+                    <div class="mt-8 pt-8 border-t border-st-andrews-blue/10">
+                        <h4 class="font-semibold text-st-andrews-blue mb-4 text-center">Areas of Expertise</h4>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <div class="badge bg-st-andrews-blue/10 text-st-andrews-blue border-none">Corporate Governance</div>
+                            <div class="badge bg-st-andrews-blue/10 text-st-andrews-blue border-none">Investment Strategy</div>
+                            <div class="badge bg-st-andrews-blue/10 text-st-andrews-blue border-none">Financial Markets</div>
+                            <div class="badge bg-st-andrews-blue/10 text-st-andrews-blue border-none">Government Advisory</div>
+                            <div class="badge bg-st-andrews-blue/10 text-st-andrews-blue border-none">Board Leadership</div>
+                            <div class="badge bg-st-andrews-blue/10 text-st-andrews-blue border-none">Risk Management</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Location Information -->
+        <div class="text-center mt-12">
+            <div class="card bg-white/80 backdrop-blur-sm border border-white/50 max-w-md mx-auto">
+                <div class="card-body p-6">
+                    <div class="flex items-center justify-center gap-3 mb-2">
+                        <i class="fas fa-map-marker-alt text-gold-rush text-lg"></i>
+                        <h4 class="font-semibold text-st-andrews-blue">Based in New Zealand</h4>
+                    </div>
+                    <p class="text-st-andrews-blue/70 text-sm font-body">
+                        Available for engagements throughout New Zealand and internationally
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
