@@ -357,7 +357,6 @@ func getPageData() PageData {
 			{Title: "Directing Companies", Image: "/static/images/services-photos/photo-1523875194681-bedd468c58bf.jpg", Alt: "Chess board"},
 		},
 		CurrentWork: []Position{
-			{Company: "NZ Windfarms Ltd", Title: "Chairman", Logo: "/static/images/company-logos/current/nz_wind_farms.png", URL: "https://www.nzwindfarms.co.nz/", Alt: "NZ Windfarms Logo"},
 			{Company: "Financial Markets Authority", Title: "Chairman", Logo: "/static/images/company-logos/current/fma_logo.png", URL: "https://www.fma.govt.nz/", Alt: "Financial Markets Authority Logo"},
 			{Company: "Local Government Funding Agency", Title: "Chairman", Logo: "/static/images/company-logos/current/lgfa.png", URL: "https://www.lgfa.co.nz/", Alt: "Local Government Funding Agency Logo"},
 			{Company: "Apello Services Ltd", Title: "Director", Logo: "/static/images/company-logos/current/apello-services-logo.png", URL: "https://appelloservices.co.nz/", Alt: "Apello Services Ltd Logo"},
@@ -367,6 +366,7 @@ func getPageData() PageData {
 			{Company: "Legend Terrace", Title: "Chairman and Shareholder", Logo: "/static/images/company-logos/current/legend-terrace-logo.png", URL: "", Alt: "Legend Terrace NZ Logo"},
 		},
 		PreviousWork: []Position{
+			{Company: "NZ Windfarms Ltd", Title: "Chairman", Logo: "/static/images/company-logos/current/nz_wind_farms.png", URL: "https://www.nzwindfarms.co.nz/", Alt: "NZ Windfarms Logo"},
 			{Company: "Saturn Advice Ltd", Title: "Chairman and Shareholder", Logo: "/static/images/company-logos/current/Saturn-Advice-Logo_new 1.png", URL: "https://saturnadvice.co.nz/", Alt: "Saturn Advice Ltd Logo"},
 			{Company: "Saturn Invest Ltd", Title: "Chairman and Shareholder", Logo: "/static/images/company-logos/current/saturn-invest-logo.png", URL: "https://www.pssnz.co.nz/", Alt: "Saturn Invest Ltd Logo"},
 			{Company: "Elevation Capital", Title: "Chairman and Shareholder", Logo: "/static/images/company-logos/current/elevation-capital-logo.png", URL: "https://www.elevationcapital.co.nz/", Alt: "Elevation Capital Logo"},

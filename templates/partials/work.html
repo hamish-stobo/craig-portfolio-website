@@ -15,15 +15,17 @@
             <div class="tabs tabs-boxed bg-white shadow-lg border border-st-andrews-blue/10">
                 <button @click="activeWorkTab = 'current'" 
                         :class="activeWorkTab === 'current' ? 'tab-active' : ''"
-                        class="tab tab-lg font-semibold text-st-andrews-blue transition-all duration-300">
+                        class="tab tab-lg font-semibold text-st-andrews-blue transition-all duration-300" tooltip="Current Positions">
                     <i class="fas fa-briefcase mr-2"></i>
-                    Current Positions
+                    <span class="sm:hidden">Current</span>
+                    <span class="hidden sm:inline">Current Positions</span>
                 </button>
                 <button @click="activeWorkTab = 'previous'" 
                         :class="activeWorkTab === 'previous' ? 'tab-active' : ''"
-                        class="tab tab-lg font-semibold text-st-andrews-blue transition-all duration-300">
+                        class="tab tab-lg font-semibold text-st-andrews-blue transition-all duration-300" tooltip="Previous Roles">
                     <i class="fas fa-history mr-2"></i>
-                    Previous Roles
+                    <span class="sm:hidden">Previous</span>
+                    <span class="hidden sm:inline">Previous Roles</span>
                 </button>
             </div>
         </div>
@@ -61,12 +63,6 @@
                             <h3 class="card-title text-lg font-heading font-semibold text-st-andrews-blue group-hover:text-deep-blue transition-colors duration-300">
                                 {{.Company}}
                             </h3>
-                            
-                            <!-- Status Indicator -->
-                            <div class="flex items-center gap-2 mt-2">
-                                <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                                <span class="text-sm text-st-andrews-blue/70 font-medium">Active Role</span>
-                            </div>
                             
                             {{if .URL}}
                             <!-- External Link Indicator -->
@@ -116,12 +112,6 @@
                             <h3 class="card-title text-lg font-heading font-semibold text-st-andrews-blue/80 group-hover:text-st-andrews-blue transition-colors duration-300">
                                 {{.Company}}
                             </h3>
-                            
-                            <!-- Status Indicator -->
-                            <div class="flex items-center gap-2 mt-2">
-                                <div class="w-3 h-3 bg-st-andrews-blue/50 rounded-full"></div>
-                                <span class="text-sm text-st-andrews-blue/60 font-medium">Previous Role</span>
-                            </div>
                             
                             {{if .URL}}
                             <!-- External Link Indicator -->

@@ -32,15 +32,16 @@
                             <div class="tabs tabs-boxed mb-8 bg-sky/20 p-1">
                                 <button @click="activeTab = 'summary'" 
                                         :class="activeTab === 'summary' ? 'tab-active' : ''"
-                                        class="tab tab-lg font-semibold transition-all duration-300">
+                                        class="tab tab-lg font-semibold transition-all duration-300" tooltip="Personal Summary">
+                                        <div>
                                     <i class="fas fa-user mr-2"></i>
-                                    Personal Summary
+                                    <span class="hidden sm:inline">Personal Summary</span>
                                 </button>
                                 <button @click="activeTab = 'qualifications'" 
                                         :class="activeTab === 'qualifications' ? 'tab-active' : ''"
-                                        class="tab tab-lg font-semibold transition-all duration-300">
+                                        class="tab tab-lg font-semibold transition-all duration-300" tooltip="Qualifications">
                                     <i class="fas fa-graduation-cap mr-2"></i>
-                                    Qualifications
+                                    <span class="hidden sm:inline">Qualifications</span>
                                 </button>
                             </div>
                             
@@ -80,7 +81,7 @@
                             </div>
                             <div class="flex flex-row justify-end mt-4" x-show="activeTab === 'qualifications'">
                                 <div>
-                                    <a href="" target="_blank">
+                                    <a href="/static/docs/Craig Stobo CV.pdf" target="_blank">
                                         <button class="btn btn-primary">
                                             <i class="fas fa-arrow-right mr-2"></i>
                                             View CV

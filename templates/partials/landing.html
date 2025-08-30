@@ -2,21 +2,19 @@
 <section class="hero min-h-screen relative overflow-hidden">
     <!-- Background Images for Mobile -->
     <div class="absolute inset-0 md:hidden">
-        <div class="absolute inset-0 bg-slide bg-slide-1 opacity-0" style="background-image: url('https://inboxdesign.ibcdn.nz/media/2018_02_07_2016_07_27_waitaki-boys-high-school-entrance.jpg'); background-position: 30% 50%;"></div>
-        <div class="absolute inset-0 bg-slide bg-slide-2 opacity-0" style="background-image: url('https://julietetelandresen.com/wp-content/uploads/2018/01/7027833-queenstown-new-zealand-wakatipu-lake.jpg');"></div>
-        <div class="absolute inset-0 bg-slide bg-slide-3 opacity-0" style="background-image: url('https://www.timeshighereducation.com/sites/default/files/styles/institution_12col_card/public/institution_images/clocktower_blossom_2.jpg');"></div>
-        <div class="absolute inset-0 bg-slide bg-slide-4 opacity-0" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/60/Bayswater_Marina_Auckland_New_Zealand.jpg');"></div>
+        <div class="absolute inset-0">
+            <picture class="w-full h-full">
+                <source srcset="/static/images/landing-page/kinabalu_summit_dark_mobile.webp" type="image/webp">
+                <div class="w-full h-full bg-cover bg-center" style="background-image: url('/static/images/landing-page/kinabalu_summit_dark_mobile.jpg');"></div>
+            </picture>
+        </div>
         <div class="absolute inset-0 bg-gradient-to-br from-st-andrews-blue/40 via-deep-blue/60 to-st-andrews-blue/80"></div>
     </div>
     
     <!-- Desktop Background with Modern Format Support -->
-    <picture class="hidden md:block absolute inset-0">
-        <source srcset="/static/images/landing-page/desktop-bg.webp" type="image/webp">
-        <source srcset="/static/images/landing-page/desktop-bg.jpg" type="image/jpeg">
-        <div class="absolute inset-0 bg-slide" style="background-image: url('/static/images/landing-page/desktop-bg.jpg');">
-            <div class="absolute inset-0 bg-gradient-to-br from-st-andrews-blue/50 via-deep-blue/70 to-st-andrews-blue/90"></div>
-        </div>
-    </picture>
+    <div class="hidden md:block absolute inset-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-st-andrews-blue/50 via-deep-blue/70 to-st-andrews-blue/90"></div>
+    </div>
     
     <!-- Hero Content -->
     <div class="hero-content text-center relative z-10 max-w-4xl mx-auto px-4">
@@ -32,7 +30,7 @@
             </p>
             
             <!-- Description -->
-            <p class="text-lg text-ivory/90 mb-12 max-w-xl mx-auto leading-relaxed font-body">
+            <p class="text-lg text-ivory/90 mb-12 max-w-xl mx-auto leading-relaxed font-body hidden md:block">
                 Experienced diplomat, economist, and CEO with expertise in investment direction, 
                 government advisory, and corporate leadership across New Zealand's financial sector.
             </p>
