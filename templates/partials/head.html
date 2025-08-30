@@ -4,6 +4,12 @@
     <title>{{.Title}}</title>
     <link rel="icon" href="/static/images/craig-profile-photo.png" type="image/png">
     
+    <!-- Performance: Preload critical resources -->
+    <link rel="preload" href="/static/images/landing-page/desktop-bg.webp" as="image" type="image/webp" media="(min-width: 768px)">
+    <link rel="preload" href="/static/images/landing-page/desktop-bg.jpg" as="image" type="image/jpeg" media="(min-width: 768px)">
+    <link rel="preload" href="/static/images/craig-profile-photo.png" as="image" type="image/png">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     

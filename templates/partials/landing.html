@@ -9,10 +9,14 @@
         <div class="absolute inset-0 bg-gradient-to-br from-st-andrews-blue/40 via-deep-blue/60 to-st-andrews-blue/80"></div>
     </div>
     
-    <!-- Desktop Background -->
-    <div class="hidden md:block absolute inset-0 bg-slide" style="background-image: url('/static/images/landing-page/desktop-bg.png');">
-        <div class="absolute inset-0 bg-gradient-to-br from-st-andrews-blue/50 via-deep-blue/70 to-st-andrews-blue/90"></div>
-    </div>
+    <!-- Desktop Background with Modern Format Support -->
+    <picture class="hidden md:block absolute inset-0">
+        <source srcset="/static/images/landing-page/desktop-bg.webp" type="image/webp">
+        <source srcset="/static/images/landing-page/desktop-bg.jpg" type="image/jpeg">
+        <div class="absolute inset-0 bg-slide" style="background-image: url('/static/images/landing-page/desktop-bg.jpg');">
+            <div class="absolute inset-0 bg-gradient-to-br from-st-andrews-blue/50 via-deep-blue/70 to-st-andrews-blue/90"></div>
+        </div>
+    </picture>
     
     <!-- Hero Content -->
     <div class="hero-content text-center relative z-10 max-w-4xl mx-auto px-4">
