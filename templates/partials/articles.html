@@ -205,24 +205,65 @@
                  x-transition:enter="transition ease-out duration-500"
                  x-transition:enter-start="opacity-0 transform translate-y-8"
                  x-transition:enter-end="opacity-1 transform translate-y-0"
-                 class="text-center">
-                <div class="card bg-white/10 backdrop-blur-md border border-white/20 max-w-2xl mx-auto">
-                    <div class="card-body p-12">
-                        <div class="text-6xl mb-6">
-                            <i class="fas fa-feather-alt text-gold-rush"></i>
+                 class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                {{range $index, $work := .CreativeWriting}}
+                <article class="card bg-white shadow-2xl border border-white/50 hover:shadow-3xl hover:scale-105 transition-all duration-500 group overflow-hidden">
+                    <a href="{{.URL}}" target="_blank" class="block">
+                        <!-- Creative Work Header -->
+                        <div class="relative bg-gradient-to-br from-st-andrews-blue to-deep-blue p-8 text-center">
+                            <div class="text-4xl mb-4">
+                                <i class="fas fa-feather-alt text-gold-rush"></i>
+                            </div>
+                            
+                            <!-- Creative Work Badge -->
+                            <div class="badge bg-gold-rush text-st-andrews-blue border-none font-semibold mb-4">
+                                <i class="fas fa-file-alt mr-1"></i>
+                                Creative Writing
+                            </div>
+                            
+                            <!-- External Link Icon -->
+                            <div class="absolute top-4 right-4 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-gold-rush group-hover:scale-110 transition-all duration-300">
+                                <i class="fas fa-external-link-alt text-white text-sm"></i>
+                            </div>
                         </div>
-                        <h3 class="text-2xl font-heading font-semibold text-white mb-4">Creative Writing</h3>
-                        <p class="text-sky/80 mb-6 font-body">
-                            Personal reflections and creative works that showcase a different dimension of professional life.
-                        </p>
-                        <div class="text-left bg-white/5 p-6 rounded-xl border border-white/10">
-                            <blockquote class="text-sky/90 italic font-body text-lg leading-relaxed">
-                                "Beyond the boardroom and balance sheets, creativity and reflection nurture the mind and spirit..."
-                            </blockquote>
-                            <cite class="text-gold-rush text-sm mt-4 block">— Craig Stobo</cite>
+                        
+                        <!-- Creative Work Content -->
+                        <div class="card-body p-6">
+                            <!-- Date Badge -->
+                            <div class="flex justify-center mb-4">
+                                <div class="badge badge-ghost text-st-andrews-blue/60 text-xs">
+                                    <i class="far fa-calendar mr-1"></i>
+                                    {{.Date}}
+                                </div>
+                            </div>
+                            
+                            <!-- Creative Work Title -->
+                            <h3 class="card-title text-xl font-heading font-semibold text-st-andrews-blue group-hover:text-deep-blue transition-colors duration-300 leading-tight mb-4 text-center">
+                                {{.Title}}
+                            </h3>
+                            
+                            <!-- Creative Work Description -->
+                            <p class="text-sm text-st-andrews-blue/70 leading-relaxed font-body mb-6 text-center">
+                                {{if eq .Title "COVID-19 Vignettes"}}
+                                    Personal reflections and poetic observations during the global pandemic, capturing moments of uncertainty, resilience, and hope.
+                                {{else if eq .Title "For David"}}
+                                    A heartfelt tribute and personal memoir, exploring themes of friendship, loss, and remembrance.
+                                {{else}}
+                                    A collection of personal writings and creative expressions exploring various themes and experiences.
+                                {{end}}
+                            </p>
+                            
+                            <!-- Read More -->
+                            <div class="card-actions justify-center mt-4">
+                                <div class="badge badge-outline text-st-andrews-blue border-st-andrews-blue/30 group-hover:bg-st-andrews-blue group-hover:text-white transition-all duration-300">
+                                    <i class="fas fa-book-open mr-1"></i>
+                                    Read PDF
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </a>
+                </article>
+                {{end}}
             </div>
         </div>
     </div>

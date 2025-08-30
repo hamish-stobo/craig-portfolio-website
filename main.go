@@ -22,6 +22,7 @@ type PageData struct {
 	PreviousWork    []Position
 	Articles        []Article
 	PressItems      []PressItem
+	CreativeWriting []CreativeWork
 	Contact         Contact
 }
 
@@ -55,6 +56,12 @@ type PressItem struct {
 	Image  string
 	URL    string
 	Alt    string
+}
+
+type CreativeWork struct {
+	Title string
+	Date  string
+	URL   string
 }
 
 type Contact struct {
@@ -382,6 +389,10 @@ func getPageData() PageData {
 			{Title: "Shovel-ready, but not work-ready", Source: "NZ Herald", Date: "9 May 2020", Image: "/static/images/publications-media/media/nz-herald-2020.jpg", URL: "https://www.nzherald.co.nz/business/news/article.cfm?c_id=3&objectid=12330405", Alt: "NZ Herald article thumbnail"},
 			{Title: "Q & A with Craig Stobo", Source: "University of Otago Business School", Date: "20 Oct 2017", Image: "/static/images/publications-media/media/UoO-2017-business-school-interview.png", URL: "https://www.youtube.com/watch?v=fDo0HFOe8EU", Alt: "University of Otago interview thumbnail"},
 			{Title: "Government assets sheet needs right balance", Source: "NZ Herald", Date: "12 Mar 2015", Image: "/static/images/publications-media/media/nz-herald-2015.jpg", URL: "https://www.nzherald.co.nz/business/news/article.cfm?c_id=3&objectid=11415720", Alt: "NZ Herald article thumbnail"},
+		},
+		CreativeWriting: []CreativeWork{
+			{Title: "COVID-19 Vignettes", Date: "13 May 2020", URL: "/static/docs/creative-writing/Covid 19 Verse.pdf"},
+			{Title: "For David", Date: "May 2020", URL: "/static/docs/creative-writing/For David.pdf"},
 		},
 		Contact: Contact{
 			LinkedIn: "https://nz.linkedin.com/in/craig-stobo-4b40361a2",
