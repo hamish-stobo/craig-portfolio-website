@@ -51,12 +51,13 @@ type Article struct {
 }
 
 type PressItem struct {
-	Title  string
-	Source string
-	Date   string
-	Image  string
-	URL    string
-	Alt    string
+	Title       string
+	Source      string
+	Date        string
+	Image       string
+	URL         string
+	Alt         string
+	Description string
 }
 
 type CreativeWork struct {
@@ -411,12 +412,36 @@ func getPageData() PageData {
 			},
 		},
 		PressItems: []PressItem{
-			{Title: "Shovel-ready, but not work-ready", Source: "NZ Herald", Date: "9 May 2020", Image: "/static/images/publications-media/media/nz-herald-2020.jpg", URL: "https://www.nzherald.co.nz/business/news/article.cfm?c_id=3&objectid=12330405", Alt: "NZ Herald article thumbnail"},
-			{Title: "Q & A with Craig Stobo", Source: "University of Otago Business School", Date: "20 Oct 2017", Image: "/static/images/publications-media/media/UoO-2017-business-school-interview.png", URL: "https://www.youtube.com/watch?v=fDo0HFOe8EU", Alt: "University of Otago interview thumbnail"},
-			{Title: "Government assets sheet needs right balance", Source: "NZ Herald", Date: "12 Mar 2015", Image: "/static/images/publications-media/media/nz-herald-2015.jpg", URL: "https://www.nzherald.co.nz/business/news/article.cfm?c_id=3&objectid=11415720", Alt: "NZ Herald article thumbnail"},
+			{
+				Title:       "Shovel-ready, but not work-ready",
+				Source:      "NZ Herald",
+				Date:        "9 May 2020",
+				Image:       "/static/images/publications-media/media/nz-herald-2020.jpg",
+				URL:         "https://www.nzherald.co.nz/business/news/article.cfm?c_id=3&objectid=12330405",
+				Alt:         "NZ Herald article thumbnail",
+				Description: "Expert commentary and analysis on key economic and financial sector developments in New Zealand.",
+			},
+			{
+				Title:       "Q & A with Craig Stobo",
+				Source:      "University of Otago Business School",
+				Date:        "20 Oct 2017",
+				Image:       "/static/images/publications-media/media/UoO-2017-business-school-interview.png",
+				URL:         "https://www.youtube.com/watch?v=fDo0HFOe8EU",
+				Alt:         "University of Otago interview thumbnail",
+				Description: "Insights from a distinguished alumnus and business leader on industry trends and professional development.",
+			},
+			{
+				Title:       "Government assets sheet needs right balance",
+				Source:      "NZ Herald",
+				Date:        "12 Mar 2015",
+				Image:       "/static/images/publications-media/media/nz-herald-2015.jpg",
+				URL:         "https://www.nzherald.co.nz/business/news/article.cfm?c_id=3&objectid=11415720",
+				Alt:         "NZ Herald article thumbnail",
+				Description: "Professional commentary and expert analysis from a leading voice in New Zealand's financial sector.",
+			},
 		},
 		CreativeWriting: []CreativeWork{
-			{Title: "COVID-19 Vignettes", Date: "13 May 2020", URL: "/static/docs/creative-writing/Covid 19 Verse.pdf"},
+			{Title: "COVID-19 Vignettes", Date: "May 2020", URL: "/static/docs/creative-writing/Covid 19 Verse.pdf"},
 			{Title: "For David", Date: "May 2020", URL: "/static/docs/creative-writing/For David.pdf"},
 		},
 		Contact: Contact{
