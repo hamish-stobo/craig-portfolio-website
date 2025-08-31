@@ -16,20 +16,35 @@
                 <button @click="activeTab = 'articles'" 
                         :class="activeTab === 'articles' ? 'tab-active' : ''"
                         class="tab tab-lg font-semibold text-white transition-all duration-300">
-                    <i class="fas fa-file-alt mr-2"></i>
-                    Research Papers
+                        <div class="sm:hidden" tooltip="Research Papers">
+                            <i class="fas fa-file-alt mx-2"></i>
+                        </div>
+                        <div class="hidden sm:block">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            Research Papers
+                        </div>
                 </button>
                 <button @click="activeTab = 'press'" 
                         :class="activeTab === 'press' ? 'tab-active' : ''"
                         class="tab tab-lg font-semibold text-white transition-all duration-300">
-                    <i class="fas fa-newspaper mr-2"></i>
-                    Press Coverage
+                        <div class="sm:hidden" tooltip="Press Coverage">
+                            <i class="fas fa-newspaper mx-2"></i>
+                        </div>
+                        <div class="hidden sm:block">
+                            <i class="fas fa-newspaper mr-2"></i>
+                            Press Coverage
+                        </div>
                 </button>
                 <button @click="activeTab = 'poetry'" 
                         :class="activeTab === 'poetry' ? 'tab-active' : ''"
                         class="tab tab-lg font-semibold text-white transition-all duration-300">
-                    <i class="fas fa-feather-alt mr-2"></i>
-                    Creative Writing
+                        <div class="sm:hidden" tooltip="Creative Writing">
+                            <i class="fas fa-feather-alt mx-2"></i>
+                        </div>
+                        <div class="hidden sm:block">
+                            <i class="fas fa-feather-alt mr-2"></i>
+                            Creative Writing
+                        </div>
                 </button>
             </div>
         </div>
@@ -41,71 +56,47 @@
                  x-transition:enter="transition ease-out duration-500"
                  x-transition:enter-start="opacity-0 transform translate-y-8"
                  x-transition:enter-end="opacity-1 transform translate-y-0"
-                 class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+                 class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                 {{range $index, $article := .Articles}}
                 <article class="card bg-white shadow-2xl border border-white/50 hover:shadow-3xl hover:scale-105 transition-all duration-500 group overflow-hidden">
                     <a href="{{.URL}}" target="_blank" class="block">
-                        <!-- Article Thumbnail -->
-                        <figure class="relative h-48 overflow-hidden">
-                            <img src="{{.Image}}" 
-                                 alt="{{.Alt}}" 
-                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
-                            <div class="absolute inset-0 bg-gradient-to-t from-st-andrews-blue/80 via-transparent to-transparent"></div>
-                            
-                            <!-- Document Type Badge -->
-                            <div class="absolute top-4 left-4">
-                                <div class="badge bg-gold-rush text-st-andrews-blue border-none font-semibold">
+                        
+                        <!-- Article Content -->
+                        <div class="card-body p-4 sm:p-6">
+                            <!-- Publication Info -->
+                            <div class="flex items-center gap-1 sm:gap-2 mb-3 pt-2 flex-wrap">
+                                <div class="badge badge-outline text-st-andrews-blue border-st-andrews-blue/30 text-xs max-w-[220px] sm:max-w-none" title="{{.Source}}">
+                                    <span class="truncate">{{.Source}}</span>
+                                </div>
+                                <div class="badge badge-ghost text-st-andrews-blue/60 text-xs whitespace-nowrap">
+                                    {{.Date}}
+                                </div>
+                                <div class="badge bg-gold-rush text-st-andrews-blue border-none font-semibold text-xs whitespace-nowrap">
                                     <i class="fas fa-file-pdf mr-1"></i>
                                     PDF
                                 </div>
                             </div>
                             
-                            <!-- Download Icon -->
-                            <div class="absolute bottom-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center group-hover:bg-gold-rush group-hover:scale-110 transition-all duration-300">
-                                <i class="fas fa-download text-st-andrews-blue"></i>
-                            </div>
-                        </figure>
-                        
-                        <!-- Article Content -->
-                        <div class="card-body p-6">
-                            <!-- Publication Info -->
-                            <div class="flex items-center gap-2 mb-3">
-                                <div class="badge badge-outline text-st-andrews-blue border-st-andrews-blue/30 text-xs">
-                                    {{.Source}}
-                                </div>
-                                <div class="badge badge-ghost text-st-andrews-blue/60 text-xs">
-                                    {{.Date}}
-                                </div>
-                            </div>
-                            
                             <!-- Article Title -->
-                            <h3 class="card-title text-lg font-heading font-semibold text-st-andrews-blue group-hover:text-deep-blue transition-colors duration-300 leading-tight mb-3">
+                            <h3 class="card-title text-base sm:text-lg font-heading font-semibold text-st-andrews-blue group-hover:text-deep-blue transition-colors duration-300 leading-tight mb-3 line-clamp-2">
                                 {{.Title}}
                             </h3>
                             
                             <!-- Article Preview -->
-                            <p class="text-sm text-st-andrews-blue/70 leading-relaxed font-body mb-4">
-                                {{if eq .Title "NZ Local Government Insurance Review"}}
-                                    Comprehensive analysis of the New Zealand local government insurance market, providing strategic recommendations for risk management and cost optimization.
-                                {{else if eq .Title "Exporting Financial Services"}}
-                                    Strategic framework for expanding New Zealand's financial services sector internationally, exploring market opportunities and regulatory considerations.
-                                {{else if eq .Title "Towards Consensus on the Taxation of Investment Income"}}
-                                    Policy research examining investment income taxation structures and their implications for economic growth and fairness.
-                                {{else}}
-                                    Expert analysis and policy recommendations from a leading voice in New Zealand's financial sector.
-                                {{end}}
+                            <p class="text-xs sm:text-sm text-st-andrews-blue/70 leading-relaxed font-body mb-4 line-clamp-3">
+                                {{.Description}}
                             </p>
                             
                             <!-- Read More -->
-                            <div class="card-actions justify-between items-center mt-4">
-                                <div class="flex items-center gap-2 text-st-andrews-blue/60 text-sm">
+                            <div class="card-actions justify-end items-center mt-4">
+                                <div class="flex items-center gap-2 text-st-andrews-blue/60 group-hover:text-st-andrews-blue text-xs sm:text-sm transition-colors duration-100">
                                     <i class="fas fa-eye"></i>
                                     <span>View Full Document</span>
                                 </div>
-                                <div class="badge badge-outline text-st-andrews-blue border-st-andrews-blue/30 group-hover:bg-st-andrews-blue group-hover:text-white transition-all duration-300">
+                                <!-- <div class="badge badge-outline text-st-andrews-blue border-st-andrews-blue/30 group-hover:bg-st-andrews-blue group-hover:text-white transition-all duration-300">
                                     <i class="fas fa-arrow-right mr-1"></i>
                                     Read
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </a>

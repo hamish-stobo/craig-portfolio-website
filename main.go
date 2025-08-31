@@ -41,12 +41,13 @@ type Position struct {
 }
 
 type Article struct {
-	Title  string
-	Source string
-	Date   string
-	Image  string
-	URL    string
-	Alt    string
+	Title       string
+	Source      string
+	Date        string
+	Image       string
+	URL         string
+	Alt         string
+	Description string
 }
 
 type PressItem struct {
@@ -381,9 +382,33 @@ func getPageData() PageData {
 			{Company: "Local Government New Zealand", Title: "Advisor", Logo: "/static/images/company-logos/previous/lgnz-logo.png", URL: "https://www.lgnz.co.nz/", Alt: "Local Government New Zealand Logo"},
 		},
 		Articles: []Article{
-			{Title: "NZ Local Government Insurance Review", Source: "Local Government New Zealand", Date: "Dec 2013", Image: "/static/images/publications-media/articles/thumbnail_local_government_insurance_market_review.png", URL: "/static/docs/articles/LGNZ140101 Insurance Review Publication FA-4.pdf", Alt: "Thumbnail of Document"},
-			{Title: "Exporting Financial Services", Source: "International Financial Services Development Group", Date: "July 2011", Image: "/static/images/publications-media/articles/thumbnail_exporting_financial_services.png", URL: "/static/docs/articles/IFSD Group Presentation_July2011.pdf", Alt: "Thumbnail of Document"},
-			{Title: "Towards Consensus on the Taxation of Investment Income", Source: "Inland Revenue Department", Date: "October 2004", Image: "/static/images/publications-media/articles/thumbnail_consensus_taxation_investment_income.png", URL: "/static/docs/articles/2004-other-report-stobo-taxation-investment-income.pdf", Alt: "Thumbnail of Document"},
+			{
+				Title:       "NZ Local Government Insurance Review",
+				Source:      "Local Government New Zealand",
+				Date:        "Dec 2013",
+				Image:       "/static/images/publications-media/articles/thumbnail_local_government_insurance_market_review.png",
+				URL:         "/static/docs/articles/LGNZ140101 Insurance Review Publication FA-4.pdf",
+				Alt:         "Thumbnail of Document",
+				Description: "Comprehensive analysis of the New Zealand local government insurance market, providing strategic recommendations for risk management and cost optimization.",
+			},
+			{
+				Title:       "Exporting Financial Services",
+				Source:      "International Financial Services Development Group",
+				Date:        "July 2011",
+				Image:       "/static/images/publications-media/articles/thumbnail_exporting_financial_services.png",
+				URL:         "/static/docs/articles/IFSD Group Presentation_July2011.pdf",
+				Alt:         "Thumbnail of Document",
+				Description: "Strategic framework for expanding New Zealand's financial services sector internationally, exploring market opportunities and regulatory considerations.",
+			},
+			{
+				Title:       "Towards Consensus on the Taxation of Investment Income",
+				Source:      "Inland Revenue Department",
+				Date:        "October 2004",
+				Image:       "/static/images/publications-media/articles/thumbnail_consensus_taxation_investment_income.png",
+				URL:         "/static/docs/articles/2004-other-report-stobo-taxation-investment-income.pdf",
+				Alt:         "Thumbnail of Document",
+				Description: "Expert analysis and policy recommendations from a leading voice in New Zealand's financial sector.",
+			},
 		},
 		PressItems: []PressItem{
 			{Title: "Shovel-ready, but not work-ready", Source: "NZ Herald", Date: "9 May 2020", Image: "/static/images/publications-media/media/nz-herald-2020.jpg", URL: "https://www.nzherald.co.nz/business/news/article.cfm?c_id=3&objectid=12330405", Alt: "NZ Herald article thumbnail"},
