@@ -342,8 +342,9 @@ func getPageData() PageData {
 		as a diplomat, economist, Chief Investment Officer and CEO. Outside of work I have climbed 
 		mountains in NZ, Peru, Pakistan, and Nepal. I continue to ski, sail and compete in ocean swims. 
 		I also enjoy drama and literature, and I am a long-time supporter of Otago rugby and the 
-		Highlanders. Finally, I am Chair of the Waitaki Boys High School Foundation, and I'm a 
-		Taumata of Otago University's Business School.`,
+		Highlanders. 
+		Finally, I am Chair of the Waitaki Boys High School Foundation, Chair of the Audit and Risk Committee of Cancer Society Auckland and Northern, 
+		and Advisor to the Otago University Business School.`,
 		Qualifications: []string{
 			"BA (Hons) First Class Economics Otago",
 			"Wharton Business School (Advanced Management Programme)",
@@ -359,18 +360,18 @@ func getPageData() PageData {
 			{Title: "Directing Companies", Image: "/static/images/services-photos/photo-1523875194681-bedd468c58bf.jpg", Alt: "Chess board"},
 		},
 		CurrentWork: []Position{
+			{Company: "Auckland Future Fund", Title: "Director", Logo: "/static/images/company-logos/current/auckland_future_fund_logo.png", URL: "https://aucklandfuturefund.co.nz/en.html", Alt: "Auckland Future Fund Logo"},
 			{Company: "Financial Markets Authority", Title: "Chairman", Logo: "/static/images/company-logos/current/fma_logo.png", URL: "https://www.fma.govt.nz/", Alt: "Financial Markets Authority Logo"},
 			{Company: "Local Government Funding Agency", Title: "Chairman", Logo: "/static/images/company-logos/current/lgfa.png", URL: "https://www.lgfa.co.nz/", Alt: "Local Government Funding Agency Logo"},
 			{Company: "Apello Services Ltd", Title: "Director", Logo: "/static/images/company-logos/current/apello-services-logo.png", URL: "https://appelloservices.co.nz/", Alt: "Apello Services Ltd Logo"},
-			{Company: "Biomarine Ltd", Title: "Chairman and Shareholder", Logo: "/static/images/company-logos/current/biomarine-logo.png", URL: "http://www.biomarine.co.nz/", Alt: "Biomarine Ltd Logo"},
 			{Company: "Cressida Capital", Title: "Board Advisor", Logo: "/static/images/company-logos/current/cressida-capital-logo.png", URL: "https://www.cressida.co.nz/", Alt: "Cressida Capital Logo"},
 			{Company: "Urban Partners", Title: "Board Advisor", Logo: "/static/images/company-logos/current/urban-partners.png", URL: "http://www.urbanpartners.co.nz", Alt: "Urban Partners NZ Logo"},
 			{Company: "Legend Terrace", Title: "Chairman and Shareholder", Logo: "/static/images/company-logos/current/legend-terrace-logo.png", URL: "", Alt: "Legend Terrace NZ Logo"},
 		},
 		PreviousWork: []Position{
 			{Company: "NZ Windfarms Ltd", Title: "Chairman", Logo: "/static/images/company-logos/current/nz_wind_farms.png", URL: "https://www.nzwindfarms.co.nz/", Alt: "NZ Windfarms Logo"},
-			{Company: "Saturn Advice Ltd", Title: "Chairman and Shareholder", Logo: "/static/images/company-logos/current/Saturn-Advice-Logo_new 1.png", URL: "https://saturnadvice.co.nz/", Alt: "Saturn Advice Ltd Logo"},
-			{Company: "Saturn Invest Ltd", Title: "Chairman and Shareholder", Logo: "/static/images/company-logos/current/saturn-invest-logo.png", URL: "https://www.pssnz.co.nz/", Alt: "Saturn Invest Ltd Logo"},
+			{Company: "Saturn Advice Ltd", Title: "Chairman", Logo: "/static/images/company-logos/current/Saturn-Advice-Logo_new 1.png", URL: "https://saturnadvice.co.nz/", Alt: "Saturn Advice Ltd Logo"},
+			{Company: "Saturn Invest Ltd", Title: "Director", Logo: "/static/images/company-logos/current/saturn-invest-logo.png", URL: "https://www.pssnz.co.nz/", Alt: "Saturn Invest Ltd Logo"},
 			{Company: "Elevation Capital", Title: "Chairman and Shareholder", Logo: "/static/images/company-logos/current/elevation-capital-logo.png", URL: "https://www.elevationcapital.co.nz/", Alt: "Elevation Capital Logo"},
 			{Company: "AIG Insurance New Zealand", Title: "Chairman", Logo: "/static/images/company-logos/current/AIG-logo.png", URL: "https://www.aig.co.nz/", Alt: "AIG Insurance New Zealand Logo"},
 			{Company: "Precinct Properties Ltd", Title: "Chairman", Logo: "/static/images/company-logos/current/precinct-properties-logo.png", URL: "https://www.precinct.co.nz/", Alt: "Precinct Properties Ltd Logo"},
